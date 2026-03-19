@@ -17,59 +17,59 @@ models:
           - not_null
           - unique
 
-      - name: gross_revenue
+      - name: gross_revenue_by_date
         description: "Total revenue including all orders."
         tests:
           - not_null
 
-      - name: net_revenue
+      - name: net_revenue_by_date
         description: "Revenue excluding refunded orders."
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               arguments:
-                expression: "<= gross_revenue"
+                expression: "<= gross_revenue_by_date"
 
-      - name: realized_revenue
+      - name: realized_revenue_by_date
         description: "Revenue from completed (shipped or delivered) orders."
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               arguments:
-                expression: "<= net_revenue"
+                expression: "<= net_revenue_by_date"
 
-      - name: total_orders
+      - name: total_orders_by_date
         description: "Total number of orders placed."
         tests:
           - not_null
 
-      - name: valid_orders
+      - name: valid_orders_by_date
         description: "Total number of non-refunded orders."
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               arguments:
-                expression: "<= total_orders"
+                expression: "<= total_orders_by_date"
 
-      - name: completed_orders
+      - name: completed_orders_by_date
         description: "Total number of completed (shipped/delivered) orders."
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               arguments:
-                expression: "<= valid_orders"
+                expression: "<= valid_orders_by_date"
 
-      - name: gross_aov
+      - name: gross_aov_by_date
         description: "Average order value based on total orders."
         tests:
           - not_null
 
-      - name: net_aov
+      - name: net_aov_by_date
         description: "Average order value based on valid (non-refunded) orders."
         tests:
           - not_null
 
-      - name: realized_aov
+      - name: realized_aov_by_date
         description: "Average order value based on completed orders."
         tests:
           - not_null

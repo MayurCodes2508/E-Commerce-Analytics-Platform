@@ -4,13 +4,13 @@
 
 with child as (
     select date_key as from_field
-    from `intense-pixel-490219-h2`.`prod_core`.`fct_order_items`
+    from `intense-pixel-490219-h2`.`dev_core`.`fct_order_items`
     where date_key is not null
 ),
 
 parent as (
     select date_key as to_field
-    from `intense-pixel-490219-h2`.`prod_core`.`dim_date`
+    from `intense-pixel-490219-h2`.`dev_core`.`dim_date`
 )
 
 select

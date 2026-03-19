@@ -1,0 +1,1 @@
+{{ test_relationships(column_name="payment_date_key", field="date_key", model=get_where_subquery(ref('fct_payments')), to=ref('dim_date')) }}

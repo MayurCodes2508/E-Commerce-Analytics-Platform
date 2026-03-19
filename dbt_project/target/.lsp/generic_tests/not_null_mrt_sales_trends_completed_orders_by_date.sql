@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="completed_orders_by_date", model=get_where_subquery(ref('mrt_sales_trends'))) }}

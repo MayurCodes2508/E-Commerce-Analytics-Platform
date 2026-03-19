@@ -15,7 +15,7 @@ models:
               arguments:
                 values: ['Completed', 'Cancelled/Refunded', 'Paid', 'Created', 'Other']
 
-      - name: total_orders
+      - name: total_orders_by_order_status_bucket
         description: "The total count of orders within this status bucket."
         tests:
           - not_null

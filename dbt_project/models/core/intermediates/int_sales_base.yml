@@ -31,7 +31,7 @@ models:
                 to: ref('dim_products')
                 field: product_key
 
-      - name: date_key
+      - name: order_item_created_at_date_key
         description: "Foreign key referencing date dimension."
         tests:
           - not_null

@@ -22,26 +22,26 @@ models:
       - name: category
         description: "Product category."
 
-      - name: gross_revenue
+      - name: gross_revenue_by_product
         description: "Total revenue including all orders (before refunds)."
         tests:
           - not_null
 
-      - name: net_revenue
+      - name: net_revenue_by_product
         description: "Revenue excluding refunded orders."
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               arguments:
-                expression: "<= gross_revenue"
+                expression: "<= gross_revenue_by_product"
 
-      - name: realized_revenue
+      - name: realized_revenue_by_product
         description: "Revenue from completed orders (shipped or delivered)."
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               arguments:
-                expression: "<= net_revenue"
+                expression: "<= net_revenue_by_product"
 
       - name: dbt_loaded_at
         description: "Timestamp when this mart was last built."

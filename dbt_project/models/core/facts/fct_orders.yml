@@ -30,7 +30,7 @@ models:
                 to: ref('dim_customers')
                 field: customer_key
 
-      - name: date_key
+      - name: order_created_at_date_key
         data_type: integer
         description: "Foreign key to the date dimension"
         tests:

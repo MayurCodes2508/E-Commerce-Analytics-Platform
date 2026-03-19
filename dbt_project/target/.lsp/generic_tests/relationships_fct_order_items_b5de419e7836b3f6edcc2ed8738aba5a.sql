@@ -1,0 +1,1 @@
+{{ test_relationships(column_name="order_item_created_at_date_key", field="date_key", model=get_where_subquery(ref('fct_order_items')), to=ref('dim_date')) }}

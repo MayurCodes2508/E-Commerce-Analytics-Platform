@@ -17,7 +17,7 @@
            WHEN order_status = 'created' THEN 'Created'
            ELSE 'Other'
        END AS order_status_bucket,
-       COUNT(DISTINCT order_key) AS total_orders,
+       COUNT(DISTINCT order_key) AS total_orders_by_order_status_bucket,
        CURRENT_TIMESTAMP() AS dbt_loaded_at
 FROM `intense-pixel-490219-h2`.`prod_core`.`int_sales_base`
 GROUP BY order_status_bucket
