@@ -89,11 +89,17 @@ Full lineage visualization using dbt docs
 🏗️ Architecture
 
 Data Generation (Python)
+
 ↓
+
 BigQuery (raw layer)
+
 ↓
+
 dbt (staging → core → intermediate → marts)
+
 ↓
+
 Power BI Dashboard
 
 ---
