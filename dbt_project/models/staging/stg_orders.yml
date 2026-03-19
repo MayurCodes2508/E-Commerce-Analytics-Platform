@@ -1,0 +1,36 @@
+version: 2
+models:
+  - name: stg_orders
+    description: "Staging model for orders data that casts order_date to TIMESTAMP type, trims whitespace from order_status, and includes an ingestion timestamp for data lineage."
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Identifier of the customer who placed the order"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+
+      - name: created_at
+        description: "Timestamp when the order was created"
+        tests:
+          - not_null
+
+      - name: order_status
+        description: "Status of the order"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['paid', 'created', 'delivered', 'cancelled', 'refunded', 'shipped']
+
+      - name: ingestion_timestamp
+        description: "Timestamp when the data was ingested into the data warehouse"
+        tests:
+          - not_null

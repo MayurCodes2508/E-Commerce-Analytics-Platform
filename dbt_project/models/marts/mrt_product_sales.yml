@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: mrt_product_sales
+    description: >
+      This mart provides product-level sales performance metrics.
+      It aggregates revenue across different business definitions:
+      - Gross Revenue: total sales without exclusions
+      - Net Revenue: excludes refunded orders
+      - Realized Revenue: includes only completed (shipped/delivered) orders
+
+    columns:
+      - name: product_key
+        description: "Surrogate key uniquely identifying each product."
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        description: "Name of the product."
+
+      - name: category
+        description: "Product category."
+
+      - name: gross_revenue
+        description: "Total revenue including all orders (before refunds)."
+        tests:
+          - not_null
+
+      - name: net_revenue
+        description: "Revenue excluding refunded orders."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "<= gross_revenue"
+
+      - name: realized_revenue
+        description: "Revenue from completed orders (shipped or delivered)."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "<= net_revenue"
+
+      - name: dbt_loaded_at
+        description: "Timestamp when this mart was last built."
+        tests:
+          - not_null

@@ -1,0 +1,79 @@
+version: 2
+models:
+  - name: fct_order_items
+    config:
+      contract:
+        enforced: true
+    description: "Order items fact table containing granular order item data with foreign keys to dimensions for analytics and reporting."
+
+    columns:
+      - name: order_item_key
+        data_type: string
+        description: "Surrogate key for the order items fact"
+        tests:
+          - not_null
+          - unique
+
+      - name: order_item_id
+        data_type: integer
+        description: "Natural key from the source system"
+        tests:
+          - not_null
+
+      - name: order_key
+        data_type: string
+        description: "Foreign key to the orders dimension"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_orders')
+                field: order_key
+
+      - name: product_key
+        data_type: string
+        description: "Foreign key to the products dimension"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_key
+
+      - name: date_key
+        data_type: integer
+        description: "Foreign key to the date dimension"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: created_at
+        data_type: timestamp
+        description: "Timestamp when the order item was created"
+
+      - name: quantity
+        data_type: integer
+        description: "Quantity of the product ordered"
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "> 0"
+
+      - name: price
+        data_type: numeric(18,2)
+        description: "Price per unit of the product"
+        tests:
+            - dbt_utils.expression_is_true:
+                arguments:
+                  expression: ">= 0"
+
+      - name: line_total
+        data_type: numeric(18,2)
+        description: "Calculated total for the line item (quantity * price)"
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"

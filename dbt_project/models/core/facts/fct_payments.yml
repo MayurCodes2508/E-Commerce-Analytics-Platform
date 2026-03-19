@@ -1,0 +1,61 @@
+version: 2
+models:
+  - name: fct_payments
+    config:
+      contract:
+        enforced: true
+    description: "Payments fact table containing payment transaction data with foreign keys to dimensions for analytics and reporting."
+    
+    columns:
+      - name: payment_key
+        data_type: string
+        description: "Surrogate key for the payments fact"
+        tests:
+          - not_null
+          - unique
+
+      - name: payment_id
+        data_type: integer
+        description: "Natural key from the source system"
+        tests:
+          - not_null
+
+      - name: order_key
+        data_type: string
+        description: "Foreign key to the orders dimension"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_orders')
+                field: order_key
+
+      - name: date_key
+        data_type: integer
+        description: "Foreign key to the date dimension"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: payment_method
+        data_type: string
+        description: "Method used for the payment"
+
+      - name: amount
+        data_type: numeric(18,2)
+        description: "Amount of the payment"
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"
+
+      - name: payment_status
+        data_type: string
+        description: "Status of the payment"
+
+      - name: payment_timestamp
+        data_type: timestamp
+        description: "Timestamp when the payment was processed"

@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="order_status_bucket", model=get_where_subquery(ref('mrt_order_status_bucket')), values=["Completed","Cancelled/Refunded","Paid","Created","Other"]) }}

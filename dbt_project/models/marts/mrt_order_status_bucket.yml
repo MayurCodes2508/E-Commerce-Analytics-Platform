@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: mrt_order_status_bucket
+    description: >
+      This mart model aggregates order data into status buckets, providing insights into order fulfillment stages.
+      Business logic: Orders are categorized into buckets based on their current status (e.g., pending, shipped, delivered).
+      The total_orders field counts the number of orders in each bucket, and dbt_loaded_at indicates the timestamp when the data was loaded into the warehouse.
+    columns:
+      - name: order_status_bucket
+        description: "The bucket category for order statuses, such as 'Pending', 'Shipped', or 'Delivered'."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Completed', 'Cancelled/Refunded', 'Paid', 'Created', 'Other']
+
+      - name: total_orders
+        description: "The total count of orders within this status bucket."
+        tests:
+          - not_null
+
+      - name: dbt_loaded_at
+        description: "Timestamp indicating when the data was loaded into the data warehouse."
+        tests:
+          - not_null

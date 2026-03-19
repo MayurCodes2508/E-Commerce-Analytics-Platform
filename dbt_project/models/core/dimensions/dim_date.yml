@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: dim_date
+
+    config:
+      contract:
+        enforced: true  
+     
+    description: "Date dimension table providing date attributes for time-based analysis and reporting."
+    
+    columns:
+      - name: date_key
+        data_type: integer
+        description: "Surrogate key for the date dimension, typically in YYYYMMDD format"
+        tests:
+          - not_null
+          - unique
+
+      - name: date
+        data_type: date
+        description: "The actual date value"
+        tests:
+          - not_null
+          - unique

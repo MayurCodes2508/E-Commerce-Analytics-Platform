@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: int_sales_base
+    description: >
+      Intermediate model combining order items, orders, and product data.
+      This model serves as a reusable base for building sales marts.
+
+    columns:
+      - name: order_item_key
+        description: "Unique identifier for each order item."
+        tests:
+          - not_null
+          - unique
+
+      - name: order_key
+        description: "Foreign key referencing orders."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_orders')
+                field: order_key
+
+      - name: product_key
+        description: "Foreign key referencing products."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_key
+
+      - name: date_key
+        description: "Foreign key referencing date dimension."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: date
+        description: "Date of the order."
+
+      - name: order_status
+        description: "Status of the order."
+
+      - name: product_name
+        description: "Name of the product."
+
+      - name: category
+        description: "Product category."
+
+      - name: line_total
+        description: "Revenue generated for the order item."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"

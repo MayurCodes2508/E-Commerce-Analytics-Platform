@@ -1,0 +1,1 @@
+{{ dbt_utils.test_expression_is_true(column_name="delivered_at", expression="delivered_at IS NULL OR delivered_at >= shipped_at", model=get_where_subquery(ref('stg_shipments'))) }}

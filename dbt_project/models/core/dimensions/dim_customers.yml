@@ -1,0 +1,51 @@
+version: 2
+models:
+  - name: dim_customers
+
+    config:
+      contract:
+        enforced: true
+
+    description: "Customer dimension table containing customer attributes and demographic information for analytics and reporting purposes."
+    
+    columns:
+      - name: customer_key
+        data_type: string
+        description: "Surrogate key for the customer dimension"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        data_type: integer
+        description: "Natural key, unique identifier from the source system"
+        tests:
+          - not_null
+
+      - name: customer_name
+        data_type: string
+        description: "Full name of the customer"
+
+      - name: email
+        data_type: string
+        description: "Email address of the customer"
+
+      - name: signup_date
+        data_type: date
+        description: "Date when the customer signed up"
+
+      - name: country
+        data_type: string
+        description: "Country of the customer"
+
+      - name: city
+        data_type: string 
+        description: "City of the customer"
+
+      - name: is_active
+        data_type: boolean
+        description: "Boolean flag indicating if the customer is active"
+
+      - name: created_at
+        data_type: date
+        description: "Date when the customer record was created"

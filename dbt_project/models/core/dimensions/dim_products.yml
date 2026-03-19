@@ -1,0 +1,47 @@
+version: 2
+models:
+  - name: dim_products
+
+    config:
+      contract:
+        enforced: true
+
+    description: "Product dimension table containing product attributes and information for analytics and reporting purposes."
+    
+    columns:
+      - name: product_key
+        data_type: string
+        description: "Surrogate key for the product dimension"
+        tests:
+          - not_null
+          - unique
+
+      - name: product_id
+        data_type: integer
+        description: "Natural key, unique identifier from the source system"
+        tests:
+          - not_null
+
+      - name: product_name
+        data_type: string
+        description: "Name of the product"
+
+      - name: category
+        data_type: string
+        description: "Category of the product"
+
+      - name: brand
+        data_type: string
+        description: "Brand of the product"
+
+      - name: base_price
+        data_type: numeric(18,2)
+        description: "Base price of the product"
+
+      - name: created_at
+        data_type: date
+        description: "Date when the product was created"
+
+      - name: is_active
+        data_type: boolean
+        description: "Boolean flag indicating if the product is active"

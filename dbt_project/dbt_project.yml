@@ -1,0 +1,34 @@
+name: ecommerce_analytics_platform
+version: '1.0'
+config-version: 2
+
+profile: ecommerce_analytics_platform
+
+model-paths: ["models"]
+snapshot-paths: ["snapshots"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+models:
+  ecommerce_analytics_platform: 
+
+    staging:
+      +dataset: staging
+      +materialized: view
+
+    core:
+      +dataset: core
+
+      intermediates:
+        +materialized: view
+
+      dimensions:
+        +materialized: table
+      
+      facts:
+        +materialized: incremental
+        +on_schema_change: append_new_columns
+      
+    marts:
+      +dataset: marts
+      +materialized: table

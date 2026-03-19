@@ -1,0 +1,53 @@
+version: 2
+models:
+  - name: fct_shipments
+    config:
+      contract:
+        enforced: true
+    description: "Shipments fact table containing shipment tracking data with foreign keys to dimensions for analytics and reporting."
+    
+    columns:
+      - name: shipment_key
+        data_type: string
+        description: "Surrogate key for the shipments fact"
+        tests:
+          - not_null
+          - unique
+
+      - name: shipment_id
+        data_type: integer
+        description: "Natural key for the shipment, typically the tracking number"
+        tests:
+          - not_null
+
+      - name: order_key
+        data_type: string
+        description: "Foreign key to the orders dimension"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_orders')
+                field: order_key
+
+      - name: date_key
+        data_type: integer
+        description: "Foreign key to the date dimension"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: shipment_status
+        data_type: string
+        description: "Status of the shipment"
+
+      - name: shipped_at
+        data_type: timestamp
+        description: "Timestamp when the shipment was shipped"
+
+      - name: delivered_at
+        data_type: timestamp  
+        description: "Timestamp when the shipment was delivered"

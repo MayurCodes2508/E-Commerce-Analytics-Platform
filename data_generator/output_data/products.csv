@@ -1,0 +1,801 @@
+product_id,product_name,category,brand,base_price,created_at,is_active
+1,Nike Toys Games Item 1,toys_games,Nike,139.56,2026-03-18,True
+2,Panasonic Toys Games Item 2,toys_games,Panasonic,50.8,2026-03-18,True
+3,Sony Electronics Item 3,electronics,Sony,1321.98,2026-03-18,True
+4,Nike Books Item 4,books,Nike,51.29,2026-03-18,True
+5,Dell Toys Games Item 5,toys_games,Dell,39.1,2026-03-18,True
+6,Panasonic Sports Outdoors Item 6,sports_outdoors,Panasonic,368.94,2026-03-18,True
+7,Panasonic Office Supplies Item 7,office_supplies,Panasonic,81.07,2026-03-18,True
+8,HP Home Kitchen Item 8,home_kitchen,HP,259.16,2026-03-18,True
+9,Apple Electronics Item 9,electronics,Apple,1502.37,2026-03-18,True
+10,Apple Electronics Item 10,electronics,Apple,835.99,2026-03-18,True
+11,Dell Office Supplies Item 11,office_supplies,Dell,54.74,2026-03-18,True
+12,Sony Home Kitchen Item 12,home_kitchen,Sony,237.61,2026-03-18,True
+13,Nike Health Wellness Item 13,health_wellness,Nike,41.71,2026-03-18,True
+14,Samsung Sports Outdoors Item 14,sports_outdoors,Samsung,147.54,2026-03-18,True
+15,Dell Clothing Item 15,clothing,Dell,144.73,2026-03-18,True
+16,Samsung Health Wellness Item 16,health_wellness,Samsung,47.39,2026-03-18,True
+17,Dell Home Kitchen Item 17,home_kitchen,Dell,432.19,2026-03-18,True
+18,Logitech Home Kitchen Item 18,home_kitchen,Logitech,92.11,2026-03-18,True
+19,Apple Home Kitchen Item 19,home_kitchen,Apple,53.54,2026-03-18,True
+20,Apple Beauty Personal Care Item 20,beauty_personal_care,Apple,105.23,2026-03-18,True
+21,Philips Home Kitchen Item 21,home_kitchen,Philips,174.82,2026-03-18,True
+22,Dell Electronics Item 22,electronics,Dell,539.5,2026-03-18,True
+23,Apple Toys Games Item 23,toys_games,Apple,119.05,2026-03-18,True
+24,Samsung Books Item 24,books,Samsung,57.0,2026-03-18,True
+25,Logitech Clothing Item 25,clothing,Logitech,48.34,2026-03-18,True
+26,Sony Clothing Item 26,clothing,Sony,88.17,2026-03-18,True
+27,HP Home Kitchen Item 27,home_kitchen,HP,182.72,2026-03-18,True
+28,Nike Clothing Item 28,clothing,Nike,169.59,2026-03-18,True
+29,Samsung Toys Games Item 29,toys_games,Samsung,58.17,2026-03-18,True
+30,Logitech Toys Games Item 30,toys_games,Logitech,110.34,2026-03-18,True
+31,Samsung Health Wellness Item 31,health_wellness,Samsung,69.67,2026-03-18,True
+32,Dell Sports Outdoors Item 32,sports_outdoors,Dell,252.85,2026-03-18,True
+33,HP Electronics Item 33,electronics,HP,1648.11,2026-03-18,True
+34,Apple Clothing Item 34,clothing,Apple,43.96,2026-03-18,True
+35,Apple Clothing Item 35,clothing,Apple,193.11,2026-03-18,True
+36,Logitech Office Supplies Item 36,office_supplies,Logitech,34.23,2026-03-18,True
+37,Panasonic Toys Games Item 37,toys_games,Panasonic,140.21,2026-03-18,True
+38,HP Electronics Item 38,electronics,HP,1053.53,2026-03-18,True
+39,Samsung Toys Games Item 39,toys_games,Samsung,42.58,2026-03-18,True
+40,Logitech Office Supplies Item 40,office_supplies,Logitech,110.04,2026-03-18,True
+41,Samsung Grocery Item 41,grocery,Samsung,28.19,2026-03-18,True
+42,Logitech Office Supplies Item 42,office_supplies,Logitech,41.66,2026-03-18,True
+43,Nike Health Wellness Item 43,health_wellness,Nike,158.96,2026-03-18,True
+44,Apple Sports Outdoors Item 44,sports_outdoors,Apple,122.98,2026-03-18,True
+45,Philips Health Wellness Item 45,health_wellness,Philips,157.75,2026-03-18,True
+46,Nike Toys Games Item 46,toys_games,Nike,75.24,2026-03-18,True
+47,Dell Electronics Item 47,electronics,Dell,1547.37,2026-03-18,True
+48,Logitech Sports Outdoors Item 48,sports_outdoors,Logitech,180.8,2026-03-18,True
+49,Adidas Beauty Personal Care Item 49,beauty_personal_care,Adidas,112.83,2026-03-18,True
+50,Samsung Toys Games Item 50,toys_games,Samsung,130.15,2026-03-18,True
+51,Samsung Clothing Item 51,clothing,Samsung,26.63,2026-03-18,True
+52,Apple Office Supplies Item 52,office_supplies,Apple,108.27,2026-03-18,True
+53,Sony Grocery Item 53,grocery,Sony,47.09,2026-03-18,True
+54,Nike Clothing Item 54,clothing,Nike,76.04,2026-03-18,True
+55,Logitech Office Supplies Item 55,office_supplies,Logitech,98.04,2026-03-18,True
+56,Apple Beauty Personal Care Item 56,beauty_personal_care,Apple,67.27,2026-03-18,True
+57,Sony Beauty Personal Care Item 57,beauty_personal_care,Sony,48.7,2026-03-18,True
+58,Dell Health Wellness Item 58,health_wellness,Dell,127.33,2026-03-18,True
+59,Adidas Sports Outdoors Item 59,sports_outdoors,Adidas,198.72,2026-03-18,True
+60,Philips Office Supplies Item 60,office_supplies,Philips,50.91,2026-03-18,True
+61,HP Electronics Item 61,electronics,HP,560.64,2026-03-18,True
+62,Panasonic Grocery Item 62,grocery,Panasonic,6.06,2026-03-18,True
+63,Adidas Clothing Item 63,clothing,Adidas,82.13,2026-03-18,True
+64,HP Beauty Personal Care Item 64,beauty_personal_care,HP,39.83,2026-03-18,True
+65,Dell Beauty Personal Care Item 65,beauty_personal_care,Dell,70.44,2026-03-18,True
+66,Dell Beauty Personal Care Item 66,beauty_personal_care,Dell,26.49,2026-03-18,True
+67,Apple Office Supplies Item 67,office_supplies,Apple,74.64,2026-03-18,True
+68,Nike Electronics Item 68,electronics,Nike,1372.94,2026-03-18,True
+69,Apple Sports Outdoors Item 69,sports_outdoors,Apple,69.06,2026-03-18,True
+70,HP Clothing Item 70,clothing,HP,35.32,2026-03-18,True
+71,Panasonic Clothing Item 71,clothing,Panasonic,105.64,2026-03-18,True
+72,Logitech Home Kitchen Item 72,home_kitchen,Logitech,71.0,2026-03-18,True
+73,Philips Beauty Personal Care Item 73,beauty_personal_care,Philips,17.85,2026-03-18,True
+74,Panasonic Health Wellness Item 74,health_wellness,Panasonic,57.06,2026-03-18,True
+75,Apple Beauty Personal Care Item 75,beauty_personal_care,Apple,66.39,2026-03-18,True
+76,Nike Grocery Item 76,grocery,Nike,8.78,2026-03-18,True
+77,Sony Clothing Item 77,clothing,Sony,149.81,2026-03-18,True
+78,Adidas Toys Games Item 78,toys_games,Adidas,117.45,2026-03-18,True
+79,Nike Electronics Item 79,electronics,Nike,1140.86,2026-03-18,True
+80,Adidas Grocery Item 80,grocery,Adidas,34.49,2026-03-18,True
+81,Sony Clothing Item 81,clothing,Sony,167.05,2026-03-18,True
+82,Logitech Grocery Item 82,grocery,Logitech,46.78,2026-03-18,True
+83,Panasonic Beauty Personal Care Item 83,beauty_personal_care,Panasonic,63.75,2026-03-18,True
+84,Dell Toys Games Item 84,toys_games,Dell,115.68,2026-03-18,True
+85,Philips Sports Outdoors Item 85,sports_outdoors,Philips,122.89,2026-03-18,True
+86,HP Books Item 86,books,HP,35.76,2026-03-18,True
+87,Panasonic Home Kitchen Item 87,home_kitchen,Panasonic,479.59,2026-03-18,True
+88,Adidas Toys Games Item 88,toys_games,Adidas,59.84,2026-03-18,True
+89,Samsung Beauty Personal Care Item 89,beauty_personal_care,Samsung,33.22,2026-03-18,True
+90,Sony Health Wellness Item 90,health_wellness,Sony,139.25,2026-03-18,True
+91,Nike Office Supplies Item 91,office_supplies,Nike,110.64,2026-03-18,True
+92,Logitech Grocery Item 92,grocery,Logitech,25.43,2026-03-18,True
+93,Adidas Sports Outdoors Item 93,sports_outdoors,Adidas,168.31,2026-03-18,True
+94,Dell Sports Outdoors Item 94,sports_outdoors,Dell,357.09,2026-03-18,True
+95,Apple Books Item 95,books,Apple,32.94,2026-03-18,True
+96,Panasonic Office Supplies Item 96,office_supplies,Panasonic,56.74,2026-03-18,True
+97,Sony Electronics Item 97,electronics,Sony,187.75,2026-03-18,True
+98,Nike Clothing Item 98,clothing,Nike,89.09,2026-03-18,True
+99,Apple Toys Games Item 99,toys_games,Apple,87.84,2026-03-18,True
+100,Samsung Sports Outdoors Item 100,sports_outdoors,Samsung,311.58,2026-03-18,True
+101,HP Office Supplies Item 101,office_supplies,HP,40.07,2026-03-18,True
+102,Samsung Electronics Item 102,electronics,Samsung,765.07,2026-03-18,True
+103,Philips Beauty Personal Care Item 103,beauty_personal_care,Philips,37.23,2026-03-18,True
+104,Adidas Health Wellness Item 104,health_wellness,Adidas,43.19,2026-03-18,True
+105,HP Electronics Item 105,electronics,HP,779.55,2026-03-18,True
+106,Adidas Office Supplies Item 106,office_supplies,Adidas,11.47,2026-03-18,True
+107,Nike Sports Outdoors Item 107,sports_outdoors,Nike,273.48,2026-03-18,True
+108,Samsung Health Wellness Item 108,health_wellness,Samsung,85.9,2026-03-18,True
+109,Panasonic Home Kitchen Item 109,home_kitchen,Panasonic,234.99,2026-03-18,True
+110,Panasonic Grocery Item 110,grocery,Panasonic,44.53,2026-03-18,True
+111,HP Toys Games Item 111,toys_games,HP,73.14,2026-03-18,True
+112,Logitech Home Kitchen Item 112,home_kitchen,Logitech,112.66,2026-03-18,True
+113,Apple Office Supplies Item 113,office_supplies,Apple,58.02,2026-03-18,True
+114,Sony Health Wellness Item 114,health_wellness,Sony,63.4,2026-03-18,True
+115,Apple Toys Games Item 115,toys_games,Apple,83.59,2026-03-18,True
+116,HP Sports Outdoors Item 116,sports_outdoors,HP,335.94,2026-03-18,True
+117,Logitech Beauty Personal Care Item 117,beauty_personal_care,Logitech,22.3,2026-03-18,True
+118,Dell Beauty Personal Care Item 118,beauty_personal_care,Dell,66.09,2026-03-18,True
+119,Sony Electronics Item 119,electronics,Sony,1606.04,2026-03-18,True
+120,Nike Beauty Personal Care Item 120,beauty_personal_care,Nike,67.67,2026-03-18,True
+121,Samsung Clothing Item 121,clothing,Samsung,152.84,2026-03-18,True
+122,Nike Home Kitchen Item 122,home_kitchen,Nike,390.22,2026-03-18,True
+123,Nike Sports Outdoors Item 123,sports_outdoors,Nike,266.08,2026-03-18,True
+124,Samsung Toys Games Item 124,toys_games,Samsung,141.01,2026-03-18,True
+125,Nike Home Kitchen Item 125,home_kitchen,Nike,126.74,2026-03-18,True
+126,Sony Beauty Personal Care Item 126,beauty_personal_care,Sony,87.29,2026-03-18,True
+127,Apple Grocery Item 127,grocery,Apple,40.56,2026-03-18,True
+128,Adidas Office Supplies Item 128,office_supplies,Adidas,43.73,2026-03-18,True
+129,Apple Clothing Item 129,clothing,Apple,177.65,2026-03-18,True
+130,Philips Health Wellness Item 130,health_wellness,Philips,196.4,2026-03-18,True
+131,Sony Grocery Item 131,grocery,Sony,40.32,2026-03-18,True
+132,Adidas Books Item 132,books,Adidas,14.68,2026-03-18,True
+133,Nike Grocery Item 133,grocery,Nike,40.49,2026-03-18,True
+134,Nike Clothing Item 134,clothing,Nike,73.3,2026-03-18,True
+135,Sony Home Kitchen Item 135,home_kitchen,Sony,173.74,2026-03-18,True
+136,Philips Home Kitchen Item 136,home_kitchen,Philips,487.28,2026-03-18,True
+137,Philips Health Wellness Item 137,health_wellness,Philips,94.97,2026-03-18,True
+138,Samsung Beauty Personal Care Item 138,beauty_personal_care,Samsung,11.53,2026-03-18,True
+139,Logitech Beauty Personal Care Item 139,beauty_personal_care,Logitech,101.67,2026-03-18,True
+140,Apple Beauty Personal Care Item 140,beauty_personal_care,Apple,115.11,2026-03-18,True
+141,Samsung Office Supplies Item 141,office_supplies,Samsung,55.13,2026-03-18,True
+142,Sony Office Supplies Item 142,office_supplies,Sony,75.58,2026-03-18,True
+143,Dell Health Wellness Item 143,health_wellness,Dell,85.91,2026-03-18,True
+144,Logitech Health Wellness Item 144,health_wellness,Logitech,188.95,2026-03-18,True
+145,Philips Books Item 145,books,Philips,46.43,2026-03-18,True
+146,HP Toys Games Item 146,toys_games,HP,95.12,2026-03-18,True
+147,Adidas Health Wellness Item 147,health_wellness,Adidas,28.32,2026-03-18,True
+148,HP Health Wellness Item 148,health_wellness,HP,23.95,2026-03-18,True
+149,Sony Grocery Item 149,grocery,Sony,37.69,2026-03-18,True
+150,Apple Beauty Personal Care Item 150,beauty_personal_care,Apple,43.65,2026-03-18,True
+151,Dell Books Item 151,books,Dell,46.96,2026-03-18,True
+152,Sony Beauty Personal Care Item 152,beauty_personal_care,Sony,19.54,2026-03-18,True
+153,Logitech Electronics Item 153,electronics,Logitech,1533.0,2026-03-18,True
+154,Dell Toys Games Item 154,toys_games,Dell,78.12,2026-03-18,True
+155,Sony Electronics Item 155,electronics,Sony,1010.62,2026-03-18,True
+156,Apple Office Supplies Item 156,office_supplies,Apple,116.14,2026-03-18,True
+157,Samsung Toys Games Item 157,toys_games,Samsung,131.54,2026-03-18,True
+158,Panasonic Office Supplies Item 158,office_supplies,Panasonic,8.38,2026-03-18,True
+159,Logitech Toys Games Item 159,toys_games,Logitech,114.29,2026-03-18,True
+160,Apple Toys Games Item 160,toys_games,Apple,124.48,2026-03-18,True
+161,Philips Sports Outdoors Item 161,sports_outdoors,Philips,237.56,2026-03-18,True
+162,Logitech Office Supplies Item 162,office_supplies,Logitech,80.69,2026-03-18,True
+163,Logitech Health Wellness Item 163,health_wellness,Logitech,78.99,2026-03-18,True
+164,Logitech Health Wellness Item 164,health_wellness,Logitech,182.77,2026-03-18,True
+165,Samsung Toys Games Item 165,toys_games,Samsung,57.37,2026-03-18,True
+166,HP Beauty Personal Care Item 166,beauty_personal_care,HP,55.17,2026-03-18,True
+167,Adidas Grocery Item 167,grocery,Adidas,48.73,2026-03-18,True
+168,Samsung Electronics Item 168,electronics,Samsung,1526.27,2026-03-18,True
+169,Panasonic Office Supplies Item 169,office_supplies,Panasonic,95.1,2026-03-18,True
+170,HP Office Supplies Item 170,office_supplies,HP,113.87,2026-03-18,True
+171,Panasonic Grocery Item 171,grocery,Panasonic,31.83,2026-03-18,True
+172,Apple Health Wellness Item 172,health_wellness,Apple,53.98,2026-03-18,True
+173,Samsung Electronics Item 173,electronics,Samsung,1948.66,2026-03-18,True
+174,Nike Office Supplies Item 174,office_supplies,Nike,37.66,2026-03-18,True
+175,Panasonic Health Wellness Item 175,health_wellness,Panasonic,122.22,2026-03-18,True
+176,Logitech Grocery Item 176,grocery,Logitech,8.27,2026-03-18,True
+177,Apple Sports Outdoors Item 177,sports_outdoors,Apple,76.98,2026-03-18,True
+178,Panasonic Sports Outdoors Item 178,sports_outdoors,Panasonic,204.6,2026-03-18,True
+179,Apple Health Wellness Item 179,health_wellness,Apple,131.37,2026-03-18,True
+180,Dell Books Item 180,books,Dell,25.26,2026-03-18,True
+181,Logitech Beauty Personal Care Item 181,beauty_personal_care,Logitech,29.81,2026-03-18,True
+182,Sony Beauty Personal Care Item 182,beauty_personal_care,Sony,18.35,2026-03-18,True
+183,Dell Beauty Personal Care Item 183,beauty_personal_care,Dell,80.96,2026-03-18,True
+184,Apple Books Item 184,books,Apple,33.39,2026-03-18,True
+185,Logitech Health Wellness Item 185,health_wellness,Logitech,129.09,2026-03-18,True
+186,Logitech Beauty Personal Care Item 186,beauty_personal_care,Logitech,22.8,2026-03-18,True
+187,Logitech Beauty Personal Care Item 187,beauty_personal_care,Logitech,71.26,2026-03-18,True
+188,Nike Home Kitchen Item 188,home_kitchen,Nike,200.14,2026-03-18,True
+189,Panasonic Sports Outdoors Item 189,sports_outdoors,Panasonic,88.92,2026-03-18,True
+190,Dell Electronics Item 190,electronics,Dell,1493.75,2026-03-18,True
+191,Samsung Health Wellness Item 191,health_wellness,Samsung,86.56,2026-03-18,True
+192,Adidas Toys Games Item 192,toys_games,Adidas,140.77,2026-03-18,True
+193,Sony Clothing Item 193,clothing,Sony,160.08,2026-03-18,True
+194,HP Office Supplies Item 194,office_supplies,HP,87.75,2026-03-18,True
+195,Nike Clothing Item 195,clothing,Nike,137.54,2026-03-18,True
+196,Philips Home Kitchen Item 196,home_kitchen,Philips,49.49,2026-03-18,True
+197,Sony Health Wellness Item 197,health_wellness,Sony,25.24,2026-03-18,True
+198,Panasonic Grocery Item 198,grocery,Panasonic,29.31,2026-03-18,True
+199,Nike Sports Outdoors Item 199,sports_outdoors,Nike,87.42,2026-03-18,True
+200,Sony Health Wellness Item 200,health_wellness,Sony,146.21,2026-03-18,True
+201,Adidas Books Item 201,books,Adidas,17.59,2026-03-18,True
+202,Apple Clothing Item 202,clothing,Apple,21.53,2026-03-18,True
+203,Apple Home Kitchen Item 203,home_kitchen,Apple,324.05,2026-03-18,True
+204,Apple Electronics Item 204,electronics,Apple,1181.48,2026-03-18,True
+205,Logitech Home Kitchen Item 205,home_kitchen,Logitech,122.72,2026-03-18,True
+206,HP Beauty Personal Care Item 206,beauty_personal_care,HP,92.9,2026-03-18,True
+207,Logitech Toys Games Item 207,toys_games,Logitech,139.58,2026-03-18,True
+208,Sony Toys Games Item 208,toys_games,Sony,23.44,2026-03-18,True
+209,Samsung Books Item 209,books,Samsung,45.48,2026-03-18,True
+210,Logitech Office Supplies Item 210,office_supplies,Logitech,77.36,2026-03-18,True
+211,Adidas Books Item 211,books,Adidas,38.19,2026-03-18,True
+212,Dell Health Wellness Item 212,health_wellness,Dell,96.81,2026-03-18,True
+213,Dell Beauty Personal Care Item 213,beauty_personal_care,Dell,58.85,2026-03-18,True
+214,Adidas Electronics Item 214,electronics,Adidas,1096.16,2026-03-18,True
+215,Apple Office Supplies Item 215,office_supplies,Apple,85.98,2026-03-18,True
+216,Logitech Books Item 216,books,Logitech,28.23,2026-03-18,True
+217,Panasonic Toys Games Item 217,toys_games,Panasonic,20.77,2026-03-18,True
+218,HP Electronics Item 218,electronics,HP,1413.56,2026-03-18,True
+219,Dell Sports Outdoors Item 219,sports_outdoors,Dell,341.57,2026-03-18,True
+220,Samsung Home Kitchen Item 220,home_kitchen,Samsung,60.16,2026-03-18,True
+221,Philips Beauty Personal Care Item 221,beauty_personal_care,Philips,52.12,2026-03-18,True
+222,Adidas Grocery Item 222,grocery,Adidas,19.5,2026-03-18,True
+223,Apple Toys Games Item 223,toys_games,Apple,103.24,2026-03-18,True
+224,HP Clothing Item 224,clothing,HP,163.51,2026-03-18,True
+225,Philips Grocery Item 225,grocery,Philips,36.18,2026-03-18,True
+226,Philips Clothing Item 226,clothing,Philips,55.86,2026-03-18,True
+227,Panasonic Home Kitchen Item 227,home_kitchen,Panasonic,389.7,2026-03-18,True
+228,Nike Clothing Item 228,clothing,Nike,58.79,2026-03-18,True
+229,Philips Electronics Item 229,electronics,Philips,533.73,2026-03-18,True
+230,Apple Sports Outdoors Item 230,sports_outdoors,Apple,78.12,2026-03-18,True
+231,Adidas Office Supplies Item 231,office_supplies,Adidas,37.49,2026-03-18,True
+232,Apple Grocery Item 232,grocery,Apple,36.08,2026-03-18,True
+233,Sony Electronics Item 233,electronics,Sony,1386.16,2026-03-18,True
+234,Nike Toys Games Item 234,toys_games,Nike,113.71,2026-03-18,True
+235,Logitech Home Kitchen Item 235,home_kitchen,Logitech,128.77,2026-03-18,True
+236,Samsung Home Kitchen Item 236,home_kitchen,Samsung,197.86,2026-03-18,True
+237,Sony Office Supplies Item 237,office_supplies,Sony,32.16,2026-03-18,True
+238,Adidas Books Item 238,books,Adidas,38.38,2026-03-18,True
+239,Dell Home Kitchen Item 239,home_kitchen,Dell,141.79,2026-03-18,True
+240,Logitech Grocery Item 240,grocery,Logitech,48.6,2026-03-18,True
+241,Logitech Electronics Item 241,electronics,Logitech,940.8,2026-03-18,True
+242,Panasonic Grocery Item 242,grocery,Panasonic,8.49,2026-03-18,True
+243,Panasonic Electronics Item 243,electronics,Panasonic,653.05,2026-03-18,True
+244,Samsung Toys Games Item 244,toys_games,Samsung,139.85,2026-03-18,True
+245,Samsung Sports Outdoors Item 245,sports_outdoors,Samsung,314.7,2026-03-18,True
+246,Samsung Electronics Item 246,electronics,Samsung,765.87,2026-03-18,True
+247,Apple Office Supplies Item 247,office_supplies,Apple,33.49,2026-03-18,True
+248,Logitech Clothing Item 248,clothing,Logitech,190.51,2026-03-18,True
+249,Nike Beauty Personal Care Item 249,beauty_personal_care,Nike,112.55,2026-03-18,True
+250,Philips Electronics Item 250,electronics,Philips,762.41,2026-03-18,True
+251,Sony Sports Outdoors Item 251,sports_outdoors,Sony,380.26,2026-03-18,True
+252,Samsung Beauty Personal Care Item 252,beauty_personal_care,Samsung,82.06,2026-03-18,True
+253,Adidas Books Item 253,books,Adidas,57.22,2026-03-18,True
+254,Nike Health Wellness Item 254,health_wellness,Nike,25.96,2026-03-18,True
+255,Adidas Home Kitchen Item 255,home_kitchen,Adidas,56.92,2026-03-18,True
+256,HP Beauty Personal Care Item 256,beauty_personal_care,HP,31.19,2026-03-18,True
+257,Adidas Office Supplies Item 257,office_supplies,Adidas,81.03,2026-03-18,True
+258,Apple Office Supplies Item 258,office_supplies,Apple,105.67,2026-03-18,True
+259,HP Sports Outdoors Item 259,sports_outdoors,HP,114.12,2026-03-18,True
+260,Adidas Toys Games Item 260,toys_games,Adidas,64.37,2026-03-18,True
+261,Dell Books Item 261,books,Dell,24.11,2026-03-18,True
+262,HP Books Item 262,books,HP,15.72,2026-03-18,True
+263,Adidas Sports Outdoors Item 263,sports_outdoors,Adidas,210.51,2026-03-18,True
+264,Logitech Office Supplies Item 264,office_supplies,Logitech,64.76,2026-03-18,True
+265,Philips Beauty Personal Care Item 265,beauty_personal_care,Philips,45.07,2026-03-18,True
+266,Panasonic Sports Outdoors Item 266,sports_outdoors,Panasonic,188.6,2026-03-18,True
+267,Logitech Grocery Item 267,grocery,Logitech,14.77,2026-03-18,True
+268,Dell Toys Games Item 268,toys_games,Dell,127.64,2026-03-18,True
+269,Dell Electronics Item 269,electronics,Dell,689.11,2026-03-18,True
+270,Sony Home Kitchen Item 270,home_kitchen,Sony,200.73,2026-03-18,True
+271,Adidas Home Kitchen Item 271,home_kitchen,Adidas,252.3,2026-03-18,True
+272,Samsung Beauty Personal Care Item 272,beauty_personal_care,Samsung,44.79,2026-03-18,True
+273,HP Beauty Personal Care Item 273,beauty_personal_care,HP,19.31,2026-03-18,True
+274,Panasonic Office Supplies Item 274,office_supplies,Panasonic,50.96,2026-03-18,True
+275,Adidas Sports Outdoors Item 275,sports_outdoors,Adidas,180.98,2026-03-18,True
+276,Nike Home Kitchen Item 276,home_kitchen,Nike,102.2,2026-03-18,True
+277,Logitech Health Wellness Item 277,health_wellness,Logitech,79.83,2026-03-18,True
+278,Apple Books Item 278,books,Apple,11.39,2026-03-18,True
+279,Logitech Office Supplies Item 279,office_supplies,Logitech,71.31,2026-03-18,True
+280,Samsung Home Kitchen Item 280,home_kitchen,Samsung,373.97,2026-03-18,True
+281,Sony Grocery Item 281,grocery,Sony,41.96,2026-03-18,True
+282,Apple Grocery Item 282,grocery,Apple,19.27,2026-03-18,True
+283,HP Beauty Personal Care Item 283,beauty_personal_care,HP,40.84,2026-03-18,True
+284,Apple Beauty Personal Care Item 284,beauty_personal_care,Apple,51.54,2026-03-18,True
+285,Dell Toys Games Item 285,toys_games,Dell,54.65,2026-03-18,True
+286,Nike Beauty Personal Care Item 286,beauty_personal_care,Nike,92.2,2026-03-18,True
+287,Dell Books Item 287,books,Dell,22.08,2026-03-18,True
+288,HP Clothing Item 288,clothing,HP,107.14,2026-03-18,True
+289,Panasonic Beauty Personal Care Item 289,beauty_personal_care,Panasonic,63.01,2026-03-18,True
+290,Apple Health Wellness Item 290,health_wellness,Apple,159.3,2026-03-18,True
+291,Sony Toys Games Item 291,toys_games,Sony,119.17,2026-03-18,True
+292,Apple Books Item 292,books,Apple,31.18,2026-03-18,True
+293,Samsung Electronics Item 293,electronics,Samsung,1800.27,2026-03-18,True
+294,Adidas Grocery Item 294,grocery,Adidas,24.75,2026-03-18,True
+295,HP Grocery Item 295,grocery,HP,25.55,2026-03-18,True
+296,Apple Books Item 296,books,Apple,45.98,2026-03-18,True
+297,Sony Office Supplies Item 297,office_supplies,Sony,18.2,2026-03-18,True
+298,Samsung Home Kitchen Item 298,home_kitchen,Samsung,155.64,2026-03-18,True
+299,Panasonic Toys Games Item 299,toys_games,Panasonic,95.92,2026-03-18,True
+300,Sony Sports Outdoors Item 300,sports_outdoors,Sony,379.58,2026-03-18,True
+301,Apple Health Wellness Item 301,health_wellness,Apple,15.89,2026-03-18,True
+302,Panasonic Electronics Item 302,electronics,Panasonic,1947.06,2026-03-18,True
+303,Samsung Office Supplies Item 303,office_supplies,Samsung,45.78,2026-03-18,True
+304,Panasonic Office Supplies Item 304,office_supplies,Panasonic,69.15,2026-03-18,True
+305,Panasonic Home Kitchen Item 305,home_kitchen,Panasonic,485.09,2026-03-18,True
+306,Dell Office Supplies Item 306,office_supplies,Dell,48.34,2026-03-18,True
+307,Nike Books Item 307,books,Nike,11.22,2026-03-18,True
+308,Apple Books Item 308,books,Apple,41.44,2026-03-18,True
+309,Samsung Toys Games Item 309,toys_games,Samsung,108.35,2026-03-18,True
+310,Philips Health Wellness Item 310,health_wellness,Philips,100.2,2026-03-18,True
+311,Dell Clothing Item 311,clothing,Dell,171.59,2026-03-18,True
+312,Adidas Beauty Personal Care Item 312,beauty_personal_care,Adidas,42.63,2026-03-18,True
+313,Apple Health Wellness Item 313,health_wellness,Apple,77.69,2026-03-18,True
+314,Logitech Clothing Item 314,clothing,Logitech,95.42,2026-03-18,True
+315,Adidas Home Kitchen Item 315,home_kitchen,Adidas,219.35,2026-03-18,True
+316,Sony Health Wellness Item 316,health_wellness,Sony,181.73,2026-03-18,True
+317,Adidas Health Wellness Item 317,health_wellness,Adidas,188.26,2026-03-18,True
+318,Philips Toys Games Item 318,toys_games,Philips,89.28,2026-03-18,True
+319,Nike Clothing Item 319,clothing,Nike,50.51,2026-03-18,True
+320,Logitech Home Kitchen Item 320,home_kitchen,Logitech,486.25,2026-03-18,True
+321,Philips Beauty Personal Care Item 321,beauty_personal_care,Philips,44.8,2026-03-18,True
+322,Sony Sports Outdoors Item 322,sports_outdoors,Sony,396.94,2026-03-18,True
+323,Philips Health Wellness Item 323,health_wellness,Philips,100.39,2026-03-18,True
+324,Logitech Clothing Item 324,clothing,Logitech,92.51,2026-03-18,True
+325,Samsung Toys Games Item 325,toys_games,Samsung,141.63,2026-03-18,True
+326,Panasonic Home Kitchen Item 326,home_kitchen,Panasonic,368.15,2026-03-18,True
+327,Nike Health Wellness Item 327,health_wellness,Nike,85.49,2026-03-18,True
+328,Apple Toys Games Item 328,toys_games,Apple,117.45,2026-03-18,True
+329,Samsung Books Item 329,books,Samsung,49.22,2026-03-18,True
+330,Dell Books Item 330,books,Dell,10.95,2026-03-18,True
+331,Apple Electronics Item 331,electronics,Apple,1884.06,2026-03-18,True
+332,Logitech Toys Games Item 332,toys_games,Logitech,87.0,2026-03-18,True
+333,Nike Electronics Item 333,electronics,Nike,498.17,2026-03-18,True
+334,Samsung Toys Games Item 334,toys_games,Samsung,141.93,2026-03-18,True
+335,Dell Health Wellness Item 335,health_wellness,Dell,29.3,2026-03-18,True
+336,Adidas Grocery Item 336,grocery,Adidas,27.79,2026-03-18,True
+337,Nike Beauty Personal Care Item 337,beauty_personal_care,Nike,110.88,2026-03-18,True
+338,Dell Books Item 338,books,Dell,37.68,2026-03-18,True
+339,Samsung Books Item 339,books,Samsung,33.27,2026-03-18,True
+340,Sony Toys Games Item 340,toys_games,Sony,109.84,2026-03-18,True
+341,Sony Grocery Item 341,grocery,Sony,33.54,2026-03-18,True
+342,Samsung Books Item 342,books,Samsung,34.0,2026-03-18,True
+343,Dell Health Wellness Item 343,health_wellness,Dell,71.39,2026-03-18,True
+344,Philips Grocery Item 344,grocery,Philips,34.31,2026-03-18,True
+345,Dell Health Wellness Item 345,health_wellness,Dell,90.73,2026-03-18,True
+346,Dell Books Item 346,books,Dell,44.78,2026-03-18,True
+347,Sony Grocery Item 347,grocery,Sony,32.87,2026-03-18,True
+348,Samsung Office Supplies Item 348,office_supplies,Samsung,108.67,2026-03-18,True
+349,Apple Toys Games Item 349,toys_games,Apple,60.4,2026-03-18,True
+350,Adidas Health Wellness Item 350,health_wellness,Adidas,55.12,2026-03-18,True
+351,Logitech Toys Games Item 351,toys_games,Logitech,123.31,2026-03-18,True
+352,Dell Books Item 352,books,Dell,56.92,2026-03-18,True
+353,Logitech Sports Outdoors Item 353,sports_outdoors,Logitech,269.7,2026-03-18,True
+354,Panasonic Toys Games Item 354,toys_games,Panasonic,133.27,2026-03-18,True
+355,Panasonic Books Item 355,books,Panasonic,23.35,2026-03-18,True
+356,Logitech Home Kitchen Item 356,home_kitchen,Logitech,175.92,2026-03-18,True
+357,Dell Electronics Item 357,electronics,Dell,1218.99,2026-03-18,True
+358,Nike Health Wellness Item 358,health_wellness,Nike,152.36,2026-03-18,True
+359,Nike Books Item 359,books,Nike,53.47,2026-03-18,True
+360,Sony Office Supplies Item 360,office_supplies,Sony,82.36,2026-03-18,True
+361,Samsung Office Supplies Item 361,office_supplies,Samsung,15.59,2026-03-18,True
+362,Philips Electronics Item 362,electronics,Philips,1990.5,2026-03-18,True
+363,Dell Home Kitchen Item 363,home_kitchen,Dell,477.6,2026-03-18,True
+364,Logitech Books Item 364,books,Logitech,46.84,2026-03-18,True
+365,Apple Electronics Item 365,electronics,Apple,250.91,2026-03-18,True
+366,Philips Books Item 366,books,Philips,47.42,2026-03-18,True
+367,Panasonic Clothing Item 367,clothing,Panasonic,57.53,2026-03-18,True
+368,Logitech Electronics Item 368,electronics,Logitech,1805.57,2026-03-18,True
+369,Philips Toys Games Item 369,toys_games,Philips,118.73,2026-03-18,True
+370,HP Toys Games Item 370,toys_games,HP,122.87,2026-03-18,True
+371,Adidas Sports Outdoors Item 371,sports_outdoors,Adidas,376.5,2026-03-18,True
+372,Adidas Home Kitchen Item 372,home_kitchen,Adidas,460.8,2026-03-18,True
+373,Dell Books Item 373,books,Dell,37.69,2026-03-18,True
+374,Adidas Clothing Item 374,clothing,Adidas,193.1,2026-03-18,True
+375,Logitech Office Supplies Item 375,office_supplies,Logitech,92.29,2026-03-18,True
+376,Philips Home Kitchen Item 376,home_kitchen,Philips,331.42,2026-03-18,True
+377,Panasonic Books Item 377,books,Panasonic,19.63,2026-03-18,True
+378,Philips Home Kitchen Item 378,home_kitchen,Philips,42.04,2026-03-18,True
+379,Sony Clothing Item 379,clothing,Sony,105.78,2026-03-18,True
+380,Dell Home Kitchen Item 380,home_kitchen,Dell,351.05,2026-03-18,True
+381,Nike Home Kitchen Item 381,home_kitchen,Nike,54.98,2026-03-18,True
+382,Sony Office Supplies Item 382,office_supplies,Sony,78.12,2026-03-18,True
+383,Dell Electronics Item 383,electronics,Dell,1331.7,2026-03-18,True
+384,Samsung Electronics Item 384,electronics,Samsung,1740.28,2026-03-18,True
+385,Logitech Sports Outdoors Item 385,sports_outdoors,Logitech,65.92,2026-03-18,True
+386,Sony Beauty Personal Care Item 386,beauty_personal_care,Sony,16.92,2026-03-18,True
+387,Nike Electronics Item 387,electronics,Nike,696.1,2026-03-18,True
+388,Panasonic Home Kitchen Item 388,home_kitchen,Panasonic,299.36,2026-03-18,True
+389,Sony Toys Games Item 389,toys_games,Sony,61.28,2026-03-18,True
+390,HP Sports Outdoors Item 390,sports_outdoors,HP,289.86,2026-03-18,True
+391,Logitech Office Supplies Item 391,office_supplies,Logitech,9.44,2026-03-18,True
+392,Sony Toys Games Item 392,toys_games,Sony,119.26,2026-03-18,True
+393,Panasonic Books Item 393,books,Panasonic,14.88,2026-03-18,True
+394,HP Grocery Item 394,grocery,HP,16.74,2026-03-18,True
+395,Nike Beauty Personal Care Item 395,beauty_personal_care,Nike,19.63,2026-03-18,True
+396,Nike Toys Games Item 396,toys_games,Nike,110.41,2026-03-18,True
+397,Logitech Electronics Item 397,electronics,Logitech,556.17,2026-03-18,True
+398,Nike Clothing Item 398,clothing,Nike,164.8,2026-03-18,True
+399,Apple Home Kitchen Item 399,home_kitchen,Apple,365.86,2026-03-18,True
+400,Philips Electronics Item 400,electronics,Philips,248.78,2026-03-18,True
+401,Samsung Health Wellness Item 401,health_wellness,Samsung,121.55,2026-03-18,True
+402,Nike Toys Games Item 402,toys_games,Nike,64.69,2026-03-18,True
+403,Nike Office Supplies Item 403,office_supplies,Nike,103.73,2026-03-18,True
+404,Panasonic Books Item 404,books,Panasonic,40.13,2026-03-18,True
+405,Panasonic Grocery Item 405,grocery,Panasonic,4.12,2026-03-18,True
+406,Sony Office Supplies Item 406,office_supplies,Sony,85.81,2026-03-18,True
+407,HP Beauty Personal Care Item 407,beauty_personal_care,HP,53.32,2026-03-18,True
+408,Panasonic Books Item 408,books,Panasonic,27.53,2026-03-18,True
+409,Panasonic Books Item 409,books,Panasonic,29.45,2026-03-18,True
+410,Sony Toys Games Item 410,toys_games,Sony,147.34,2026-03-18,True
+411,HP Sports Outdoors Item 411,sports_outdoors,HP,64.67,2026-03-18,True
+412,Adidas Beauty Personal Care Item 412,beauty_personal_care,Adidas,113.15,2026-03-18,True
+413,Apple Sports Outdoors Item 413,sports_outdoors,Apple,97.6,2026-03-18,True
+414,Logitech Beauty Personal Care Item 414,beauty_personal_care,Logitech,90.74,2026-03-18,True
+415,Panasonic Beauty Personal Care Item 415,beauty_personal_care,Panasonic,59.99,2026-03-18,True
+416,Nike Toys Games Item 416,toys_games,Nike,80.61,2026-03-18,True
+417,Dell Office Supplies Item 417,office_supplies,Dell,13.46,2026-03-18,True
+418,Logitech Toys Games Item 418,toys_games,Logitech,65.7,2026-03-18,True
+419,Nike Sports Outdoors Item 419,sports_outdoors,Nike,377.63,2026-03-18,True
+420,HP Office Supplies Item 420,office_supplies,HP,46.07,2026-03-18,True
+421,Apple Electronics Item 421,electronics,Apple,1163.85,2026-03-18,True
+422,Nike Office Supplies Item 422,office_supplies,Nike,71.22,2026-03-18,True
+423,Samsung Clothing Item 423,clothing,Samsung,173.58,2026-03-18,True
+424,Dell Toys Games Item 424,toys_games,Dell,49.89,2026-03-18,True
+425,Apple Toys Games Item 425,toys_games,Apple,39.26,2026-03-18,True
+426,Panasonic Office Supplies Item 426,office_supplies,Panasonic,61.76,2026-03-18,True
+427,HP Sports Outdoors Item 427,sports_outdoors,HP,278.1,2026-03-18,True
+428,Sony Toys Games Item 428,toys_games,Sony,140.2,2026-03-18,True
+429,Samsung Toys Games Item 429,toys_games,Samsung,148.14,2026-03-18,True
+430,Nike Office Supplies Item 430,office_supplies,Nike,25.43,2026-03-18,True
+431,Panasonic Office Supplies Item 431,office_supplies,Panasonic,43.4,2026-03-18,True
+432,Logitech Health Wellness Item 432,health_wellness,Logitech,181.5,2026-03-18,True
+433,Dell Home Kitchen Item 433,home_kitchen,Dell,230.78,2026-03-18,True
+434,Apple Office Supplies Item 434,office_supplies,Apple,78.07,2026-03-18,True
+435,HP Health Wellness Item 435,health_wellness,HP,178.94,2026-03-18,True
+436,Adidas Beauty Personal Care Item 436,beauty_personal_care,Adidas,86.33,2026-03-18,True
+437,Philips Grocery Item 437,grocery,Philips,17.55,2026-03-18,True
+438,Nike Grocery Item 438,grocery,Nike,14.46,2026-03-18,True
+439,Sony Clothing Item 439,clothing,Sony,154.8,2026-03-18,True
+440,Panasonic Sports Outdoors Item 440,sports_outdoors,Panasonic,39.77,2026-03-18,True
+441,Sony Home Kitchen Item 441,home_kitchen,Sony,464.65,2026-03-18,True
+442,Philips Toys Games Item 442,toys_games,Philips,131.26,2026-03-18,True
+443,Sony Grocery Item 443,grocery,Sony,10.66,2026-03-18,True
+444,Nike Grocery Item 444,grocery,Nike,30.02,2026-03-18,True
+445,Dell Sports Outdoors Item 445,sports_outdoors,Dell,232.02,2026-03-18,True
+446,Adidas Books Item 446,books,Adidas,55.88,2026-03-18,True
+447,Adidas Grocery Item 447,grocery,Adidas,22.26,2026-03-18,True
+448,Panasonic Office Supplies Item 448,office_supplies,Panasonic,16.83,2026-03-18,True
+449,HP Electronics Item 449,electronics,HP,544.64,2026-03-18,True
+450,Samsung Clothing Item 450,clothing,Samsung,35.47,2026-03-18,True
+451,Panasonic Office Supplies Item 451,office_supplies,Panasonic,114.95,2026-03-18,True
+452,Nike Home Kitchen Item 452,home_kitchen,Nike,112.55,2026-03-18,True
+453,Dell Grocery Item 453,grocery,Dell,3.5,2026-03-18,True
+454,Samsung Office Supplies Item 454,office_supplies,Samsung,99.79,2026-03-18,True
+455,Dell Clothing Item 455,clothing,Dell,32.65,2026-03-18,True
+456,Philips Books Item 456,books,Philips,17.51,2026-03-18,True
+457,Samsung Grocery Item 457,grocery,Samsung,19.2,2026-03-18,True
+458,Sony Office Supplies Item 458,office_supplies,Sony,55.22,2026-03-18,True
+459,Philips Books Item 459,books,Philips,38.11,2026-03-18,True
+460,Apple Grocery Item 460,grocery,Apple,29.43,2026-03-18,True
+461,Philips Beauty Personal Care Item 461,beauty_personal_care,Philips,99.24,2026-03-18,True
+462,HP Health Wellness Item 462,health_wellness,HP,104.95,2026-03-18,True
+463,Adidas Electronics Item 463,electronics,Adidas,1624.98,2026-03-18,True
+464,Panasonic Grocery Item 464,grocery,Panasonic,39.14,2026-03-18,True
+465,Apple Health Wellness Item 465,health_wellness,Apple,161.96,2026-03-18,True
+466,Apple Office Supplies Item 466,office_supplies,Apple,24.46,2026-03-18,True
+467,Dell Grocery Item 467,grocery,Dell,37.23,2026-03-18,True
+468,Nike Health Wellness Item 468,health_wellness,Nike,26.54,2026-03-18,True
+469,Logitech Electronics Item 469,electronics,Logitech,645.77,2026-03-18,True
+470,Apple Electronics Item 470,electronics,Apple,109.4,2026-03-18,True
+471,Adidas Grocery Item 471,grocery,Adidas,23.45,2026-03-18,True
+472,Samsung Clothing Item 472,clothing,Samsung,190.05,2026-03-18,True
+473,Samsung Beauty Personal Care Item 473,beauty_personal_care,Samsung,91.7,2026-03-18,True
+474,Adidas Grocery Item 474,grocery,Adidas,35.36,2026-03-18,True
+475,Dell Grocery Item 475,grocery,Dell,27.5,2026-03-18,True
+476,Apple Toys Games Item 476,toys_games,Apple,80.29,2026-03-18,True
+477,Philips Clothing Item 477,clothing,Philips,147.39,2026-03-18,True
+478,Nike Electronics Item 478,electronics,Nike,1164.99,2026-03-18,True
+479,Apple Electronics Item 479,electronics,Apple,756.76,2026-03-18,True
+480,Apple Beauty Personal Care Item 480,beauty_personal_care,Apple,14.72,2026-03-18,True
+481,Philips Sports Outdoors Item 481,sports_outdoors,Philips,322.26,2026-03-18,True
+482,Panasonic Electronics Item 482,electronics,Panasonic,1145.81,2026-03-18,True
+483,Dell Books Item 483,books,Dell,9.6,2026-03-18,True
+484,Logitech Office Supplies Item 484,office_supplies,Logitech,93.3,2026-03-18,True
+485,HP Electronics Item 485,electronics,HP,1923.57,2026-03-18,True
+486,Nike Clothing Item 486,clothing,Nike,157.43,2026-03-18,True
+487,Dell Electronics Item 487,electronics,Dell,1990.98,2026-03-18,True
+488,Philips Beauty Personal Care Item 488,beauty_personal_care,Philips,113.26,2026-03-18,True
+489,Philips Toys Games Item 489,toys_games,Philips,59.85,2026-03-18,True
+490,Apple Toys Games Item 490,toys_games,Apple,23.7,2026-03-18,True
+491,Samsung Electronics Item 491,electronics,Samsung,1905.67,2026-03-18,True
+492,HP Beauty Personal Care Item 492,beauty_personal_care,HP,106.5,2026-03-18,True
+493,Adidas Electronics Item 493,electronics,Adidas,335.34,2026-03-18,True
+494,Sony Home Kitchen Item 494,home_kitchen,Sony,65.99,2026-03-18,True
+495,Nike Books Item 495,books,Nike,23.54,2026-03-18,True
+496,Philips Home Kitchen Item 496,home_kitchen,Philips,195.81,2026-03-18,True
+497,HP Electronics Item 497,electronics,HP,1409.73,2026-03-18,True
+498,Adidas Office Supplies Item 498,office_supplies,Adidas,82.13,2026-03-18,True
+499,Philips Home Kitchen Item 499,home_kitchen,Philips,296.41,2026-03-18,True
+500,Sony Books Item 500,books,Sony,23.03,2026-03-18,True
+501,HP Grocery Item 501,grocery,HP,34.33,2026-03-18,True
+502,Dell Sports Outdoors Item 502,sports_outdoors,Dell,29.85,2026-03-18,True
+503,Adidas Electronics Item 503,electronics,Adidas,1512.56,2026-03-18,True
+504,Samsung Books Item 504,books,Samsung,57.23,2026-03-18,True
+505,Samsung Sports Outdoors Item 505,sports_outdoors,Samsung,218.03,2026-03-18,True
+506,Logitech Sports Outdoors Item 506,sports_outdoors,Logitech,61.57,2026-03-18,True
+507,Samsung Grocery Item 507,grocery,Samsung,17.21,2026-03-18,True
+508,Logitech Clothing Item 508,clothing,Logitech,21.07,2026-03-18,True
+509,Nike Books Item 509,books,Nike,46.55,2026-03-18,True
+510,Dell Books Item 510,books,Dell,52.37,2026-03-18,True
+511,Adidas Clothing Item 511,clothing,Adidas,126.22,2026-03-18,True
+512,Apple Office Supplies Item 512,office_supplies,Apple,75.82,2026-03-18,True
+513,HP Toys Games Item 513,toys_games,HP,128.44,2026-03-18,True
+514,Logitech Clothing Item 514,clothing,Logitech,134.18,2026-03-18,True
+515,Logitech Office Supplies Item 515,office_supplies,Logitech,26.16,2026-03-18,True
+516,Nike Beauty Personal Care Item 516,beauty_personal_care,Nike,37.32,2026-03-18,True
+517,HP Office Supplies Item 517,office_supplies,HP,45.23,2026-03-18,True
+518,Adidas Health Wellness Item 518,health_wellness,Adidas,131.66,2026-03-18,True
+519,Adidas Clothing Item 519,clothing,Adidas,170.27,2026-03-18,True
+520,Apple Books Item 520,books,Apple,46.51,2026-03-18,True
+521,Dell Toys Games Item 521,toys_games,Dell,56.08,2026-03-18,True
+522,Philips Clothing Item 522,clothing,Philips,108.44,2026-03-18,True
+523,HP Toys Games Item 523,toys_games,HP,22.16,2026-03-18,True
+524,Dell Clothing Item 524,clothing,Dell,178.68,2026-03-18,True
+525,Panasonic Clothing Item 525,clothing,Panasonic,44.53,2026-03-18,True
+526,Philips Books Item 526,books,Philips,25.63,2026-03-18,True
+527,Nike Health Wellness Item 527,health_wellness,Nike,68.8,2026-03-18,True
+528,Philips Toys Games Item 528,toys_games,Philips,42.52,2026-03-18,True
+529,Logitech Office Supplies Item 529,office_supplies,Logitech,63.01,2026-03-18,True
+530,Logitech Sports Outdoors Item 530,sports_outdoors,Logitech,125.94,2026-03-18,True
+531,Philips Sports Outdoors Item 531,sports_outdoors,Philips,212.16,2026-03-18,True
+532,Logitech Clothing Item 532,clothing,Logitech,97.17,2026-03-18,True
+533,Nike Beauty Personal Care Item 533,beauty_personal_care,Nike,29.8,2026-03-18,True
+534,Samsung Electronics Item 534,electronics,Samsung,562.82,2026-03-18,True
+535,Panasonic Electronics Item 535,electronics,Panasonic,723.22,2026-03-18,True
+536,Apple Home Kitchen Item 536,home_kitchen,Apple,442.03,2026-03-18,True
+537,Sony Electronics Item 537,electronics,Sony,452.5,2026-03-18,True
+538,Apple Office Supplies Item 538,office_supplies,Apple,54.11,2026-03-18,True
+539,Panasonic Office Supplies Item 539,office_supplies,Panasonic,50.23,2026-03-18,True
+540,Dell Beauty Personal Care Item 540,beauty_personal_care,Dell,35.01,2026-03-18,True
+541,HP Electronics Item 541,electronics,HP,1188.22,2026-03-18,True
+542,Logitech Books Item 542,books,Logitech,49.7,2026-03-18,True
+543,HP Books Item 543,books,HP,29.92,2026-03-18,True
+544,Logitech Grocery Item 544,grocery,Logitech,33.96,2026-03-18,True
+545,Adidas Electronics Item 545,electronics,Adidas,158.67,2026-03-18,True
+546,Dell Sports Outdoors Item 546,sports_outdoors,Dell,268.27,2026-03-18,True
+547,Philips Sports Outdoors Item 547,sports_outdoors,Philips,388.45,2026-03-18,True
+548,HP Office Supplies Item 548,office_supplies,HP,19.83,2026-03-18,True
+549,Philips Office Supplies Item 549,office_supplies,Philips,107.66,2026-03-18,True
+550,Philips Books Item 550,books,Philips,9.63,2026-03-18,True
+551,Dell Books Item 551,books,Dell,22.07,2026-03-18,True
+552,Dell Office Supplies Item 552,office_supplies,Dell,97.44,2026-03-18,True
+553,Sony Home Kitchen Item 553,home_kitchen,Sony,438.38,2026-03-18,True
+554,Samsung Health Wellness Item 554,health_wellness,Samsung,176.49,2026-03-18,True
+555,HP Clothing Item 555,clothing,HP,21.51,2026-03-18,True
+556,Sony Clothing Item 556,clothing,Sony,109.69,2026-03-18,True
+557,Dell Health Wellness Item 557,health_wellness,Dell,34.43,2026-03-18,True
+558,Dell Books Item 558,books,Dell,52.54,2026-03-18,True
+559,Philips Toys Games Item 559,toys_games,Philips,142.37,2026-03-18,True
+560,Logitech Health Wellness Item 560,health_wellness,Logitech,173.94,2026-03-18,True
+561,Adidas Beauty Personal Care Item 561,beauty_personal_care,Adidas,70.43,2026-03-18,True
+562,Dell Books Item 562,books,Dell,14.02,2026-03-18,True
+563,Philips Home Kitchen Item 563,home_kitchen,Philips,116.93,2026-03-18,True
+564,Logitech Books Item 564,books,Logitech,16.23,2026-03-18,True
+565,Adidas Office Supplies Item 565,office_supplies,Adidas,85.73,2026-03-18,True
+566,Logitech Books Item 566,books,Logitech,33.64,2026-03-18,True
+567,Adidas Clothing Item 567,clothing,Adidas,164.16,2026-03-18,True
+568,Dell Beauty Personal Care Item 568,beauty_personal_care,Dell,99.11,2026-03-18,True
+569,Samsung Electronics Item 569,electronics,Samsung,1879.78,2026-03-18,True
+570,Logitech Grocery Item 570,grocery,Logitech,14.48,2026-03-18,True
+571,Adidas Sports Outdoors Item 571,sports_outdoors,Adidas,136.5,2026-03-18,True
+572,Apple Books Item 572,books,Apple,49.6,2026-03-18,True
+573,Samsung Office Supplies Item 573,office_supplies,Samsung,94.21,2026-03-18,True
+574,Nike Sports Outdoors Item 574,sports_outdoors,Nike,155.11,2026-03-18,True
+575,Sony Beauty Personal Care Item 575,beauty_personal_care,Sony,39.59,2026-03-18,True
+576,Sony Toys Games Item 576,toys_games,Sony,123.0,2026-03-18,True
+577,Dell Home Kitchen Item 577,home_kitchen,Dell,176.04,2026-03-18,True
+578,Philips Home Kitchen Item 578,home_kitchen,Philips,334.47,2026-03-18,True
+579,Adidas Books Item 579,books,Adidas,46.84,2026-03-18,True
+580,Adidas Clothing Item 580,clothing,Adidas,188.3,2026-03-18,True
+581,Adidas Electronics Item 581,electronics,Adidas,774.95,2026-03-18,True
+582,Dell Toys Games Item 582,toys_games,Dell,106.73,2026-03-18,True
+583,Logitech Health Wellness Item 583,health_wellness,Logitech,55.96,2026-03-18,True
+584,Dell Health Wellness Item 584,health_wellness,Dell,124.53,2026-03-18,True
+585,Panasonic Health Wellness Item 585,health_wellness,Panasonic,153.55,2026-03-18,True
+586,Logitech Beauty Personal Care Item 586,beauty_personal_care,Logitech,24.34,2026-03-18,True
+587,Nike Clothing Item 587,clothing,Nike,69.98,2026-03-18,True
+588,Adidas Clothing Item 588,clothing,Adidas,59.91,2026-03-18,True
+589,Samsung Toys Games Item 589,toys_games,Samsung,72.77,2026-03-18,True
+590,Sony Office Supplies Item 590,office_supplies,Sony,58.43,2026-03-18,True
+591,Samsung Office Supplies Item 591,office_supplies,Samsung,66.38,2026-03-18,True
+592,Adidas Books Item 592,books,Adidas,39.94,2026-03-18,True
+593,Adidas Books Item 593,books,Adidas,32.18,2026-03-18,True
+594,Samsung Clothing Item 594,clothing,Samsung,61.32,2026-03-18,True
+595,HP Office Supplies Item 595,office_supplies,HP,82.05,2026-03-18,True
+596,Dell Sports Outdoors Item 596,sports_outdoors,Dell,294.4,2026-03-18,True
+597,HP Grocery Item 597,grocery,HP,49.88,2026-03-18,True
+598,Adidas Electronics Item 598,electronics,Adidas,460.92,2026-03-18,True
+599,Adidas Clothing Item 599,clothing,Adidas,141.32,2026-03-18,True
+600,Sony Beauty Personal Care Item 600,beauty_personal_care,Sony,57.5,2026-03-18,True
+601,Apple Office Supplies Item 601,office_supplies,Apple,13.68,2026-03-18,True
+602,Dell Beauty Personal Care Item 602,beauty_personal_care,Dell,20.94,2026-03-18,True
+603,Samsung Office Supplies Item 603,office_supplies,Samsung,38.88,2026-03-18,True
+604,Sony Toys Games Item 604,toys_games,Sony,55.69,2026-03-18,True
+605,HP Books Item 605,books,HP,26.57,2026-03-18,True
+606,Samsung Health Wellness Item 606,health_wellness,Samsung,179.31,2026-03-18,True
+607,Logitech Electronics Item 607,electronics,Logitech,1200.92,2026-03-18,True
+608,Panasonic Beauty Personal Care Item 608,beauty_personal_care,Panasonic,82.84,2026-03-18,True
+609,Panasonic Sports Outdoors Item 609,sports_outdoors,Panasonic,308.19,2026-03-18,True
+610,Sony Grocery Item 610,grocery,Sony,43.51,2026-03-18,True
+611,Samsung Books Item 611,books,Samsung,54.6,2026-03-18,True
+612,Nike Sports Outdoors Item 612,sports_outdoors,Nike,336.11,2026-03-18,True
+613,Sony Grocery Item 613,grocery,Sony,47.16,2026-03-18,True
+614,Philips Beauty Personal Care Item 614,beauty_personal_care,Philips,11.16,2026-03-18,True
+615,HP Electronics Item 615,electronics,HP,371.79,2026-03-18,True
+616,HP Grocery Item 616,grocery,HP,18.32,2026-03-18,True
+617,Nike Clothing Item 617,clothing,Nike,93.5,2026-03-18,True
+618,Samsung Beauty Personal Care Item 618,beauty_personal_care,Samsung,99.32,2026-03-18,True
+619,HP Books Item 619,books,HP,26.03,2026-03-18,True
+620,Adidas Books Item 620,books,Adidas,49.29,2026-03-18,True
+621,Apple Clothing Item 621,clothing,Apple,163.49,2026-03-18,True
+622,Philips Toys Games Item 622,toys_games,Philips,118.89,2026-03-18,True
+623,Nike Clothing Item 623,clothing,Nike,96.74,2026-03-18,True
+624,Samsung Books Item 624,books,Samsung,55.35,2026-03-18,True
+625,Panasonic Health Wellness Item 625,health_wellness,Panasonic,19.84,2026-03-18,True
+626,Samsung Home Kitchen Item 626,home_kitchen,Samsung,121.96,2026-03-18,True
+627,Dell Health Wellness Item 627,health_wellness,Dell,122.29,2026-03-18,True
+628,Panasonic Books Item 628,books,Panasonic,23.22,2026-03-18,True
+629,Dell Electronics Item 629,electronics,Dell,637.49,2026-03-18,True
+630,Adidas Books Item 630,books,Adidas,20.75,2026-03-18,True
+631,Sony Books Item 631,books,Sony,57.96,2026-03-18,True
+632,Panasonic Beauty Personal Care Item 632,beauty_personal_care,Panasonic,25.22,2026-03-18,True
+633,HP Office Supplies Item 633,office_supplies,HP,115.66,2026-03-18,True
+634,Logitech Books Item 634,books,Logitech,24.63,2026-03-18,True
+635,Logitech Grocery Item 635,grocery,Logitech,36.58,2026-03-18,True
+636,Nike Grocery Item 636,grocery,Nike,11.82,2026-03-18,True
+637,Logitech Grocery Item 637,grocery,Logitech,40.82,2026-03-18,True
+638,Apple Electronics Item 638,electronics,Apple,506.42,2026-03-18,True
+639,Adidas Grocery Item 639,grocery,Adidas,43.66,2026-03-18,True
+640,Dell Beauty Personal Care Item 640,beauty_personal_care,Dell,103.1,2026-03-18,True
+641,Logitech Office Supplies Item 641,office_supplies,Logitech,44.06,2026-03-18,True
+642,Adidas Clothing Item 642,clothing,Adidas,75.23,2026-03-18,True
+643,Apple Office Supplies Item 643,office_supplies,Apple,57.98,2026-03-18,True
+644,Apple Toys Games Item 644,toys_games,Apple,68.23,2026-03-18,True
+645,Nike Toys Games Item 645,toys_games,Nike,131.59,2026-03-18,True
+646,HP Beauty Personal Care Item 646,beauty_personal_care,HP,67.8,2026-03-18,True
+647,Nike Books Item 647,books,Nike,52.27,2026-03-18,True
+648,Samsung Sports Outdoors Item 648,sports_outdoors,Samsung,287.84,2026-03-18,True
+649,Philips Office Supplies Item 649,office_supplies,Philips,76.91,2026-03-18,True
+650,Nike Office Supplies Item 650,office_supplies,Nike,62.02,2026-03-18,True
+651,Philips Beauty Personal Care Item 651,beauty_personal_care,Philips,46.66,2026-03-18,True
+652,Dell Books Item 652,books,Dell,8.85,2026-03-18,True
+653,Dell Beauty Personal Care Item 653,beauty_personal_care,Dell,115.69,2026-03-18,True
+654,Panasonic Grocery Item 654,grocery,Panasonic,16.69,2026-03-18,True
+655,Adidas Clothing Item 655,clothing,Adidas,39.79,2026-03-18,True
+656,Sony Home Kitchen Item 656,home_kitchen,Sony,499.38,2026-03-18,True
+657,Adidas Sports Outdoors Item 657,sports_outdoors,Adidas,193.88,2026-03-18,True
+658,HP Beauty Personal Care Item 658,beauty_personal_care,HP,16.54,2026-03-18,True
+659,Philips Beauty Personal Care Item 659,beauty_personal_care,Philips,54.69,2026-03-18,True
+660,Samsung Clothing Item 660,clothing,Samsung,131.64,2026-03-18,True
+661,Adidas Electronics Item 661,electronics,Adidas,1873.57,2026-03-18,True
+662,Philips Beauty Personal Care Item 662,beauty_personal_care,Philips,105.42,2026-03-18,True
+663,Panasonic Health Wellness Item 663,health_wellness,Panasonic,78.4,2026-03-18,True
+664,Logitech Electronics Item 664,electronics,Logitech,507.93,2026-03-18,True
+665,Philips Home Kitchen Item 665,home_kitchen,Philips,222.0,2026-03-18,True
+666,Logitech Beauty Personal Care Item 666,beauty_personal_care,Logitech,110.03,2026-03-18,True
+667,Dell Office Supplies Item 667,office_supplies,Dell,12.9,2026-03-18,True
+668,Panasonic Beauty Personal Care Item 668,beauty_personal_care,Panasonic,54.04,2026-03-18,True
+669,Apple Home Kitchen Item 669,home_kitchen,Apple,33.09,2026-03-18,True
+670,Nike Sports Outdoors Item 670,sports_outdoors,Nike,234.03,2026-03-18,True
+671,Sony Office Supplies Item 671,office_supplies,Sony,11.87,2026-03-18,True
+672,Panasonic Sports Outdoors Item 672,sports_outdoors,Panasonic,383.97,2026-03-18,True
+673,Panasonic Office Supplies Item 673,office_supplies,Panasonic,88.64,2026-03-18,True
+674,Logitech Books Item 674,books,Logitech,30.0,2026-03-18,True
+675,Sony Sports Outdoors Item 675,sports_outdoors,Sony,280.47,2026-03-18,True
+676,Nike Clothing Item 676,clothing,Nike,52.8,2026-03-18,True
+677,Nike Electronics Item 677,electronics,Nike,176.54,2026-03-18,True
+678,Nike Clothing Item 678,clothing,Nike,186.88,2026-03-18,True
+679,Logitech Health Wellness Item 679,health_wellness,Logitech,177.77,2026-03-18,True
+680,Panasonic Toys Games Item 680,toys_games,Panasonic,51.88,2026-03-18,True
+681,Logitech Books Item 681,books,Logitech,58.32,2026-03-18,True
+682,Logitech Toys Games Item 682,toys_games,Logitech,142.49,2026-03-18,True
+683,Apple Beauty Personal Care Item 683,beauty_personal_care,Apple,25.24,2026-03-18,True
+684,Panasonic Office Supplies Item 684,office_supplies,Panasonic,12.72,2026-03-18,True
+685,Dell Home Kitchen Item 685,home_kitchen,Dell,430.85,2026-03-18,True
+686,Apple Health Wellness Item 686,health_wellness,Apple,28.05,2026-03-18,True
+687,Panasonic Grocery Item 687,grocery,Panasonic,43.33,2026-03-18,True
+688,Apple Home Kitchen Item 688,home_kitchen,Apple,206.56,2026-03-18,True
+689,Panasonic Sports Outdoors Item 689,sports_outdoors,Panasonic,125.3,2026-03-18,True
+690,Panasonic Books Item 690,books,Panasonic,55.16,2026-03-18,True
+691,Samsung Office Supplies Item 691,office_supplies,Samsung,81.17,2026-03-18,True
+692,Nike Electronics Item 692,electronics,Nike,1551.62,2026-03-18,True
+693,Sony Toys Games Item 693,toys_games,Sony,85.87,2026-03-18,True
+694,Samsung Clothing Item 694,clothing,Samsung,36.75,2026-03-18,True
+695,Sony Books Item 695,books,Sony,22.31,2026-03-18,True
+696,Dell Grocery Item 696,grocery,Dell,39.94,2026-03-18,True
+697,Sony Home Kitchen Item 697,home_kitchen,Sony,491.03,2026-03-18,True
+698,Philips Books Item 698,books,Philips,19.35,2026-03-18,True
+699,Logitech Health Wellness Item 699,health_wellness,Logitech,93.57,2026-03-18,True
+700,Apple Health Wellness Item 700,health_wellness,Apple,65.55,2026-03-18,True
+701,Panasonic Home Kitchen Item 701,home_kitchen,Panasonic,460.75,2026-03-18,True
+702,Samsung Toys Games Item 702,toys_games,Samsung,15.62,2026-03-18,True
+703,Dell Office Supplies Item 703,office_supplies,Dell,84.84,2026-03-18,True
+704,Dell Books Item 704,books,Dell,15.81,2026-03-18,True
+705,Dell Health Wellness Item 705,health_wellness,Dell,190.64,2026-03-18,True
+706,Adidas Office Supplies Item 706,office_supplies,Adidas,60.23,2026-03-18,True
+707,Logitech Health Wellness Item 707,health_wellness,Logitech,184.04,2026-03-18,True
+708,Apple Grocery Item 708,grocery,Apple,45.06,2026-03-18,True
+709,Nike Clothing Item 709,clothing,Nike,39.28,2026-03-18,True
+710,Dell Home Kitchen Item 710,home_kitchen,Dell,201.64,2026-03-18,True
+711,HP Toys Games Item 711,toys_games,HP,40.63,2026-03-18,True
+712,Dell Beauty Personal Care Item 712,beauty_personal_care,Dell,107.42,2026-03-18,True
+713,Apple Grocery Item 713,grocery,Apple,16.06,2026-03-18,True
+714,Samsung Sports Outdoors Item 714,sports_outdoors,Samsung,93.81,2026-03-18,True
+715,Panasonic Sports Outdoors Item 715,sports_outdoors,Panasonic,278.77,2026-03-18,True
+716,Panasonic Clothing Item 716,clothing,Panasonic,20.5,2026-03-18,True
+717,Philips Beauty Personal Care Item 717,beauty_personal_care,Philips,36.13,2026-03-18,True
+718,Logitech Health Wellness Item 718,health_wellness,Logitech,71.86,2026-03-18,True
+719,Samsung Grocery Item 719,grocery,Samsung,29.69,2026-03-18,True
+720,Nike Toys Games Item 720,toys_games,Nike,91.64,2026-03-18,True
+721,Adidas Beauty Personal Care Item 721,beauty_personal_care,Adidas,59.53,2026-03-18,True
+722,HP Clothing Item 722,clothing,HP,35.31,2026-03-18,True
+723,Philips Sports Outdoors Item 723,sports_outdoors,Philips,238.31,2026-03-18,True
+724,HP Beauty Personal Care Item 724,beauty_personal_care,HP,105.8,2026-03-18,True
+725,Apple Grocery Item 725,grocery,Apple,22.81,2026-03-18,True
+726,Samsung Toys Games Item 726,toys_games,Samsung,100.25,2026-03-18,True
+727,Dell Sports Outdoors Item 727,sports_outdoors,Dell,218.54,2026-03-18,True
+728,Adidas Office Supplies Item 728,office_supplies,Adidas,92.77,2026-03-18,True
+729,Samsung Clothing Item 729,clothing,Samsung,74.03,2026-03-18,True
+730,Logitech Home Kitchen Item 730,home_kitchen,Logitech,224.02,2026-03-18,True
+731,Philips Sports Outdoors Item 731,sports_outdoors,Philips,306.78,2026-03-18,True
+732,Samsung Health Wellness Item 732,health_wellness,Samsung,144.71,2026-03-18,True
+733,Samsung Sports Outdoors Item 733,sports_outdoors,Samsung,90.29,2026-03-18,True
+734,Sony Sports Outdoors Item 734,sports_outdoors,Sony,294.4,2026-03-18,True
+735,Nike Clothing Item 735,clothing,Nike,26.16,2026-03-18,True
+736,Adidas Home Kitchen Item 736,home_kitchen,Adidas,420.16,2026-03-18,True
+737,Nike Health Wellness Item 737,health_wellness,Nike,28.56,2026-03-18,True
+738,Panasonic Home Kitchen Item 738,home_kitchen,Panasonic,116.78,2026-03-18,True
+739,Logitech Beauty Personal Care Item 739,beauty_personal_care,Logitech,35.46,2026-03-18,True
+740,Nike Toys Games Item 740,toys_games,Nike,108.12,2026-03-18,True
+741,Nike Home Kitchen Item 741,home_kitchen,Nike,453.5,2026-03-18,True
+742,HP Beauty Personal Care Item 742,beauty_personal_care,HP,39.35,2026-03-18,True
+743,Panasonic Sports Outdoors Item 743,sports_outdoors,Panasonic,238.39,2026-03-18,True
+744,Logitech Clothing Item 744,clothing,Logitech,93.19,2026-03-18,True
+745,Philips Sports Outdoors Item 745,sports_outdoors,Philips,360.4,2026-03-18,True
+746,Sony Toys Games Item 746,toys_games,Sony,99.27,2026-03-18,True
+747,Nike Electronics Item 747,electronics,Nike,266.99,2026-03-18,True
+748,Dell Books Item 748,books,Dell,13.76,2026-03-18,True
+749,Nike Books Item 749,books,Nike,28.4,2026-03-18,True
+750,Adidas Electronics Item 750,electronics,Adidas,604.36,2026-03-18,True
+751,HP Health Wellness Item 751,health_wellness,HP,180.41,2026-03-18,True
+752,Philips Toys Games Item 752,toys_games,Philips,57.12,2026-03-18,True
+753,Samsung Office Supplies Item 753,office_supplies,Samsung,78.84,2026-03-18,True
+754,Samsung Health Wellness Item 754,health_wellness,Samsung,100.57,2026-03-18,True
+755,Samsung Toys Games Item 755,toys_games,Samsung,34.17,2026-03-18,True
+756,Dell Clothing Item 756,clothing,Dell,150.37,2026-03-18,True
+757,Samsung Sports Outdoors Item 757,sports_outdoors,Samsung,385.87,2026-03-18,True
+758,Samsung Home Kitchen Item 758,home_kitchen,Samsung,30.34,2026-03-18,True
+759,Apple Grocery Item 759,grocery,Apple,12.63,2026-03-18,True
+760,Apple Books Item 760,books,Apple,15.48,2026-03-18,True
+761,Dell Beauty Personal Care Item 761,beauty_personal_care,Dell,66.75,2026-03-18,True
+762,Panasonic Home Kitchen Item 762,home_kitchen,Panasonic,133.25,2026-03-18,True
+763,Nike Health Wellness Item 763,health_wellness,Nike,161.43,2026-03-18,True
+764,Panasonic Grocery Item 764,grocery,Panasonic,27.4,2026-03-18,True
+765,HP Office Supplies Item 765,office_supplies,HP,30.89,2026-03-18,True
+766,Samsung Books Item 766,books,Samsung,46.28,2026-03-18,True
+767,Apple Grocery Item 767,grocery,Apple,7.16,2026-03-18,True
+768,Logitech Health Wellness Item 768,health_wellness,Logitech,106.4,2026-03-18,True
+769,Apple Grocery Item 769,grocery,Apple,3.91,2026-03-18,True
+770,Dell Home Kitchen Item 770,home_kitchen,Dell,287.52,2026-03-18,True
+771,Philips Books Item 771,books,Philips,22.02,2026-03-18,True
+772,Apple Home Kitchen Item 772,home_kitchen,Apple,70.48,2026-03-18,True
+773,Sony Office Supplies Item 773,office_supplies,Sony,30.49,2026-03-18,True
+774,Sony Sports Outdoors Item 774,sports_outdoors,Sony,191.76,2026-03-18,True
+775,Samsung Sports Outdoors Item 775,sports_outdoors,Samsung,178.08,2026-03-18,True
+776,Apple Toys Games Item 776,toys_games,Apple,48.61,2026-03-18,True
+777,Dell Toys Games Item 777,toys_games,Dell,95.28,2026-03-18,True
+778,Logitech Books Item 778,books,Logitech,8.45,2026-03-18,True
+779,HP Electronics Item 779,electronics,HP,1753.67,2026-03-18,True
+780,Samsung Office Supplies Item 780,office_supplies,Samsung,8.45,2026-03-18,True
+781,Philips Toys Games Item 781,toys_games,Philips,111.36,2026-03-18,True
+782,Sony Office Supplies Item 782,office_supplies,Sony,96.06,2026-03-18,True
+783,Nike Books Item 783,books,Nike,51.23,2026-03-18,True
+784,Samsung Beauty Personal Care Item 784,beauty_personal_care,Samsung,14.15,2026-03-18,True
+785,Dell Toys Games Item 785,toys_games,Dell,102.64,2026-03-18,True
+786,Apple Home Kitchen Item 786,home_kitchen,Apple,108.71,2026-03-18,True
+787,Adidas Office Supplies Item 787,office_supplies,Adidas,22.42,2026-03-18,True
+788,Sony Beauty Personal Care Item 788,beauty_personal_care,Sony,114.63,2026-03-18,True
+789,Nike Health Wellness Item 789,health_wellness,Nike,50.63,2026-03-18,True
+790,Adidas Clothing Item 790,clothing,Adidas,151.38,2026-03-18,True
+791,Panasonic Books Item 791,books,Panasonic,42.95,2026-03-18,True
+792,Panasonic Electronics Item 792,electronics,Panasonic,795.63,2026-03-18,True
+793,Philips Beauty Personal Care Item 793,beauty_personal_care,Philips,20.22,2026-03-18,True
+794,Sony Office Supplies Item 794,office_supplies,Sony,116.6,2026-03-18,True
+795,Samsung Beauty Personal Care Item 795,beauty_personal_care,Samsung,96.24,2026-03-18,True
+796,Logitech Office Supplies Item 796,office_supplies,Logitech,24.73,2026-03-18,True
+797,Panasonic Beauty Personal Care Item 797,beauty_personal_care,Panasonic,40.03,2026-03-18,True
+798,Panasonic Beauty Personal Care Item 798,beauty_personal_care,Panasonic,12.19,2026-03-18,True
+799,Nike Beauty Personal Care Item 799,beauty_personal_care,Nike,45.02,2026-03-18,True
+800,Sony Toys Games Item 800,toys_games,Sony,16.99,2026-03-18,True

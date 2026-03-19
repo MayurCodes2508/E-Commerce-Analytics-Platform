@@ -1,0 +1,1 @@
+{{ dbt_utils.test_expression_is_true(column_name="delivered_at", expression="shipment_status NOT IN ('delivered', 'returned') OR delivered_at IS NOT NULL", model=get_where_subquery(ref('stg_shipments'))) }}

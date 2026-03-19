@@ -1,0 +1,1 @@
+{{ test_unique(column_name="product_key", model=get_where_subquery(ref('mrt_product_sales'))) }}

@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: stg_payments
+    description: "Staging model for payments data that trims whitespace from text fields, casts amount to NUMERIC and payment_timestamp to TIMESTAMP type, and includes an ingestion timestamp for data lineage."
+    columns:
+      - name: payment_id
+        description: "Unique identifier for each payment"
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: "Identifier of the order this payment is for"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+
+      - name: payment_method
+        description: "Method used for payment"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['apple_pay', 'credit_card', 'paypal', 'bank_transfer', 'google_pay']
+
+      - name: amount
+        description: "Amount of the payment"
+
+      - name: payment_status
+        description: "Status of the payment"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['success', 'failed', 'refunded']
+
+      - name: payment_timestamp
+        description: "Timestamp when the payment was made"
+        tests:
+            - not_null
+
+      - name: ingestion_timestamp
+        description: "Timestamp when the data was ingested into the data warehouse"
+        tests:
+          - not_null

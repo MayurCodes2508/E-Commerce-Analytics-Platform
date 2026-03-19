@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+  - name: sales_dashboard
+    description: "Power BI dashboard for sales analytics (KPIs, product performance, order distribution)."
+    type: dashboard
+
+    depends_on:
+      - ref('mrt_sales_trends')
+      - ref('mrt_product_sales')
+      - ref('mrt_order_status_bucket')
+
+    owner:
+      name: Mayur
+      email: allamayurreddy@gmail.com

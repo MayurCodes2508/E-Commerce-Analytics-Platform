@@ -1,0 +1,53 @@
+
+  
+    
+
+    create or replace table `intense-pixel-490219-h2`.`prod_core`.`fct_orders`
+        
+  (
+    order_key string,
+    order_id INT64,
+    customer_key string,
+    date_key INT64,
+    created_at timestamp,
+    order_status string
+    
+    )
+
+      
+    
+    cluster by customer_key
+
+    
+    OPTIONS()
+    as (
+      
+    select order_key, order_id, customer_key, date_key, created_at, order_status
+    from (
+        
+
+WITH base AS (
+SELECT order_id,
+       customer_id,
+       created_at,
+       order_status
+FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_orders`
+
+
+
+)
+
+SELECT to_hex(md5(cast(coalesce(cast(b.order_id as string), '_dbt_utils_surrogate_key_null_') as string))) AS order_key,
+       b.order_id,
+       dc.customer_key,
+       dd.date_key,
+       b.created_at,
+       b.order_status
+FROM base b
+JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_customers` dc
+ON b.customer_id = dc.customer_id
+JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_date` dd
+ON DATE(b.created_at) = dd.date
+    ) as model_subq
+    );
+  

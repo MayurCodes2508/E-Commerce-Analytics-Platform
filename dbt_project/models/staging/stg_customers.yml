@@ -1,0 +1,39 @@
+version: 2
+models:
+  - name: stg_customers
+    description: "Staging model for customer data that cleans and standardizes fields from the raw customers table. It trims whitespace from text fields, casts dates to DATE type, and includes an ingestion timestamp for data lineage."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_name
+        description: "Full name of the customer"
+
+      - name: email
+        description: "Email address of the customer"
+
+      - name: signup_date
+        description: "Date when the customer signed up"
+
+      - name: country
+        description: "Country of the customer"
+
+      - name: city
+        description: "City of the customer"
+
+      - name: is_active
+        description: "Boolean flag indicating if the customer is active"
+        tests:
+          - not_null
+
+      - name: created_at
+        description: "Date when the customer record was created"
+
+      - name: ingestion_timestamp
+        description: "Timestamp when the data was ingested into the data warehouse"
+        tests:
+          - not_null
+    

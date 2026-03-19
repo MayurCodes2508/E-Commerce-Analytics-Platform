@@ -1,0 +1,1 @@
+{{ test_relationships(column_name="order_key", field="order_key", model=get_where_subquery(ref('fct_shipments')), to=ref('fct_orders')) }}

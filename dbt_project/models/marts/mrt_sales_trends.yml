@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: mrt_sales_trends
+    description: >
+      This mart provides time-series sales metrics at a daily grain.
+      It includes multiple revenue definitions and order metrics:
+      - Gross Revenue: total sales before exclusions
+      - Net Revenue: excludes refunded orders
+      - Realized Revenue: includes only completed (shipped/delivered) orders
+      - AOV metrics calculated based on respective order definitions
+
+    columns:
+      - name: date
+        description: "Date representing the aggregation grain for sales metrics."
+        tests:
+          - not_null
+          - unique
+
+      - name: gross_revenue
+        description: "Total revenue including all orders."
+        tests:
+          - not_null
+
+      - name: net_revenue
+        description: "Revenue excluding refunded orders."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "<= gross_revenue"
+
+      - name: realized_revenue
+        description: "Revenue from completed (shipped or delivered) orders."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "<= net_revenue"
+
+      - name: total_orders
+        description: "Total number of orders placed."
+        tests:
+          - not_null
+
+      - name: valid_orders
+        description: "Total number of non-refunded orders."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "<= total_orders"
+
+      - name: completed_orders
+        description: "Total number of completed (shipped/delivered) orders."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "<= valid_orders"
+
+      - name: gross_aov
+        description: "Average order value based on total orders."
+        tests:
+          - not_null
+
+      - name: net_aov
+        description: "Average order value based on valid (non-refunded) orders."
+        tests:
+          - not_null
+
+      - name: realized_aov
+        description: "Average order value based on completed orders."
+        tests:
+          - not_null
+
+      - name: dbt_loaded_at
+        description: "Timestamp when this mart was last built."
+        tests:
+          - not_null

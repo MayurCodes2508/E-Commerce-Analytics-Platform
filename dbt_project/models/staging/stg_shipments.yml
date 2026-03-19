@@ -1,0 +1,39 @@
+version: 2
+models:
+  - name: stg_shipments
+    description: "Staging model for shipments data that trims whitespace from shipment_status and casts shipped_at and delivered_at to TIMESTAMP type, including an ingestion timestamp for data lineage."
+    columns:
+      - name: shipment_id
+        description: "Unique identifier for each shipment"
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: "Identifier of the order this shipment is for"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+
+      - name: shipment_status
+        description: "Status of the shipment"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['in_transit', 'processing', 'delivered', 'returned', 'shipped']
+
+      - name: shipped_at
+        description: "Timestamp when the shipment was shipped"
+        tests:
+          - not_null
+
+      - name: delivered_at
+        description: "Timestamp when the shipment was delivered"
+
+      - name: ingestion_timestamp
+        description: "Timestamp when the data was ingested into the data warehouse"
+        tests:
+          - not_null
