@@ -23,7 +23,7 @@ jobs:
 
       - name: Authenticate GCP
         run: |
-          echo "${{ secrets.E_COMMERCE_ANALYTICS_PLATFORM_GCP_KEY }}" > dbt_project/gcp_key.json
+          echo '${{ secrets.E_COMMERCE_ANALYTICS_PLATFORM_GCP_KEY }}' > dbt_project/gcp_key.json
           
       - name: Create dbt profile
         run: |
