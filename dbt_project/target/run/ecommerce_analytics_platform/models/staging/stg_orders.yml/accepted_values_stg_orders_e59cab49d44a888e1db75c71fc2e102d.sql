@@ -16,7 +16,7 @@ with all_values as (
         order_status as value_field,
         count(*) as n_records
 
-    from `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_orders`
+    from `intense-pixel-490219-h2`.`dev_staging`.`stg_orders`
     group by order_status
 
 )

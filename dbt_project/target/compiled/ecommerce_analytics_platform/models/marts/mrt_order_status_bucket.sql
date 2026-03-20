@@ -7,5 +7,5 @@ SELECT CASE
        END AS order_status_bucket,
        COUNT(DISTINCT order_key) AS total_orders_by_order_status_bucket,
        CURRENT_TIMESTAMP() AS dbt_loaded_at
-FROM `intense-pixel-490219-h2`.`ci_dev_core`.`int_sales_base`
+FROM `intense-pixel-490219-h2`.`dev_core`.`int_sales_base`
 GROUP BY order_status_bucket

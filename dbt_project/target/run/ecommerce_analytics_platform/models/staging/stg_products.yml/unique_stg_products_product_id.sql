@@ -13,7 +13,7 @@
 with dbt_test__target as (
 
   select product_id as unique_field
-  from `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_products`
+  from `intense-pixel-490219-h2`.`dev_staging`.`stg_products`
   where product_id is not null
 
 )

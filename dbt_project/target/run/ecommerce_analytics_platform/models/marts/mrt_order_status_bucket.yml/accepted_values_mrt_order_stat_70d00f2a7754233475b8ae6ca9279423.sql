@@ -16,7 +16,7 @@ with all_values as (
         order_status_bucket as value_field,
         count(*) as n_records
 
-    from `intense-pixel-490219-h2`.`ci_dev_marts`.`mrt_order_status_bucket`
+    from `intense-pixel-490219-h2`.`dev_marts`.`mrt_order_status_bucket`
     group by order_status_bucket
 
 )

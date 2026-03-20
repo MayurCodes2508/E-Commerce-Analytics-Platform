@@ -19,7 +19,5 @@ SELECT to_hex(md5(cast(coalesce(cast(b.order_id as string), '_dbt_utils_surrogat
        b.created_at,
        b.order_status
 FROM base b
-JOIN `intense-pixel-490219-h2`.`dev_core`.`dim_customers` dc
-ON b.customer_id = dc.customer_id
 JOIN `intense-pixel-490219-h2`.`dev_core`.`dim_date` dd_order_created_at
 ON DATE(b.created_at) = dd_order_created_at.date

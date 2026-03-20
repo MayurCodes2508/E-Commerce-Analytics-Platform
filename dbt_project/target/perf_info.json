@@ -1,0 +1,57 @@
+{
+    "path_count": 254,
+    "parsed_path_count": 254,
+    "static_analysis_path_count": 17,
+    "static_analysis_parsed_path_count": 11,
+    "is_partial_parse_enabled": true,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 2.823858800344169,
+    "load_macros_elapsed": 2.619431500323117,
+    "parse_project_elapsed": 3.143949099816382,
+    "patch_sources_elapsed": 0.11416410002857447,
+    "process_manifest_elapsed": 0.20569480024278164,
+    "load_all_elapsed": 9.979051900096238,
+    "projects": [
+        {
+            "project_name": "ecommerce_analytics_platform",
+            "elapsed": 3.1029486004263163,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 1.0115545997396111,
+                    "parsed_path_count": 17
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 2.0779438000172377,
+                    "parsed_path_count": 19
+                }
+            ],
+            "parsed_path_count": 36
+        },
+        {
+            "project_name": "dbt_bigquery",
+            "elapsed": 0.011092500761151314,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0.01737180072814226,
+            "parsers": [
+                {
+                    "parser": "doc",
+                    "elapsed": 0.000622299499809742,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 1
+        },
+        {
+            "project_name": "dbt_utils",
+            "elapsed": 0.012179099954664707,
+            "parsers": [],
+            "parsed_path_count": 0
+        }
+    ]
+}

@@ -16,7 +16,7 @@ JOIN {{ ref('stg_orders') }} o
 ON oi.order_id = o.order_id
 
 {% if is_incremental() %}
-WHERE o.created_at > (SELECT COALESCE(TIMESTAMP_SUB(MAX(o.created_at), INTERVAL 3 DAY), TIMESTAMP('1970-01-01')) FROM {{ this }})
+WHERE o.created_at > (SELECT COALESCE(TIMESTAMP_SUB(MAX(created_at), INTERVAL 3 DAY), TIMESTAMP('1970-01-01')) FROM {{ this }})
 {% endif %}
 
 )

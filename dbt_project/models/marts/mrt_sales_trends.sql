@@ -4,7 +4,7 @@ SELECT
     SUM(line_total) AS gross_revenue_by_date,
 
     SUM(CASE
-        WHEN order_status != 'refunded' THEN line_total
+        WHEN order_status NOT IN ('cancelled', 'refunded') THEN line_total
     END) AS net_revenue_by_date,
 
     SUM(CASE
@@ -14,7 +14,7 @@ SELECT
     COUNT(DISTINCT order_key) AS total_orders_by_date,
   
     COUNT(DISTINCT CASE
-        WHEN order_status != 'cancelled' THEN order_key
+        WHEN order_status NOT IN ('cancelled', 'refunded') THEN order_key
     END) AS valid_orders_by_date,
 
     COUNT(DISTINCT CASE
@@ -24,9 +24,9 @@ SELECT
     SAFE_DIVIDE(SUM(line_total), COUNT(DISTINCT order_key)) AS gross_aov_by_date,
 
     SAFE_DIVIDE(SUM(CASE
-        WHEN order_status != 'refunded' THEN line_total
+        WHEN order_status NOT IN ('cancelled', 'refunded') THEN line_total
     END), COUNT(DISTINCT CASE
-        WHEN order_status != 'cancelled' THEN order_key
+        WHEN order_status NOT IN ('cancelled', 'refunded') THEN order_key
     END)) AS net_aov_by_date,
 
     SAFE_DIVIDE(SUM(CASE

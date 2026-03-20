@@ -4,13 +4,13 @@
 
 with child as (
     select order_key as from_field
-    from `intense-pixel-490219-h2`.`ci_dev_core`.`fct_order_items`
+    from `intense-pixel-490219-h2`.`dev_core`.`fct_order_items`
     where order_key is not null
 ),
 
 parent as (
     select order_key as to_field
-    from `intense-pixel-490219-h2`.`ci_dev_core`.`fct_orders`
+    from `intense-pixel-490219-h2`.`dev_core`.`fct_orders`
 )
 
 select

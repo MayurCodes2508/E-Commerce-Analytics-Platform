@@ -12,7 +12,7 @@ JOIN `intense-pixel-490219-h2`.`dev_staging`.`stg_orders` o
 ON oi.order_id = o.order_id
 
 
-WHERE o.created_at > (SELECT COALESCE(TIMESTAMP_SUB(MAX(o.created_at), INTERVAL 3 DAY), TIMESTAMP('1970-01-01')) FROM `intense-pixel-490219-h2`.`dev_core`.`fct_order_items`)
+WHERE o.created_at > (SELECT COALESCE(TIMESTAMP_SUB(MAX(created_at), INTERVAL 3 DAY), TIMESTAMP('1970-01-01')) FROM `intense-pixel-490219-h2`.`dev_core`.`fct_order_items`)
 
 
 )

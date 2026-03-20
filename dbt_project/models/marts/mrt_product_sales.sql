@@ -4,7 +4,7 @@ SELECT product_key,
        SUM(line_total) AS gross_revenue_by_product,
 
        SUM(CASE
-               WHEN order_status != 'refunded' THEN line_total
+               WHEN order_status NOT IN ('cancelled', 'refunded') THEN line_total
            END) AS net_revenue_by_product,
 
        SUM(CASE

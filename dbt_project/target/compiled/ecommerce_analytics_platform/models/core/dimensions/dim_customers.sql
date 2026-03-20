@@ -7,4 +7,4 @@ SELECT to_hex(md5(cast(coalesce(cast(customer_id as string), '_dbt_utils_surroga
        city,
        is_active,
        created_at
-FROM `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_customers`
+FROM `intense-pixel-490219-h2`.`dev_staging`.`stg_customers`

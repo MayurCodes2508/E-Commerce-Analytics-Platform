@@ -77,3 +77,7 @@ models:
           - dbt_utils.expression_is_true:
               arguments:
                 expression: ">= 0"
+          
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "= quantity * price"

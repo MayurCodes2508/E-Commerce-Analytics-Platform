@@ -87,7 +87,7 @@
       "stop": {
         "line": 20,
         "col": 12,
-        "index": 587
+        "index": 585
       }
     },
     "expanded_span": {
@@ -99,7 +99,7 @@
       "stop": {
         "line": 16,
         "col": 1,
-        "index": 471
+        "index": 469
       }
     }
   },
@@ -108,24 +108,24 @@
       "start": {
         "line": 24,
         "col": 8,
-        "index": 599
+        "index": 597
       },
       "stop": {
         "line": 24,
         "col": 67,
-        "index": 658
+        "index": 656
       }
     },
     "expanded_span": {
       "start": {
         "line": 20,
         "col": 8,
-        "index": 483
+        "index": 481
       },
       "stop": {
         "line": 20,
         "col": 112,
-        "index": 587
+        "index": 585
       }
     }
   },
@@ -134,24 +134,24 @@
       "start": {
         "line": 26,
         "col": 5,
-        "index": 706
+        "index": 704
       },
       "stop": {
         "line": 26,
         "col": 59,
-        "index": 760
+        "index": 758
       }
     },
     "expanded_span": {
       "start": {
         "line": 22,
         "col": 5,
-        "index": 635
+        "index": 633
       },
       "stop": {
         "line": 22,
         "col": 104,
-        "index": 734
+        "index": 732
       }
     }
   },
@@ -160,24 +160,24 @@
       "start": {
         "line": 34,
         "col": 6,
-        "index": 989
+        "index": 987
       },
       "stop": {
         "line": 34,
         "col": 31,
-        "index": 1014
+        "index": 1012
       }
     },
     "expanded_span": {
       "start": {
         "line": 30,
         "col": 6,
-        "index": 963
+        "index": 961
       },
       "stop": {
         "line": 30,
         "col": 57,
-        "index": 1014
+        "index": 1012
       }
     }
   },
@@ -186,24 +186,24 @@
       "start": {
         "line": 36,
         "col": 6,
-        "index": 1055
+        "index": 1053
       },
       "stop": {
         "line": 36,
         "col": 27,
-        "index": 1076
+        "index": 1074
       }
     },
     "expanded_span": {
       "start": {
         "line": 32,
         "col": 6,
-        "index": 1055
+        "index": 1053
       },
       "stop": {
         "line": 32,
         "col": 53,
-        "index": 1102
+        "index": 1100
       }
     }
   }

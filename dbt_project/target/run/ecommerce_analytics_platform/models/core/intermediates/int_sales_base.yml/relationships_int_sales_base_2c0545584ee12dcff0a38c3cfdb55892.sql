@@ -12,13 +12,13 @@
 
 with child as (
     select order_item_created_at_date_key as from_field
-    from `intense-pixel-490219-h2`.`ci_dev_core`.`int_sales_base`
+    from `intense-pixel-490219-h2`.`dev_core`.`int_sales_base`
     where order_item_created_at_date_key is not null
 ),
 
 parent as (
     select date_key as to_field
-    from `intense-pixel-490219-h2`.`ci_dev_core`.`dim_date`
+    from `intense-pixel-490219-h2`.`dev_core`.`dim_date`
 )
 
 select

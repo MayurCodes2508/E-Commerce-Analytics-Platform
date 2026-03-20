@@ -23,7 +23,5 @@ SELECT {{ dbt_utils.generate_surrogate_key(['b.order_id']) }} AS order_key,
        b.created_at,
        b.order_status
 FROM base b
-JOIN {{ ref('dim_customers') }} dc
-ON b.customer_id = dc.customer_id
 JOIN {{ ref('dim_date') }} dd_order_created_at
 ON DATE(b.created_at) = dd_order_created_at.date

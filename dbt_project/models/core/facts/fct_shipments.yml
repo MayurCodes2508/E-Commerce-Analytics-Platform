@@ -60,3 +60,9 @@ models:
       - name: delivered_at
         data_type: timestamp  
         description: "Timestamp when the shipment was delivered"
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= shipped_at"
+              config:
+                where: "delivered_at is not null"
