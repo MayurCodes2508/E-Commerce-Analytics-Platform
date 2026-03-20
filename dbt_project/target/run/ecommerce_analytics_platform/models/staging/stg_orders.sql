@@ -1,6 +1,6 @@
 
 
-  create or replace view `intense-pixel-490219-h2`.`prod_staging`.`stg_orders`
+  create or replace view `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_orders`
   OPTIONS()
   as SELECT order_id,
        customer_id,

@@ -16,7 +16,7 @@ with all_values as (
         shipment_status as value_field,
         count(*) as n_records
 
-    from `intense-pixel-490219-h2`.`prod_staging`.`stg_shipments`
+    from `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_shipments`
     group by shipment_status
 
 )

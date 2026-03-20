@@ -1,6 +1,6 @@
 
 
-  create or replace view `intense-pixel-490219-h2`.`prod_staging`.`stg_products`
+  create or replace view `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_products`
   OPTIONS()
   as SELECT product_id,
        TRIM(product_name) AS product_name,

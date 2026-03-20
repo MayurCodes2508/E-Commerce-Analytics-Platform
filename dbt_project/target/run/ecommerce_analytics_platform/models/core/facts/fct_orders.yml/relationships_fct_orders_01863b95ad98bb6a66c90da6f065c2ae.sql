@@ -12,13 +12,13 @@
 
 with child as (
     select customer_key as from_field
-    from `intense-pixel-490219-h2`.`prod_core`.`fct_orders`
+    from `intense-pixel-490219-h2`.`ci_dev_core`.`fct_orders`
     where customer_key is not null
 ),
 
 parent as (
     select customer_key as to_field
-    from `intense-pixel-490219-h2`.`prod_core`.`dim_customers`
+    from `intense-pixel-490219-h2`.`ci_dev_core`.`dim_customers`
 )
 
 select

@@ -5,7 +5,7 @@
 with dbt_test__target as (
 
   select payment_id as unique_field
-  from `intense-pixel-490219-h2`.`prod_staging`.`stg_payments`
+  from `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_payments`
   where payment_id is not null
 
 )

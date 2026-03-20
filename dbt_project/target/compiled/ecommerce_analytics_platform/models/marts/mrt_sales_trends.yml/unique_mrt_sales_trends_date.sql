@@ -5,7 +5,7 @@
 with dbt_test__target as (
 
   select date as unique_field
-  from `intense-pixel-490219-h2`.`prod_marts`.`mrt_sales_trends`
+  from `intense-pixel-490219-h2`.`ci_dev_marts`.`mrt_sales_trends`
   where date is not null
 
 )

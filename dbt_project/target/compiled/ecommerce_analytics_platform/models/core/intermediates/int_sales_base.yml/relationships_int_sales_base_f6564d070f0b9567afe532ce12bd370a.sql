@@ -4,13 +4,13 @@
 
 with child as (
     select product_key as from_field
-    from `intense-pixel-490219-h2`.`prod_core`.`int_sales_base`
+    from `intense-pixel-490219-h2`.`ci_dev_core`.`int_sales_base`
     where product_key is not null
 ),
 
 parent as (
     select product_key as to_field
-    from `intense-pixel-490219-h2`.`prod_core`.`dim_products`
+    from `intense-pixel-490219-h2`.`ci_dev_core`.`dim_products`
 )
 
 select

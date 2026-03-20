@@ -6,4 +6,4 @@ SELECT to_hex(md5(cast(coalesce(cast(product_id as string), '_dbt_utils_surrogat
        base_price,
        created_at,
        is_active
-FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_products`
+FROM `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_products`

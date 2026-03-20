@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`prod_core`.`dim_customers`
+    create or replace table `intense-pixel-490219-h2`.`ci_dev_core`.`dim_customers`
         
   (
     customer_key string,
@@ -36,7 +36,7 @@
        city,
        is_active,
        created_at
-FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_customers`
+FROM `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_customers`
     ) as model_subq
     );
   

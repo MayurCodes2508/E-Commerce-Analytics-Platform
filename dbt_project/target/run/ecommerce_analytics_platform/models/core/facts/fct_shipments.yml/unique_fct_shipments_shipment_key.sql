@@ -13,7 +13,7 @@
 with dbt_test__target as (
 
   select shipment_key as unique_field
-  from `intense-pixel-490219-h2`.`prod_core`.`fct_shipments`
+  from `intense-pixel-490219-h2`.`ci_dev_core`.`fct_shipments`
   where shipment_key is not null
 
 )

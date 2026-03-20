@@ -1,6 +1,6 @@
 
 
-  create or replace view `intense-pixel-490219-h2`.`prod_staging`.`stg_customers`
+  create or replace view `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_customers`
   OPTIONS()
   as SELECT customer_id,
        TRIM(customer_name) AS customer_name,

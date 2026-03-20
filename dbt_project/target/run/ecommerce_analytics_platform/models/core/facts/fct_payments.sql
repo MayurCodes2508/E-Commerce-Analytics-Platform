@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`prod_core`.`fct_payments`
+    create or replace table `intense-pixel-490219-h2`.`ci_dev_core`.`fct_payments`
         
   (
     payment_key string,
@@ -35,7 +35,7 @@ SELECT payment_id,
        amount,
        payment_status,
        payment_timestamp
-FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_payments`
+FROM `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_payments`
 
 
 )
@@ -49,7 +49,7 @@ SELECT to_hex(md5(cast(coalesce(cast(b.payment_id as string), '_dbt_utils_surrog
        b.payment_status,
        b.payment_timestamp
 FROM base b
-JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_date` dd_payment
+JOIN `intense-pixel-490219-h2`.`ci_dev_core`.`dim_date` dd_payment
 ON DATE(b.payment_timestamp) = dd_payment.date
     ) as model_subq
     );

@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`prod_core`.`fct_order_items`
+    create or replace table `intense-pixel-490219-h2`.`ci_dev_core`.`fct_order_items`
         
   (
     order_item_key string,
@@ -36,8 +36,8 @@ SELECT oi.order_item_id,
        o.created_at,
        oi.quantity,
        oi.price
-FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_order_items` oi
-JOIN `intense-pixel-490219-h2`.`prod_staging`.`stg_orders` o
+FROM `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_order_items` oi
+JOIN `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_orders` o
 ON oi.order_id = o.order_id
 
 
@@ -54,9 +54,9 @@ SELECT to_hex(md5(cast(coalesce(cast(b.order_item_id as string), '_dbt_utils_sur
        b.price,
        b.quantity * b.price AS line_total
 FROM base b
-JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_products` dp
+JOIN `intense-pixel-490219-h2`.`ci_dev_core`.`dim_products` dp
 ON b.product_id = dp.product_id
-JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_date` dd_order_item_created_at
+JOIN `intense-pixel-490219-h2`.`ci_dev_core`.`dim_date` dd_order_item_created_at
 ON DATE(b.created_at) = dd_order_item_created_at.date
     ) as model_subq
     );

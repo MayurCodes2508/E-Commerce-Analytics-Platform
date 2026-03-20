@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`prod_core`.`dim_products`
+    create or replace table `intense-pixel-490219-h2`.`ci_dev_core`.`dim_products`
         
   (
     product_key string,
@@ -34,7 +34,7 @@
        base_price,
        created_at,
        is_active
-FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_products`
+FROM `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_products`
     ) as model_subq
     );
   

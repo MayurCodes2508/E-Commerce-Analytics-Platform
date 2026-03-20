@@ -4,13 +4,13 @@
 
 with child as (
     select order_id as from_field
-    from `intense-pixel-490219-h2`.`prod_staging`.`stg_payments`
+    from `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_payments`
     where order_id is not null
 ),
 
 parent as (
     select order_id as to_field
-    from `intense-pixel-490219-h2`.`prod_staging`.`stg_orders`
+    from `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_orders`
 )
 
 select

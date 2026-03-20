@@ -16,7 +16,7 @@ with all_values as (
         payment_method as value_field,
         count(*) as n_records
 
-    from `intense-pixel-490219-h2`.`prod_staging`.`stg_payments`
+    from `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_payments`
     group by payment_method
 
 )

@@ -13,7 +13,7 @@
 with dbt_test__target as (
 
   select payment_key as unique_field
-  from `intense-pixel-490219-h2`.`prod_core`.`fct_payments`
+  from `intense-pixel-490219-h2`.`ci_dev_core`.`fct_payments`
   where payment_key is not null
 
 )

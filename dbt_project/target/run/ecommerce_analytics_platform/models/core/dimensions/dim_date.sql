@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`prod_core`.`dim_date`
+    create or replace table `intense-pixel-490219-h2`.`ci_dev_core`.`dim_date`
         
   (
     date_key INT64,

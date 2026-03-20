@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`prod_core`.`fct_orders`
+    create or replace table `intense-pixel-490219-h2`.`ci_dev_core`.`fct_orders`
         
   (
     order_key string,
@@ -31,7 +31,7 @@ SELECT order_id,
        customer_id,
        created_at,
        order_status
-FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_orders`
+FROM `intense-pixel-490219-h2`.`ci_dev_staging`.`stg_orders`
 
 
 )
@@ -43,9 +43,9 @@ SELECT to_hex(md5(cast(coalesce(cast(b.order_id as string), '_dbt_utils_surrogat
        b.created_at,
        b.order_status
 FROM base b
-JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_customers` dc
+JOIN `intense-pixel-490219-h2`.`ci_dev_core`.`dim_customers` dc
 ON b.customer_id = dc.customer_id
-JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_date` dd_order_created_at
+JOIN `intense-pixel-490219-h2`.`ci_dev_core`.`dim_date` dd_order_created_at
 ON DATE(b.created_at) = dd_order_created_at.date
     ) as model_subq
     );

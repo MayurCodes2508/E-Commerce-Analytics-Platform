@@ -5,7 +5,7 @@
 with dbt_test__target as (
 
   select order_item_key as unique_field
-  from `intense-pixel-490219-h2`.`prod_core`.`int_sales_base`
+  from `intense-pixel-490219-h2`.`ci_dev_core`.`int_sales_base`
   where order_item_key is not null
 
 )
