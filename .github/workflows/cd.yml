@@ -1,11 +1,11 @@
-name: CI Pipeline
+name: CD Pipeline
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
-  dbt-build:
+  dbt-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -30,22 +30,22 @@ jobs:
           mkdir -p ~/.dbt
           cat <<EOF > ~/.dbt/profiles.yml
           ecommerce_analytics_platform:
-            target: ci
+            target: prod
             outputs:
-              dev:
+              prod:
                 type: bigquery
                 method: service-account
                 project: intense-pixel-490219-h2
-                dataset: ci_dev
+                dataset: prod
                 threads: 4
                 keyfile: gcp_key.json
           EOF
 
-      - name: Run dbt
+      - name: Run dbt (PROD)
         working-directory: ./dbt_project
 
         env:
           GOOGLE_APPLICATION_CREDENTIALS: gcp_key.json
         run: |
           dbt deps
-          dbt build --target ci
+          dbt build --target prod
