@@ -32,7 +32,7 @@ jobs:
           ecommerce_analytics_platform:
             target: ci
             outputs:
-              dev:
+              ci:
                 type: bigquery
                 method: service-account
                 project: intense-pixel-490219-h2
