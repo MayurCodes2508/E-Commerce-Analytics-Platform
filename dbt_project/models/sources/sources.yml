@@ -5,16 +5,36 @@ sources:
     database: intense-pixel-490219-h2
     schema: raw
 
-    loaded_at_field: ingestion_timestamp
-
-    freshness:
-      warn_after: {count: 24, period: hour}
-      error_after: {count: 48, period: hour}
-
     tables:
       - name: customers
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+
       - name: orders
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+
       - name: order_items
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+
       - name: payments
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+
       - name: shipments
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+
       - name: products
+        loaded_at_field: ingestion_timestamp
