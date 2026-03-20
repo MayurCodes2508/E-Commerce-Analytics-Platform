@@ -1,4 +1,5 @@
 from google.cloud import bigquery
+from google.api_core.exceptions import NotFound
 import pandas as pd
 import os
 
@@ -7,7 +8,8 @@ DATASET = "raw"
 
 client = bigquery.Client(project=PROJECT_ID)
 
-BASE_PATH = "../data_generator/output_data"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_PATH = os.path.normpath(os.path.join(SCRIPT_DIR, "..", "data_generator", "output_data"))
 
 tables = {
     "customers": ("customers.csv", "customer_id"),
@@ -22,6 +24,10 @@ for table_name, (file_name, id_column) in tables.items():
     file_path = os.path.join(BASE_PATH, file_name)
 
     print(f"\nProcessing {file_name}...")
+
+    if not os.path.exists(file_path):
+        print(f"File not found: {file_path}, skipping")
+        continue
 
     df = pd.read_csv(file_path)
 
@@ -47,8 +53,11 @@ for table_name, (file_name, id_column) in tables.items():
 
         df = df[df[id_column] > max_id]
 
-    except Exception:
+    except NotFound:
         print("Table does not exist yet, creating new table.")
+    except Exception as exc:
+        print(f"Error checking max id for {table_name}: {exc}")
+        raise
 
     if df.empty:
         print(f"No new rows for {table_name}")

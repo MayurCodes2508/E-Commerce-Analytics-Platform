@@ -8,6 +8,9 @@ on:
 jobs:
   dbt-build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     
     steps:
       - name: Checkout repo
@@ -21,11 +24,15 @@ jobs:
       - name: Install dbt
         run: |
           python -m pip install --upgrade pip
-          pip install dbt-bigquery
+          pip install "dbt-bigquery==1.10.*"
 
-      - name: Authenticate GCP
-        run: |
-          echo '${{ secrets.E_COMMERCE_ANALYTICS_PLATFORM_GCP_KEY }}' > dbt_project/gcp_key.json
+      - name: Authenticate GCP (OIDC)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
+          create_credentials_file: true
+          export_environment_variables: true
           
       - name: Create dbt profile
         run: |
@@ -36,18 +43,14 @@ jobs:
             outputs:
               ci:
                 type: bigquery
-                method: service-account
+                method: oauth
                 project: intense-pixel-490219-h2
                 dataset: ci_dev
                 threads: 4
-                keyfile: gcp_key.json
           EOF
 
       - name: Run dbt
         working-directory: ./dbt_project
-
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: gcp_key.json
         run: |
           dbt deps
           dbt build --target ci
