@@ -1,13 +1,14 @@
-name: CD Pipeline
+name: Data Pipeline Orchestrator
 on:
-  workflow_run:
-    workflows: ["CI Pipeline"]
-    types:
-      - completed
-
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+concurrency:
+  group: 'data-pipeline'
+  cancel-in-progress: false
 jobs:
-  dbt-deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+  orchestrate:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -22,11 +23,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dbt
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install "dbt-bigquery==1.11.*"
-
+      
       - name: Authenticate GCP (OIDC)
         uses: google-github-actions/auth@v2
         with:
@@ -34,7 +35,32 @@ jobs:
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
           create_credentials_file: true
           export_environment_variables: true
-          
+
+      - name: Generate customers
+        working-directory: ./data_generator/scripts
+        run: python generate_customers.py
+
+      - name: Generate orders
+        working-directory: ./data_generator/scripts
+        run: python generate_orders.py
+
+      - name: Generate order items
+        working-directory: ./data_generator/scripts  
+        run: python generate_order_items.py
+
+      - name: Generate payments
+        working-directory: ./data_generator/scripts
+        run: python generate_payments.py
+
+      - name: Generate shipments
+        working-directory: ./data_generator/scripts
+        run: python generate_shipments.py
+        
+      - name: Run Ingestor
+        working-directory: ./ingestion
+        run: |
+          python load_to_bigquery.py || exit 1
+
       - name: Create dbt profile
         run: |
           mkdir -p ~/.dbt
@@ -50,8 +76,8 @@ jobs:
                 threads: 4
           EOF
 
-      - name: Run dbt (PROD)
+      - name: Run dbt
         working-directory: ./dbt_project
         run: |
           dbt deps
-          dbt build --target prod
+          dbt build --target prod --fail-fast --log-level info

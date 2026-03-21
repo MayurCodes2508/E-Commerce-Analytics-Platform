@@ -14,5 +14,3 @@ SELECT product_key,
 
 FROM {{ ref('int_sales_base') }}
 GROUP BY product_key, product_name, category
-
--- just

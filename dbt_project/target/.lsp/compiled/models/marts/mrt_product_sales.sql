@@ -14,5 +14,3 @@ SELECT product_key,
 
 FROM `intense-pixel-490219-h2`.`dev_core`.`int_sales_base`
 GROUP BY product_key, product_name, category
-
--- just

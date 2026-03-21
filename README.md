@@ -177,6 +177,7 @@ Warehouse: BigQuery
 Transformation: dbt
 
 Orchestration (planned): Prefect / GitHub Actions
+Orchestration: Prefect
 
 Data Generation: Python (Pandas, Faker)
 
@@ -189,17 +190,17 @@ BI Tool: Power BI
 1. Generate Data
 
 
-python generate_products.py
-python generate_customers.py
-python generate_orders.py
-python generate_order_items.py
-python generate_payments.py
-python generate_shipments.py
+python data_generator/scripts/generate_products.py
+python data_generator/scripts/generate_customers.py
+python data_generator/scripts/generate_orders.py
+python data_generator/scripts/generate_order_items.py
+python data_generator/scripts/generate_payments.py
+python data_generator/scripts/generate_shipments.py
 
 2. Ingest to BigQuery
 
 
-python load_to_bigquery.py
+python ingestion/load_to_bigquery.py
 
 3. Run dbt Models
 
@@ -212,6 +213,17 @@ dbt build --target prod
 
 dbt docs generate
 dbt docs serve
+
+5. Run End-to-End with Prefect (recommended)
+
+
+pip install -r orchestration/requirements.txt
+python orchestration/prefect_flow.py
+
+Optional: Run only dbt with Prefect parameters
+
+
+python -c "from orchestration.prefect_flow import ecommerce_pipeline; ecommerce_pipeline(run_generation=False, run_ingestion=False, run_dbt=True, dbt_target='prod')"
 
 ---
 
@@ -228,8 +240,6 @@ prod → production-ready models for BI
 🔄 Future Enhancements
 
 CI/CD pipeline (GitHub Actions)
-
-Workflow orchestration (Prefect/Airflow)
 
 Semantic layer (dbt metrics)
 
