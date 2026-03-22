@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`dev_marts`.`mrt_product_sales`
+    create or replace table `intense-pixel-490219-h2`.`prod_marts`.`mrt_product_sales`
       
     
     
@@ -24,7 +24,7 @@
            END) AS realized_revenue_by_product,
        CURRENT_TIMESTAMP() AS dbt_loaded_at
 
-FROM `intense-pixel-490219-h2`.`dev_core`.`int_sales_base`
+FROM `intense-pixel-490219-h2`.`prod_core`.`int_sales_base`
 GROUP BY product_key, product_name, category
     );
   

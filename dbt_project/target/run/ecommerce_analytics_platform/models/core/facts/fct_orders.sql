@@ -1,32 +1,50 @@
--- back compat for old kwarg name
+
   
+    
+
+    create or replace table `intense-pixel-490219-h2`.`prod_core`.`fct_orders`
+        
+  (
+    order_key string,
+    order_id INT64,
+    customer_key string,
+    order_created_at_date_key INT64,
+    created_at timestamp,
+    order_status string
+    
+    )
+
+      
+    partition by timestamp_trunc(created_at, day)
+    cluster by customer_key
+
+    
+    OPTIONS()
+    as (
+      
+    select order_key, order_id, customer_key, order_created_at_date_key, created_at, order_status
+    from (
+        
+
+WITH base AS (
+SELECT order_id,
+       customer_id,
+       created_at,
+       order_status
+FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_orders`
+
+
+)
+
+SELECT to_hex(md5(cast(coalesce(cast(b.order_id as string), '_dbt_utils_surrogate_key_null_') as string))) AS order_key,
+       b.order_id,
+       to_hex(md5(cast(coalesce(cast(b.customer_id as string), '_dbt_utils_surrogate_key_null_') as string))) AS customer_key,
+       dd_order_created_at.date_key AS order_created_at_date_key,
+       b.created_at,
+       b.order_status
+FROM base b
+JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_date` dd_order_created_at
+ON DATE(b.created_at) = dd_order_created_at.date
+    ) as model_subq
+    );
   
-        
-            
-	    
-	    
-            
-        
-    
-
-    
-
-    merge into `intense-pixel-490219-h2`.`dev_core`.`fct_orders` as DBT_INTERNAL_DEST
-        using (
-        select
-        * from `intense-pixel-490219-h2`.`dev_core`.`fct_orders__dbt_tmp`
-        ) as DBT_INTERNAL_SOURCE
-        on ((DBT_INTERNAL_SOURCE.order_key = DBT_INTERNAL_DEST.order_key))
-
-    
-    when matched then update set
-        `order_key` = DBT_INTERNAL_SOURCE.`order_key`,`order_id` = DBT_INTERNAL_SOURCE.`order_id`,`customer_key` = DBT_INTERNAL_SOURCE.`customer_key`,`order_created_at_date_key` = DBT_INTERNAL_SOURCE.`order_created_at_date_key`,`created_at` = DBT_INTERNAL_SOURCE.`created_at`,`order_status` = DBT_INTERNAL_SOURCE.`order_status`
-    
-
-    when not matched then insert
-        (`order_key`, `order_id`, `customer_key`, `order_created_at_date_key`, `created_at`, `order_status`)
-    values
-        (`order_key`, `order_id`, `customer_key`, `order_created_at_date_key`, `created_at`, `order_status`)
-
-
-    

@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`dev_marts`.`mrt_order_status_bucket`
+    create or replace table `intense-pixel-490219-h2`.`prod_marts`.`mrt_order_status_bucket`
       
     
     
@@ -19,7 +19,7 @@
        END AS order_status_bucket,
        COUNT(DISTINCT order_key) AS total_orders_by_order_status_bucket,
        CURRENT_TIMESTAMP() AS dbt_loaded_at
-FROM `intense-pixel-490219-h2`.`dev_core`.`int_sales_base`
+FROM `intense-pixel-490219-h2`.`prod_core`.`int_sales_base`
 GROUP BY order_status_bucket
     );
   

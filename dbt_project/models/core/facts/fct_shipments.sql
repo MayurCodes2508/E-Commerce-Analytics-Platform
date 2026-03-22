@@ -1,5 +1,4 @@
 {{ config(
-    incremental_strategy='merge',
     unique_key='shipment_key',
     partition_by={'field': 'shipped_at', 'data_type': 'timestamp', 'granularity': 'day'},
     cluster_by=['order_key']

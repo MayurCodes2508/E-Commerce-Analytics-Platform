@@ -1,5 +1,4 @@
 {{ config(
-    incremental_strategy='merge',
     unique_key='payment_key',
     partition_by={'field': 'payment_timestamp', 'data_type': 'timestamp', 'granularity': 'day'},
     cluster_by=['order_key']

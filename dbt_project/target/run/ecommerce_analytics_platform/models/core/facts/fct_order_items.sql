@@ -1,32 +1,61 @@
--- back compat for old kwarg name
+
   
+    
+
+    create or replace table `intense-pixel-490219-h2`.`prod_core`.`fct_order_items`
+        
+  (
+    order_item_key string,
+    order_item_id INT64,
+    order_key string,
+    product_key string,
+    order_item_created_at_date_key INT64,
+    created_at timestamp,
+    quantity INT64,
+    price numeric(18,2),
+    line_total numeric(18,2)
+    
+    )
+
+      
+    partition by timestamp_trunc(created_at, day)
+    cluster by order_key, product_key
+
+    
+    OPTIONS()
+    as (
+      
+    select order_item_key, order_item_id, order_key, product_key, order_item_created_at_date_key, created_at, quantity, price, line_total
+    from (
+        
+
+WITH base AS (
+SELECT oi.order_item_id,
+       oi.order_id,
+       oi.product_id,
+       o.created_at,
+       oi.quantity,
+       oi.price
+FROM `intense-pixel-490219-h2`.`prod_staging`.`stg_order_items` oi
+JOIN `intense-pixel-490219-h2`.`prod_staging`.`stg_orders` o
+ON oi.order_id = o.order_id
+
+
+
+)
+
+SELECT to_hex(md5(cast(coalesce(cast(b.order_item_id as string), '_dbt_utils_surrogate_key_null_') as string))) AS order_item_key,
+       b.order_item_id,
+	   to_hex(md5(cast(coalesce(cast(b.order_id as string), '_dbt_utils_surrogate_key_null_') as string))) AS order_key,
+       to_hex(md5(cast(coalesce(cast(b.product_id as string), '_dbt_utils_surrogate_key_null_') as string))) AS product_key,
+       dd_order_item_created_at.date_key AS order_item_created_at_date_key,
+       b.created_at,
+       b.quantity,
+       b.price,
+       b.quantity * b.price AS line_total
+FROM base b
+JOIN `intense-pixel-490219-h2`.`prod_core`.`dim_date` dd_order_item_created_at
+ON DATE(b.created_at) = dd_order_item_created_at.date
+    ) as model_subq
+    );
   
-        
-            
-	    
-	    
-            
-        
-    
-
-    
-
-    merge into `intense-pixel-490219-h2`.`dev_core`.`fct_order_items` as DBT_INTERNAL_DEST
-        using (
-        select
-        * from `intense-pixel-490219-h2`.`dev_core`.`fct_order_items__dbt_tmp`
-        ) as DBT_INTERNAL_SOURCE
-        on ((DBT_INTERNAL_SOURCE.order_item_key = DBT_INTERNAL_DEST.order_item_key))
-
-    
-    when matched then update set
-        `order_item_key` = DBT_INTERNAL_SOURCE.`order_item_key`,`order_item_id` = DBT_INTERNAL_SOURCE.`order_item_id`,`order_key` = DBT_INTERNAL_SOURCE.`order_key`,`product_key` = DBT_INTERNAL_SOURCE.`product_key`,`order_item_created_at_date_key` = DBT_INTERNAL_SOURCE.`order_item_created_at_date_key`,`created_at` = DBT_INTERNAL_SOURCE.`created_at`,`quantity` = DBT_INTERNAL_SOURCE.`quantity`,`price` = DBT_INTERNAL_SOURCE.`price`,`line_total` = DBT_INTERNAL_SOURCE.`line_total`
-    
-
-    when not matched then insert
-        (`order_item_key`, `order_item_id`, `order_key`, `product_key`, `order_item_created_at_date_key`, `created_at`, `quantity`, `price`, `line_total`)
-    values
-        (`order_item_key`, `order_item_id`, `order_key`, `product_key`, `order_item_created_at_date_key`, `created_at`, `quantity`, `price`, `line_total`)
-
-
-    

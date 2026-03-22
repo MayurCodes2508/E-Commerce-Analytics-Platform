@@ -10,14 +10,16 @@ macro-paths: ["macros"]
 test-paths: ["tests"]
 
 models:
-  ecommerce_analytics_platform: 
+  ecommerce_analytics_platform:
+    +on_configuration_change: apply
+    +on_schema_change: append_new_columns
 
     staging:
-      +dataset: staging
+      +schema: staging
       +materialized: view
 
     core:
-      +dataset: core
+      +schema: core
 
       intermediates:
         +materialized: view
@@ -27,8 +29,8 @@ models:
       
       facts:
         +materialized: incremental
-        +on_schema_change: append_new_columns
+        +incremental_strategy: merge
       
     marts:
-      +dataset: marts
+      +schema: marts
       +materialized: table
