@@ -51,8 +51,6 @@ for table_name, (file_name, id_column) in tables.items():
         if pd.isna(max_id):
             max_id = 0
 
-        df = df[df[id_column] > max_id]
-
     except NotFound:
         print("Table does not exist yet, creating new table.")
     except Exception as exc:

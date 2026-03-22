@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `intense-pixel-490219-h2`.`ci_dev_marts`.`mrt_sales_trends`
+    create or replace table `intense-pixel-490219-h2`.`dev_marts`.`mrt_sales_trends`
       
     
     
@@ -48,7 +48,7 @@
     END)) AS realized_aov_by_date,
     CURRENT_TIMESTAMP() AS dbt_loaded_at
 
-FROM `intense-pixel-490219-h2`.`ci_dev_core`.`int_sales_base`
+FROM `intense-pixel-490219-h2`.`dev_core`.`int_sales_base`
 GROUP BY date
     );
   
