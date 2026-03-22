@@ -12,5 +12,5 @@ SELECT product_key,
            END) AS realized_revenue_by_product,
        CURRENT_TIMESTAMP() AS dbt_loaded_at
 
-FROM `intense-pixel-490219-h2`.`prod_core`.`int_sales_base`
+FROM `intense-pixel-490219-h2`.`ci_dev_core`.`int_sales_base`
 GROUP BY product_key, product_name, category

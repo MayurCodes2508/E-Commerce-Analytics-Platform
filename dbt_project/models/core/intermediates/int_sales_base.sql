@@ -1,7 +1,7 @@
     SELECT
         oi.order_item_key,
         oi.order_key,
-        p.product_key,
+        oi.product_key,
         oi.order_item_created_at_date_key,
         d.date,
         o.order_status,

@@ -36,5 +36,5 @@ SELECT
     END)) AS realized_aov_by_date,
     CURRENT_TIMESTAMP() AS dbt_loaded_at
 
-FROM `intense-pixel-490219-h2`.`prod_core`.`int_sales_base`
+FROM `intense-pixel-490219-h2`.`ci_dev_core`.`int_sales_base`
 GROUP BY date
