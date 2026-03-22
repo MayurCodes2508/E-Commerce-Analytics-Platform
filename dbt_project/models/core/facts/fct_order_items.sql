@@ -24,14 +24,12 @@ WHERE o.created_at > (SELECT COALESCE(TIMESTAMP_SUB(MAX(created_at), INTERVAL 3 
 SELECT {{ dbt_utils.generate_surrogate_key(['b.order_item_id']) }} AS order_item_key,
        b.order_item_id,
 	   {{ dbt_utils.generate_surrogate_key(['b.order_id']) }} AS order_key,
-       dp.product_key,
+       {{ dbt_utils.generate_surrogate_key(['b.product_id']) }} AS product_key,
        dd_order_item_created_at.date_key AS order_item_created_at_date_key,
        b.created_at,
        b.quantity,
        b.price,
        b.quantity * b.price AS line_total
 FROM base b
-JOIN {{ ref('dim_products') }} dp
-ON b.product_id = dp.product_id
 JOIN {{ ref('dim_date') }} dd_order_item_created_at
 ON DATE(b.created_at) = dd_order_item_created_at.date
