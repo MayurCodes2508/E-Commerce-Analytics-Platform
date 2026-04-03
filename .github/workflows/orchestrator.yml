@@ -76,6 +76,7 @@ jobs:
                 method: oauth
                 project: intense-pixel-490219-h2
                 dataset: prod
+                location: asia-south1
                 threads: 4
           EOF
 
