@@ -1,1 +1,0 @@
-{{ test_not_null(column_name="net_revenue", model=get_where_subquery(ref('mrt_product_sales'))) }}

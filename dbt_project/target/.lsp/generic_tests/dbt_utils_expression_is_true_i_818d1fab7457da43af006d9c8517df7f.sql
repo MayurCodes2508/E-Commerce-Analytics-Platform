@@ -1,1 +1,0 @@
-{{ dbt_utils.test_expression_is_true(column_name="line_total", expression="line_total >= 0", model=get_where_subquery(ref('int_sales_base'))) }}

@@ -1,1 +1,0 @@
-{{ test_relationships(column_name="order_item_created_at_date_key", field="date_key", model=get_where_subquery(ref('int_sales_base')), to=ref('dim_date')) }}

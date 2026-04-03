@@ -1,1 +1,0 @@
-{{ test_relationships(column_name="shipped_date_key", field="date_key", model=get_where_subquery(ref('fct_shipments')), to=ref('dim_date')) }}

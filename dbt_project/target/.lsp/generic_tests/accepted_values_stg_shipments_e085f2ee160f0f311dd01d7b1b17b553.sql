@@ -1,1 +1,0 @@
-{{ test_accepted_values(column_name="shipment_status", model=get_where_subquery(ref('stg_shipments')), values=["in_transit","processing","delivered","returned","shipped"]) }}

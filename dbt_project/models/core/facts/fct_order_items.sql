@@ -12,7 +12,7 @@ SELECT oi.order_item_id,
        oi.quantity,
        oi.price
 FROM {{ ref('stg_order_items') }} oi
-JOIN {{ ref('stg_orders') }} o
+JOIN {{ ref('fct_orders') }} o
 ON oi.order_id = o.order_id
 
 {% if is_incremental() %}

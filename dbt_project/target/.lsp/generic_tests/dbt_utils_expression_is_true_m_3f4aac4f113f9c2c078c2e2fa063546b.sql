@@ -1,1 +1,0 @@
-{{ dbt_utils.test_expression_is_true(column_name="valid_orders_by_date", expression="<= total_orders_by_date", model=get_where_subquery(ref('mrt_sales_trends'))) }}

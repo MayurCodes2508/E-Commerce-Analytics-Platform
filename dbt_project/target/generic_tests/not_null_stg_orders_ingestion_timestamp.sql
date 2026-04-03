@@ -1,1 +1,0 @@
-{{ test_not_null(column_name="ingestion_timestamp", model=get_where_subquery(ref('stg_orders'))) }}

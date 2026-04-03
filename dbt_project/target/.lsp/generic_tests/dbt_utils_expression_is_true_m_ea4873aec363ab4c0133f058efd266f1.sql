@@ -1,1 +1,0 @@
-{{ dbt_utils.test_expression_is_true(column_name="realized_revenue_by_product", expression="<= net_revenue", model=get_where_subquery(ref('mrt_product_sales'))) }}

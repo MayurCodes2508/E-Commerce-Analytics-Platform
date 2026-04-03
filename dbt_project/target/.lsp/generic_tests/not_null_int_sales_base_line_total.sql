@@ -1,1 +1,0 @@
-{{ test_not_null(column_name="line_total", model=get_where_subquery(ref('int_sales_base'))) }}

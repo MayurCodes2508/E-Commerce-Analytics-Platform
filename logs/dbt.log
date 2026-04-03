@@ -1,0 +1,13 @@
+[0m13:48:25.910351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A05BC1AE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A06BCFC70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A06BCEB30>]}
+
+
+============================== 13:48:25.927649 | d150dba5-6e80-40c5-8f9f-f174a7dc760f ==============================
+[0m13:48:25.927649 [info ] [MainThread]: Running with dbt=1.10.17
+[0m13:48:25.931166 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\mayur\\AppData\\Roaming\\dbt', 'invocation_command': 'dbt debug --config-dir', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m13:48:26.070361 [info ] [MainThread]: To view your profiles.yml file, run:
+
+start C:\Users\mayur\AppData\Roaming\dbt
+[0m13:48:26.076360 [debug] [MainThread]: Command `dbt debug` succeeded at 13:48:26.075800 after 1.07 seconds
+[0m13:48:26.079148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A05BC1AE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A06BCEB30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A06BCF640>]}
+[0m13:48:26.081425 [debug] [MainThread]: Flushing usage events
+[0m13:48:27.242408 [debug] [MainThread]: An error was encountered while trying to flush usage events

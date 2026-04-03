@@ -1,1 +1,0 @@
-{{ test_unique(column_name="shipment_key", model=get_where_subquery(ref('fct_shipments'))) }}

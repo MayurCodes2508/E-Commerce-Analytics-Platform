@@ -46,4 +46,5 @@ models:
 
       - name: order_status
         data_type: string
-        description: "Status of the order"
+        description: "Status of the order (e.g., pending, completed, cancelled)"
+        

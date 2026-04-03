@@ -1,1 +1,0 @@
-{{ test_accepted_values(column_name="payment_status", model=get_where_subquery(ref('stg_payments')), values=["success","failed","refunded"]) }}
