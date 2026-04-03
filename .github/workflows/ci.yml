@@ -1,4 +1,5 @@
 name: CI Pipeline
+
 on:
   push:
     branches: [ main ]
@@ -29,11 +30,10 @@ jobs:
       - name: Authenticate GCP (OIDC)
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
-          create_credentials_file: true
-          export_environment_variables: true
-          
+          workload_identity_provider: projects/884914971497/locations/global/workloadIdentityPools/github-pool-v2/providers/github-provider
+          service_account: ecommerce-analytics-platform@intense-pixel-490219-h2.iam.gserviceaccount.com
+          token_format: access_token
+
       - name: Create dbt profile
         run: |
           mkdir -p ~/.dbt
@@ -43,7 +43,7 @@ jobs:
             outputs:
               ci:
                 type: bigquery
-                method: oauth
+                method: service-account
                 project: intense-pixel-490219-h2
                 dataset: ci_dev
                 threads: 4
