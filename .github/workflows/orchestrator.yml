@@ -73,11 +73,10 @@ jobs:
             outputs:
               prod:
                 type: bigquery
-                method: service-account
+                method: oauth
                 project: intense-pixel-490219-h2
                 dataset: prod
                 threads: 4
-                keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
           EOF
 
       - name: Run dbt
