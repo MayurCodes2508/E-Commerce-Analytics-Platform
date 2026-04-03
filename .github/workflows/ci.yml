@@ -33,6 +33,8 @@ jobs:
           workload_identity_provider: projects/884914971497/locations/global/workloadIdentityPools/github-pool-v2/providers/github-provider
           service_account: ecommerce-analytics-platform@intense-pixel-490219-h2.iam.gserviceaccount.com
           token_format: access_token
+          create_credentials_file: true
+          export_environment_variables: true
 
       - name: Create dbt profile
         run: |

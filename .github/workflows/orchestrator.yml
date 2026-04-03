@@ -38,7 +38,7 @@ jobs:
           service_account: ecommerce-analytics-platform@intense-pixel-490219-h2.iam.gserviceaccount.com
           token_format: access_token
           create_credentials_file: true
-          export_environment_variables: true
+          export_environment_variables: true 
 
       - name: Generate customers
         working-directory: ./data_generator/scripts
