@@ -49,6 +49,7 @@ jobs:
                 project: intense-pixel-490219-h2
                 dataset: ci_dev
                 threads: 4
+                keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
           EOF
 
       - name: Run dbt
