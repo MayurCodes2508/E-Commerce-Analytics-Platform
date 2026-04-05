@@ -1,77 +1,141 @@
-from google.cloud import bigquery
-from google.api_core.exceptions import NotFound
+from google.cloud import bigquery, storage
 import pandas as pd
 import os
+import datetime
 
 PROJECT_ID = "intense-pixel-490219-h2"
 DATASET = "raw"
+BUCKET_NAME = "e_commerce_analytics_bucket"  # 🔴 CHANGE THIS
 
-client = bigquery.Client(project=PROJECT_ID)
+# 🔥 Safety overlap (VERY IMPORTANT)
+SAFE_OFFSET = 1000  # tune based on your data volume
+
+bq_client = bigquery.Client(project=PROJECT_ID)
+storage_client = storage.Client()
+bucket = storage_client.bucket(BUCKET_NAME)
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_PATH = os.path.normpath(os.path.join(SCRIPT_DIR, "..", "data_generator", "output_data"))
+BASE_PATH = os.path.normpath(
+    os.path.join(SCRIPT_DIR, "..", "data_generator", "output_data")
+)
 
+# Table → file mapping
 tables = {
-    "customers": ("customers.csv", "customer_id"),
-    "products": ("products.csv", "product_id"),
-    "orders": ("orders.csv", "order_id"),
-    "order_items": ("order_items.csv", "order_item_id"),
-    "payments": ("payments.csv", "payment_id"),
-    "shipments": ("shipments.csv", "shipment_id")
+    "customers": "customers.csv",
+    "products": "products.csv",
+    "orders": "orders.csv",
+    "order_items": "order_items.csv",
+    "payments": "payments.csv",
+    "shipments": "shipments.csv"
 }
 
-for table_name, (file_name, id_column) in tables.items():
-    file_path = os.path.join(BASE_PATH, file_name)
+# Table → primary key mapping
+id_columns = {
+    "customers": "customer_id",
+    "products": "product_id",
+    "orders": "order_id",
+    "order_items": "order_item_id",
+    "payments": "payment_id",
+    "shipments": "shipment_id"
+}
 
-    print(f"\nProcessing {file_name}...")
+# Run metadata
+now = datetime.datetime.utcnow()
+date_str = now.strftime("%Y-%m-%d")
+run_ts = now.strftime("%Y-%m-%dT%H-%M-%S")
+
+for table_name, file_name in tables.items():
+    file_path = os.path.join(BASE_PATH, file_name)
+    table_id = f"{PROJECT_ID}.{DATASET}.{table_name}"
+    id_col = id_columns[table_name]
+
+    print(f"\n🔄 Processing {table_name}...")
 
     if not os.path.exists(file_path):
-        print(f"File not found: {file_path}, skipping")
+        print(f"❌ File not found: {file_path}, skipping")
         continue
 
     df = pd.read_csv(file_path)
 
     if df.empty:
-        print(f"{file_name} is empty, skipping")
+        print(f"⚠️ {table_name} is empty, skipping")
         continue
 
-    df["ingestion_timestamp"] = pd.Timestamp.utcnow()
-
-    table_id = f"{PROJECT_ID}.{DATASET}.{table_name}"
-
+    # -------------------------------
+    # 🔥 Incremental Filter (SAFE)
+    # -------------------------------
     try:
-        query = f"""
-        SELECT MAX({id_column}) AS max_id
-        FROM `{table_id}`
-        """
-
-        result = client.query(query).to_dataframe()
+        query = f"SELECT MAX({id_col}) AS max_id FROM `{table_id}`"
+        result = bq_client.query(query).to_dataframe()
         max_id = result["max_id"][0]
 
         if pd.isna(max_id):
             max_id = 0
 
-    except NotFound:
-        print("Table does not exist yet, creating new table.")
-    except Exception as exc:
-        print(f"Error checking max id for {table_name}: {exc}")
-        raise
+        print(f"ℹ️ Max {id_col} in BQ: {max_id}")
+
+    except Exception:
+        print(f"⚠️ Table may not exist yet. Loading full data.")
+        max_id = 0
+
+    # 🔥 Apply SAFE overlap window
+    lower_bound = max(max_id - SAFE_OFFSET, 0)
+
+    print(f"ℹ️ Applying filter: {id_col} > {lower_bound}")
+
+    df = df[df[id_col] > lower_bound]
 
     if df.empty:
-        print(f"No new rows for {table_name}")
+        print(f"✅ No new rows for {table_name}, skipping")
         continue
 
+    # -------------------------------
+    # 🛡️ Dedup (CRITICAL after overlap)
+    # -------------------------------
+    before_dedup = len(df)
+    df = df.drop_duplicates(subset=[id_col])
+    after_dedup = len(df)
+
+    print(f"🧹 Deduped {before_dedup - after_dedup} duplicate rows")
+
+    # -------------------------------
+    # 🕒 Add ingestion timestamp
+    # -------------------------------
+    df["ingestion_timestamp"] = pd.Timestamp.utcnow()
+
+    # -------------------------------
+    # 📦 Convert to Parquet
+    # -------------------------------
+    local_parquet = f"/tmp/{table_name}_{run_ts}.parquet"
+    df.to_parquet(local_parquet, index=False)
+
+    # -------------------------------
+    # ☁️ Upload to GCS
+    # -------------------------------
+    gcs_path = f"{table_name}/dt={date_str}/run_ts={run_ts}/data.parquet"
+
+    blob = bucket.blob(gcs_path)
+    blob.upload_from_filename(local_parquet)
+
+    print(f"☁️ Uploaded: gs://{BUCKET_NAME}/{gcs_path}")
+
+    # -------------------------------
+    # 📊 Load to BigQuery
+    # -------------------------------
     job_config = bigquery.LoadJobConfig(
+        source_format=bigquery.SourceFormat.PARQUET,
         write_disposition="WRITE_APPEND",
-        autodetect=True  
+        autodetect=True
     )
 
-    job = client.load_table_from_dataframe(
-        df,
+    uri = f"gs://{BUCKET_NAME}/{gcs_path}"
+
+    load_job = bq_client.load_table_from_uri(
+        uri,
         table_id,
         job_config=job_config
     )
 
-    job.result()
+    load_job.result()
 
-    print(f"{len(df)} new rows appended to {table_name}")
+    print(f"✅ Loaded {len(df)} rows into {table_name}")
