@@ -12,7 +12,6 @@ test-paths: ["tests"]
 models:
   ecommerce_analytics_platform:
     +on_configuration_change: apply
-    +on_schema_change: append_new_columns
 
     staging:
       +schema: staging
@@ -30,6 +29,8 @@ models:
       facts:
         +materialized: incremental
         +incremental_strategy: merge
+        +on_schema_change: append_new_columns
+        +require_partition_filter: true
       
     marts:
       +schema: marts

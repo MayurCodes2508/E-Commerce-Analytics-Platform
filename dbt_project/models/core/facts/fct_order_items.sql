@@ -1,6 +1,7 @@
 {{ config(
     unique_key='order_item_key',
     partition_by={'field': 'created_at', 'data_type': 'timestamp', 'granularity': 'day'},
+    partition_expiration_days = 90,
     cluster_by=['order_key', 'product_key']
 ) }}
 

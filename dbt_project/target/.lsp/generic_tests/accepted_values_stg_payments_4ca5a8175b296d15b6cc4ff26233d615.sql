@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="payment_method", model=get_where_subquery(ref('stg_payments')), values=["apple_pay","credit_card","paypal","bank_transfer","google_pay"]) }}

@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="order_status_bucket", model=get_where_subquery(ref('mrt_order_status_bucket'))) }}

@@ -1,0 +1,2 @@
+{{ config({"tags":[],"where":"delivered_at is not null"}) }}
+{{ dbt_utils.test_expression_is_true(column_name="delivered_at", expression=">= shipped_at", model=get_where_subquery(ref('fct_shipments'))) }}

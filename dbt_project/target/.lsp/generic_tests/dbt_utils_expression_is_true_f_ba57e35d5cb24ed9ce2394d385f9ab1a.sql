@@ -1,0 +1,1 @@
+{{ dbt_utils.test_expression_is_true(column_name="line_total", expression="= quantity * price", model=get_where_subquery(ref('fct_order_items'))) }}

@@ -1,6 +1,7 @@
 {{ config(
     unique_key='payment_key',
     partition_by={'field': 'payment_timestamp', 'data_type': 'timestamp', 'granularity': 'day'},
+    partition_expiration_days = 90,
     cluster_by=['order_key']
 ) }}
 
