@@ -5,10 +5,9 @@ import datetime
 
 PROJECT_ID = "intense-pixel-490219-h2"
 DATASET = "raw"
-BUCKET_NAME = "e_commerce_analytics_bucket"  # 🔴 CHANGE THIS
+BUCKET_NAME = "e_commerce_analytics_bucket"
 
-# 🔥 Safety overlap (VERY IMPORTANT)
-SAFE_OFFSET = 1000  # tune based on your data volume
+SAFE_OFFSET = 1000
 
 bq_client = bigquery.Client(project=PROJECT_ID)
 storage_client = storage.Client()
@@ -19,7 +18,6 @@ BASE_PATH = os.path.normpath(
     os.path.join(SCRIPT_DIR, "..", "data_generator", "output_data")
 )
 
-# Table → file mapping
 tables = {
     "customers": "customers.csv",
     "products": "products.csv",
@@ -29,7 +27,6 @@ tables = {
     "shipments": "shipments.csv"
 }
 
-# Table → primary key mapping
 id_columns = {
     "customers": "customer_id",
     "products": "product_id",
@@ -39,7 +36,6 @@ id_columns = {
     "shipments": "shipment_id"
 }
 
-# Run metadata
 now = datetime.datetime.utcnow()
 date_str = now.strftime("%Y-%m-%d")
 run_ts = now.strftime("%Y-%m-%dT%H-%M-%S")
@@ -49,21 +45,18 @@ for table_name, file_name in tables.items():
     table_id = f"{PROJECT_ID}.{DATASET}.{table_name}"
     id_col = id_columns[table_name]
 
-    print(f"\n🔄 Processing {table_name}...")
+    print(f"\n Processing {table_name}...")
 
     if not os.path.exists(file_path):
-        print(f"❌ File not found: {file_path}, skipping")
+        print(f"File not found: {file_path}, skipping")
         continue
 
     df = pd.read_csv(file_path)
 
     if df.empty:
-        print(f"⚠️ {table_name} is empty, skipping")
+        print(f"{table_name} is empty, skipping")
         continue
 
-    # -------------------------------
-    # 🔥 Incremental Filter (SAFE)
-    # -------------------------------
     try:
         query = f"SELECT MAX({id_col}) AS max_id FROM `{table_id}`"
         result = bq_client.query(query).to_dataframe()
@@ -72,56 +65,40 @@ for table_name, file_name in tables.items():
         if pd.isna(max_id):
             max_id = 0
 
-        print(f"ℹ️ Max {id_col} in BQ: {max_id}")
+        print(f"Max {id_col} in BQ: {max_id}")
 
     except Exception:
-        print(f"⚠️ Table may not exist yet. Loading full data.")
+        print(f"Table may not exist yet. Loading full data.")
         max_id = 0
 
-    # 🔥 Apply SAFE overlap window
     lower_bound = max(max_id - SAFE_OFFSET, 0)
 
-    print(f"ℹ️ Applying filter: {id_col} > {lower_bound}")
+    print(f"Applying filter: {id_col} > {lower_bound}")
 
     df = df[df[id_col] > lower_bound]
 
     if df.empty:
-        print(f"✅ No new rows for {table_name}, skipping")
+        print(f"No new rows for {table_name}, skipping")
         continue
 
-    # -------------------------------
-    # 🛡️ Dedup (CRITICAL after overlap)
-    # -------------------------------
     before_dedup = len(df)
     df = df.drop_duplicates(subset=[id_col])
     after_dedup = len(df)
 
-    print(f"🧹 Deduped {before_dedup - after_dedup} duplicate rows")
+    print(f"Deduped {before_dedup - after_dedup} duplicate rows")
 
-    # -------------------------------
-    # 🕒 Add ingestion timestamp
-    # -------------------------------
     df["ingestion_timestamp"] = pd.Timestamp.utcnow()
 
-    # -------------------------------
-    # 📦 Convert to Parquet
-    # -------------------------------
     local_parquet = f"/tmp/{table_name}_{run_ts}.parquet"
     df.to_parquet(local_parquet, index=False)
 
-    # -------------------------------
-    # ☁️ Upload to GCS
-    # -------------------------------
     gcs_path = f"{table_name}/dt={date_str}/run_ts={run_ts}/data.parquet"
 
     blob = bucket.blob(gcs_path)
     blob.upload_from_filename(local_parquet)
 
-    print(f"☁️ Uploaded: gs://{BUCKET_NAME}/{gcs_path}")
+    print(f"Uploaded: gs://{BUCKET_NAME}/{gcs_path}")
 
-    # -------------------------------
-    # 📊 Load to BigQuery
-    # -------------------------------
     job_config = bigquery.LoadJobConfig(
         source_format=bigquery.SourceFormat.PARQUET,
         write_disposition="WRITE_APPEND",
@@ -138,4 +115,4 @@ for table_name, file_name in tables.items():
 
     load_job.result()
 
-    print(f"✅ Loaded {len(df)} rows into {table_name}")
+    print(f"Loaded {len(df)} rows into {table_name}")
