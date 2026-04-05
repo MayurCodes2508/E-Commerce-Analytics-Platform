@@ -10,6 +10,8 @@ SELECT payment_id,
 FROM `intense-pixel-490219-h2`.`dev_staging`.`stg_payments`
 
 
+WHERE payment_timestamp > (SELECT COALESCE(TIMESTAMP_SUB(MAX(payment_timestamp), INTERVAL 3 DAY), TIMESTAMP('1970-01-01')) FROM `intense-pixel-490219-h2`.`dev_core`.`fct_payments`)
+
 )
 
 SELECT to_hex(md5(cast(coalesce(cast(b.payment_id as string), '_dbt_utils_surrogate_key_null_') as string))) AS payment_key,

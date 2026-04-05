@@ -1,0 +1,330 @@
+==================== 2026-04-05T07:06:04.803662Z | 3e8809cf-5d80-44f8-9ad7-3e9ea66c1c1e ====================
+07:06:04.803947 [info ]: Starting dbt LSP server
+07:06:04.804092 [info ]: Connecting to LSP client on port 8000
+07:06:04.825917 [info ]: Successfully connected to LSP client
+07:06:04.825944 [info ]: Creating LSP service...
+07:06:05.382616 [info ]: Creating LSP server...
+07:06:05.382769 [info ]: Starting LSP server...
+07:06:05.474464 [info ]: Loading ..\..\..\..\Users\mayur\AppData\Roaming\dbt\profiles.yml
+07:06:05.754618 [info ]: Started loading project
+07:06:05.756266 [info ]: Loading ..\..\..\..\Users\mayur\AppData\Roaming\dbt\profiles.yml
+07:06:05.777774 [info ]:    Started resolving packages from packages.yml
+07:06:06.363072 [info ]:   Finished [  0.59s] resolving packages from packages.yml (1 items)
+07:06:06.364469 [debug]:    Started loading packages
+07:06:06.410702 [debug]:     Loaded [  0.05s] packages
+07:06:06.413976 [info ]: Finished loading project [  0.66s]
+07:06:06.415680 [info ]: Started parsing
+07:06:06.656356 [debug]: Finished parsing models\core\dimensions\dim_customers.yml [  0.00s]
+07:06:06.657175 [debug]: Finished parsing models\core\dimensions\dim_date.yml [  0.00s]
+07:06:06.658105 [debug]: Finished parsing models\core\dimensions\dim_products.yml [  0.00s]
+07:06:06.659594 [debug]: Finished parsing models\core\facts\fct_order_items.yml [  0.00s]
+07:06:06.661053 [debug]: Finished parsing models\core\facts\fct_orders.yml [  0.00s]
+07:06:06.662445 [debug]: Finished parsing models\core\facts\fct_payments.yml [  0.00s]
+07:06:06.668288 [debug]: Finished parsing models\core\facts\fct_shipments.yml [  0.01s]
+07:06:06.670764 [debug]: Finished parsing models\core\intermediates\int_sales_base.yml [  0.00s]
+07:06:06.671690 [debug]: Finished parsing models\marts\exposures.yml [  0.00s]
+07:06:06.672862 [debug]: Finished parsing models\marts\mrt_order_status_bucket.yml [  0.00s]
+07:06:06.674985 [debug]: Finished parsing models\marts\mrt_product_sales.yml [  0.00s]
+07:06:06.677324 [debug]: Finished parsing models\marts\mrt_sales_trends.yml [  0.00s]
+07:06:06.679715 [debug]: Finished parsing models\sources\sources.yml [  0.00s]
+07:06:06.685471 [debug]: Finished parsing models\staging\stg_customers.yml [  0.01s]
+07:06:06.686637 [debug]: Finished parsing models\staging\stg_order_items.yml [  0.00s]
+07:06:06.687932 [debug]: Finished parsing models\staging\stg_orders.yml [  0.00s]
+07:06:06.689287 [debug]: Finished parsing models\staging\stg_payments.yml [  0.00s]
+07:06:06.690542 [debug]: Finished parsing models\staging\stg_products.yml [  0.00s]
+07:06:06.691919 [debug]: Finished parsing models\staging\stg_shipments.yml [  0.00s]
+07:06:06.722210 [debug]: Finished parsing models\core\dimensions\dim_customers.sql [  0.01s]
+07:06:06.724438 [debug]: Finished parsing models\core\dimensions\dim_date.sql [  0.00s]
+07:06:06.729136 [debug]: Finished parsing models\core\dimensions\dim_products.sql [  0.01s]
+07:06:06.738695 [debug]: Finished parsing models\core\facts\fct_order_items.sql [  0.01s]
+07:06:06.744749 [debug]: Finished parsing models\core\facts\fct_orders.sql [  0.01s]
+07:06:06.752629 [debug]: Finished parsing models\core\facts\fct_payments.sql [  0.01s]
+07:06:06.758695 [debug]: Finished parsing models\core\facts\fct_shipments.sql [  0.01s]
+07:06:06.760776 [debug]: Finished parsing models\core\intermediates\int_sales_base.sql [  0.00s]
+07:06:06.762840 [debug]: Finished parsing models\marts\mrt_order_status_bucket.sql [  0.00s]
+07:06:06.766485 [debug]: Finished parsing models\marts\mrt_product_sales.sql [  0.00s]
+07:06:06.768907 [debug]: Finished parsing models\marts\mrt_sales_trends.sql [  0.00s]
+07:06:06.771585 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+07:06:06.773823 [debug]: Finished parsing models\staging\stg_order_items.sql [  0.00s]
+07:06:06.776280 [debug]: Finished parsing models\staging\stg_orders.sql [  0.00s]
+07:06:06.778458 [debug]: Finished parsing models\staging\stg_payments.sql [  0.00s]
+07:06:06.781018 [debug]: Finished parsing models\staging\stg_products.sql [  0.00s]
+07:06:07.154718 [debug]: Finished parsing models\staging\stg_shipments.sql [  0.37s]
+07:06:07.179986 [debug]: Finished parsing target\generic_tests\not_null_fct_payments_order_key.sql [  0.00s]
+07:06:07.181099 [debug]: Finished parsing target\generic_tests\not_null_dim_customers_customer_id.sql [  0.00s]
+07:06:07.183865 [debug]: Finished parsing target\generic_tests\not_null_dim_customers_customer_key.sql [  0.00s]
+07:06:07.186229 [debug]: Finished parsing target\generic_tests\unique_dim_customers_customer_key.sql [  0.00s]
+07:06:07.192149 [debug]: Finished parsing target\generic_tests\unique_stg_order_items_order_item_id.sql [  0.02s]
+07:06:07.200118 [debug]: Finished parsing target\generic_tests\not_null_mrt_product_sales_gross_revenue_by_product.sql [  0.02s]
+07:06:07.210612 [debug]: Finished parsing target\generic_tests\not_null_stg_order_items_product_id.sql [  0.02s]
+07:06:07.218956 [debug]: Finished parsing target\generic_tests\not_null_mrt_product_sales_net_revenue_by_product.sql [  0.02s]
+07:06:07.230798 [debug]: Finished parsing target\generic_tests\relationships_fct_payments_298e547b66e3355e072ed5507eaed34f.sql [  0.05s]
+07:06:07.235421 [debug]: Finished parsing target\generic_tests\not_null_fct_payments_payment_date_key.sql [  0.05s]
+07:06:07.240206 [debug]: Finished parsing target\generic_tests\not_null_dim_date_date.sql [  0.05s]
+07:06:07.245411 [debug]: Finished parsing target\generic_tests\unique_dim_date_date.sql [  0.01s]
+07:06:07.245823 [debug]: Finished parsing target\generic_tests\not_null_dim_date_date_key.sql [  0.00s]
+07:06:07.248272 [debug]: Finished parsing target\generic_tests\unique_dim_date_date_key.sql [  0.00s]
+07:06:07.250906 [debug]: Finished parsing target\generic_tests\not_null_dim_products_product_id.sql [  0.00s]
+07:06:07.253767 [debug]: Finished parsing target\generic_tests\not_null_dim_products_product_key.sql [  0.00s]
+07:06:07.256221 [debug]: Finished parsing target\generic_tests\unique_dim_products_product_key.sql [  0.00s]
+07:06:07.258245 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_fct_order_items_line_total___0.sql [  0.00s]
+07:06:07.260785 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_f_ba57e35d5cb24ed9ce2394d385f9ab1a.sql [  0.00s]
+07:06:07.263022 [debug]: Finished parsing target\generic_tests\not_null_fct_order_items_order_item_created_at_date_key.sql [  0.00s]
+07:06:07.266956 [debug]: Finished parsing target\generic_tests\relationships_fct_order_items_b5de419e7836b3f6edcc2ed8738aba5a.sql [  0.00s]
+07:06:07.271123 [debug]: Finished parsing target\generic_tests\not_null_fct_order_items_order_item_id.sql [  0.00s]
+07:06:07.274041 [debug]: Finished parsing target\generic_tests\not_null_fct_order_items_order_item_key.sql [  0.00s]
+07:06:07.277506 [debug]: Finished parsing target\generic_tests\unique_fct_order_items_order_item_key.sql [  0.00s]
+07:06:07.281301 [debug]: Finished parsing target\generic_tests\not_null_fct_order_items_order_key.sql [  0.00s]
+07:06:07.287844 [debug]: Finished parsing target\generic_tests\relationships_fct_order_items_beddc09b69cdde5ebad348323e0294fa.sql [  0.01s]
+07:06:07.295195 [debug]: Finished parsing target\generic_tests\relationships_fct_payments_5ebf6c8d9f4e5fe91bab73e6316c8aba.sql [  0.06s]
+07:06:07.301895 [debug]: Finished parsing target\generic_tests\not_null_fct_order_items_product_key.sql [  0.00s]
+07:06:07.304538 [debug]: Finished parsing target\generic_tests\relationships_stg_order_items_85fcc371bcae46211ede4a7fca07283f.sql [  0.09s]
+07:06:07.304735 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_fct_order_items_price___0.sql [  0.02s]
+07:06:07.319055 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_m_82d3906fd4809b36578f5006df8af59e.sql [  0.10s]
+07:06:07.325035 [debug]: Finished parsing target\generic_tests\not_null_stg_orders_created_at.sql [  0.02s]
+07:06:07.325639 [debug]: Finished parsing target\generic_tests\not_null_fct_payments_payment_id.sql [  0.09s]
+07:06:07.343135 [debug]: Finished parsing target\generic_tests\not_null_mrt_product_sales_product_key.sql [  0.04s]
+07:06:07.345039 [debug]: Finished parsing target\generic_tests\not_null_stg_orders_customer_id.sql [  0.02s]
+07:06:07.361483 [debug]: Finished parsing target\generic_tests\unique_mrt_product_sales_product_key.sql [  0.02s]
+07:06:07.368212 [debug]: Finished parsing target\generic_tests\not_null_fct_payments_payment_key.sql [  0.04s]
+07:06:07.373392 [debug]: Finished parsing target\generic_tests\unique_fct_payments_payment_key.sql [  0.01s]
+07:06:07.373683 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_f_a1bab3f8204018eeecb262a88c450871.sql [  0.00s]
+07:06:07.375789 [debug]: Finished parsing target\generic_tests\relationships_fct_shipments_91be24e328e4dabb9e35845e2777d795.sql [  0.00s]
+07:06:07.378474 [debug]: Finished parsing target\generic_tests\not_null_fct_shipments_order_key.sql [  0.00s]
+07:06:07.381721 [debug]: Finished parsing target\generic_tests\relationships_fct_shipments_f22e8f0fcb6b2efa9e31f53eb1814d85.sql [  0.00s]
+07:06:07.384303 [debug]: Finished parsing target\generic_tests\not_null_fct_shipments_shipment_id.sql [  0.00s]
+07:06:07.386343 [debug]: Finished parsing target\generic_tests\relationships_fct_order_items_2e2e083f7ea65ad2ed45990153a70263.sql [  0.08s]
+07:06:07.389352 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_fct_order_items_quantity___0.sql [  0.06s]
+07:06:07.391151 [debug]: Finished parsing target\generic_tests\not_null_fct_orders_customer_key.sql [  0.00s]
+07:06:07.393233 [debug]: Finished parsing target\generic_tests\relationships_fct_orders_01863b95ad98bb6a66c90da6f065c2ae.sql [  0.00s]
+07:06:07.395383 [debug]: Finished parsing target\generic_tests\not_null_fct_orders_order_created_at_date_key.sql [  0.00s]
+07:06:07.398091 [debug]: Finished parsing target\generic_tests\relationships_fct_orders_cc19e0912c57ab7c00f43bb34ab9af02.sql [  0.00s]
+07:06:07.400640 [debug]: Finished parsing target\generic_tests\not_null_fct_orders_order_id.sql [  0.00s]
+07:06:07.402586 [debug]: Finished parsing target\generic_tests\not_null_fct_orders_order_key.sql [  0.00s]
+07:06:07.405011 [debug]: Finished parsing target\generic_tests\unique_fct_orders_order_key.sql [  0.00s]
+07:06:07.407847 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_fct_payments_amount___0.sql [  0.00s]
+07:06:07.414431 [debug]: Finished parsing target\generic_tests\relationships_stg_orders_96411fe0c89b49c3f4da955dfd358ba0.sql [  0.07s]
+07:06:07.474989 [debug]: Finished parsing target\generic_tests\not_null_mrt_product_sales_realized_revenue_by_product.sql [  0.11s]
+07:06:07.482700 [debug]: Finished parsing target\generic_tests\not_null_stg_orders_ingestion_timestamp.sql [  0.07s]
+07:06:07.498114 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_m_216dc8aebb005db67bf570f7205ba43e.sql [  0.02s]
+07:06:07.518412 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_completed_orders_by_date.sql [  0.02s]
+07:06:07.539097 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_m_cf192eabee561dfcc83a693bb30b316e.sql [  0.02s]
+07:06:07.571983 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_date.sql [  0.03s]
+07:06:07.594135 [debug]: Finished parsing target\generic_tests\unique_mrt_sales_trends_date.sql [  0.02s]
+07:06:07.617353 [debug]: Finished parsing target\generic_tests\not_null_fct_shipments_shipment_key.sql [  0.23s]
+07:06:07.619324 [debug]: Finished parsing target\generic_tests\unique_fct_shipments_shipment_key.sql [  0.00s]
+07:06:07.621310 [debug]: Finished parsing target\generic_tests\not_null_fct_shipments_shipped_date_key.sql [  0.00s]
+07:06:07.629017 [debug]: Finished parsing target\generic_tests\relationships_fct_shipments_d10a7e2cabfedb74a6d3aefd00339177.sql [  0.01s]
+07:06:07.631896 [debug]: Finished parsing target\generic_tests\not_null_int_sales_base_line_total.sql [  0.00s]
+07:06:07.634366 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_int_sales_base_line_total___0.sql [  0.00s]
+07:06:07.636497 [debug]: Finished parsing target\generic_tests\not_null_int_sales_base_order_item_created_at_date_key.sql [  0.00s]
+07:06:07.638723 [debug]: Finished parsing target\generic_tests\relationships_int_sales_base_2c0545584ee12dcff0a38c3cfdb55892.sql [  0.00s]
+07:06:07.640926 [debug]: Finished parsing target\generic_tests\not_null_int_sales_base_order_item_key.sql [  0.00s]
+07:06:07.643387 [debug]: Finished parsing target\generic_tests\not_null_stg_orders_order_id.sql [  0.17s]
+07:06:07.670114 [debug]: Finished parsing target\generic_tests\unique_stg_orders_order_id.sql [  0.03s]
+07:06:07.696659 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_dbt_loaded_at.sql [  0.10s]
+07:06:07.719971 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_gross_aov_by_date.sql [  0.02s]
+07:06:07.742394 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_gross_revenue_by_date.sql [  0.02s]
+07:06:07.758647 [debug]: Finished parsing target\generic_tests\accepted_values_stg_orders_e59cab49d44a888e1db75c71fc2e102d.sql [  0.09s]
+07:06:07.762089 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_net_aov_by_date.sql [  0.02s]
+07:06:07.782633 [debug]: Finished parsing target\generic_tests\not_null_stg_payments_ingestion_timestamp.sql [  0.02s]
+07:06:07.783997 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_net_revenue_by_date.sql [  0.02s]
+07:06:07.808377 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_m_5bf51ceac9d3ef1a4a5befde0eafdbf2.sql [  0.02s]
+07:06:07.828307 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_realized_aov_by_date.sql [  0.02s]
+07:06:07.851898 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_realized_revenue_by_date.sql [  0.02s]
+07:06:07.864964 [debug]: Finished parsing target\generic_tests\not_null_stg_payments_order_id.sql [  0.08s]
+07:06:07.875279 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_m_85039637f286d6e62c5326051344d56f.sql [  0.02s]
+07:06:07.885769 [debug]: Finished parsing target\generic_tests\relationships_stg_payments_order_id__order_id__ref_stg_orders_.sql [  0.02s]
+07:06:07.895131 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_total_orders_by_date.sql [  0.02s]
+07:06:07.904075 [debug]: Finished parsing target\generic_tests\not_null_stg_payments_payment_id.sql [  0.02s]
+07:06:07.907961 [debug]: Finished parsing target\generic_tests\unique_int_sales_base_order_item_key.sql [  0.27s]
+07:06:07.910103 [debug]: Finished parsing target\generic_tests\not_null_int_sales_base_order_key.sql [  0.00s]
+07:06:07.912180 [debug]: Finished parsing target\generic_tests\relationships_int_sales_base_37dd6e762dfe73862e36ece29252e2d9.sql [  0.00s]
+07:06:07.914558 [debug]: Finished parsing target\generic_tests\not_null_mrt_sales_trends_valid_orders_by_date.sql [  0.02s]
+07:06:07.917111 [debug]: Finished parsing target\generic_tests\dbt_utils_expression_is_true_m_3f4aac4f113f9c2c078c2e2fa063546b.sql [  0.00s]
+07:06:07.923203 [debug]: Finished parsing target\generic_tests\unique_stg_payments_payment_id.sql [  0.02s]
+07:06:07.941830 [debug]: Finished parsing target\generic_tests\accepted_values_stg_payments_4ca5a8175b296d15b6cc4ff26233d615.sql [  0.02s]
+07:06:07.944464 [debug]: Finished parsing target\generic_tests\not_null_int_sales_base_product_key.sql [  0.03s]
+07:06:07.946072 [debug]: Finished parsing target\generic_tests\relationships_int_sales_base_f6564d070f0b9567afe532ce12bd370a.sql [  0.03s]
+07:06:07.948556 [debug]: Finished parsing target\generic_tests\not_null_mrt_order_status_bucket_dbt_loaded_at.sql [  0.00s]
+07:06:07.950792 [debug]: Finished parsing target\generic_tests\not_null_mrt_order_status_bucket_order_status_bucket.sql [  0.00s]
+07:06:07.952955 [debug]: Finished parsing target\generic_tests\accepted_values_mrt_order_stat_70d00f2a7754233475b8ae6ca9279423.sql [  0.00s]
+07:06:07.955071 [debug]: Finished parsing target\generic_tests\not_null_mrt_order_status_buck_2c95baedfc77aad03935fedec787d393.sql [  0.00s]
+07:06:07.957493 [debug]: Finished parsing target\generic_tests\not_null_mrt_product_sales_dbt_loaded_at.sql [  0.00s]
+07:06:07.961232 [debug]: Finished parsing target\generic_tests\accepted_values_stg_payments_81c80655f09d0468d186255aea922825.sql [  0.02s]
+07:06:07.980015 [debug]: Finished parsing target\generic_tests\not_null_stg_payments_payment_timestamp.sql [  0.02s]
+07:06:07.990980 [debug]: Finished parsing target\generic_tests\not_null_stg_customers_customer_id.sql [  0.07s]
+07:06:07.993225 [debug]: Finished parsing target\generic_tests\unique_stg_customers_customer_id.sql [  0.00s]
+07:06:07.996091 [debug]: Finished parsing target\generic_tests\not_null_stg_customers_ingestion_timestamp.sql [  0.00s]
+07:06:07.999312 [debug]: Finished parsing target\generic_tests\not_null_stg_customers_is_active.sql [  0.00s]
+07:06:08.005344 [debug]: Finished parsing target\generic_tests\not_null_stg_order_items_ingestion_timestamp.sql [  0.01s]
+07:06:08.011720 [debug]: Finished parsing target\generic_tests\not_null_stg_order_items_order_id.sql [  0.01s]
+07:06:08.015026 [debug]: Finished parsing target\generic_tests\relationships_stg_order_items_b3d7cdbd08ebfad01e3226c01c10bba0.sql [  0.00s]
+07:06:08.037580 [debug]: Finished parsing target\generic_tests\not_null_stg_products_ingestion_timestamp.sql [  0.06s]
+07:06:08.039890 [debug]: Finished parsing target\generic_tests\not_null_stg_products_is_active.sql [  0.00s]
+07:06:08.042095 [debug]: Finished parsing target\generic_tests\not_null_stg_products_product_id.sql [  0.00s]
+07:06:08.044495 [debug]: Finished parsing target\generic_tests\unique_stg_products_product_id.sql [  0.00s]
+07:06:08.066344 [debug]: Finished parsing target\generic_tests\not_null_stg_order_items_order_item_id.sql [  0.05s]
+07:06:08.112999 [debug]: Finished parsing target\generic_tests\not_null_stg_shipments_ingestion_timestamp.sql [  0.07s]
+07:06:08.116738 [debug]: Finished parsing target\generic_tests\not_null_stg_shipments_order_id.sql [  0.00s]
+07:06:08.119627 [debug]: Finished parsing target\generic_tests\relationships_stg_shipments_order_id__order_id__ref_stg_orders_.sql [  0.00s]
+07:06:08.122636 [debug]: Finished parsing target\generic_tests\not_null_stg_shipments_shipment_id.sql [  0.00s]
+07:06:08.126121 [debug]: Finished parsing target\generic_tests\unique_stg_shipments_shipment_id.sql [  0.00s]
+07:06:08.145561 [debug]: Finished parsing target\generic_tests\accepted_values_stg_shipments_e085f2ee160f0f311dd01d7b1b17b553.sql [  0.02s]
+07:06:08.152829 [debug]: Finished parsing target\generic_tests\not_null_stg_shipments_shipped_at.sql [  0.01s]
+07:06:08.452668 [info ]: Finished parsing [  2.04s]
+07:06:08.459669 [info ]: Cached model count updated: 17 models (estimate)
+07:06:08.459773 [info ]: Cached model count updated: 17 models (accurate)
+07:06:08.460993 [info ]: Started scheduling
+07:06:08.462796 [info ]: Finished scheduling [  0.00s]
+07:06:08.462898 [debug]: Compilation - 18 nodes selected: {"exposure.ecommerce_analytics_platform.sales_dashboard", "model.ecommerce_analytics_platform.dim_customers", "model.ecommerce_analytics_platform.dim_date", "model.ecommerce_analytics_platform.dim_products", "model.ecommerce_analytics_platform.fct_order_items", "model.ecommerce_analytics_platform.fct_orders", "model.ecommerce_analytics_platform.fct_payments", "model.ecommerce_analytics_platform.fct_shipments", "model.ecommerce_analytics_platform.int_sales_base", "model.ecommerce_analytics_platform.mrt_order_status_bucket", "model.ecommerce_analytics_platform.mrt_product_sales", "model.ecommerce_analytics_platform.mrt_sales_trends", "model.ecommerce_analytics_platform.stg_customers", "model.ecommerce_analytics_platform.stg_order_items", "model.ecommerce_analytics_platform.stg_orders", "model.ecommerce_analytics_platform.stg_payments", "model.ecommerce_analytics_platform.stg_products", "model.ecommerce_analytics_platform.stg_shipments"}
+07:06:08.462990 [info ]: Started scheduling
+07:06:08.465680 [info ]: Finished scheduling [  0.00s]
+07:06:08.466384 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "intense-pixel-490219-h2", schema: "raw", table: "customers" }) and interval: None
+07:06:08.466662 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "intense-pixel-490219-h2", schema: "raw", table: "shipments" }) and interval: None
+07:06:08.470444 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "intense-pixel-490219-h2", schema: "raw", table: "products" }) and interval: None
+07:06:08.472487 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "intense-pixel-490219-h2", schema: "raw", table: "orders" }) and interval: None
+07:06:08.472694 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "intense-pixel-490219-h2", schema: "raw", table: "order_items" }) and interval: None
+07:06:08.473011 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "intense-pixel-490219-h2", schema: "raw", table: "payments" }) and interval: None
+07:06:08.479496 [debug]:    Started downloading relations (1 items)
+07:06:12.889432 [debug]: Query executed on node unknown:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `intense-pixel-490219-h2`.`dev_core`.INFORMATION_SCHEMA.TABLES
+07:06:12.895916 [debug]:   Finished [  4.42s] downloading relations (1 items)
+07:06:12.896026 [info ]: Started downloading schemas
+07:06:14.124230 [info ]: Downloaded `intense-pixel-490219-h2`.`dev_core`.`fct_order_items` (schema)
+07:06:14.126344 [info ]: Downloaded `intense-pixel-490219-h2`.`dev_core`.`fct_orders` (schema)
+07:06:14.128220 [info ]: Downloaded `intense-pixel-490219-h2`.`dev_core`.`fct_payments` (schema)
+07:06:14.130101 [info ]: Downloaded `intense-pixel-490219-h2`.`dev_core`.`fct_shipments` (schema)
+07:06:14.647671 [info ]: Started building task graph
+07:06:14.648227 [info ]: Finished building task graph [  0.00s]
+07:06:14.648856 [info ]: Started rendering (17 nodes)
+07:06:14.648953 [info ]: Started model dev_staging.stg_shipments
+07:06:14.649033 [debug]: Started rendering model dev_staging.stg_shipments
+07:06:14.649103 [info ]: Started model dev_staging.stg_payments
+07:06:14.649125 [debug]: Started rendering model dev_staging.stg_payments
+07:06:14.649171 [info ]: Started model dev_staging.stg_customers
+07:06:14.649171 [info ]: Finished downloading schemas [  1.75s]
+07:06:14.649201 [debug]: Started rendering model dev_staging.stg_customers
+07:06:14.649248 [info ]: Started model dev_staging.stg_order_items
+07:06:14.649279 [debug]: Started rendering model dev_staging.stg_order_items
+07:06:14.649315 [info ]: Started model dev_staging.stg_orders
+07:06:14.649342 [debug]: Started rendering model dev_staging.stg_orders
+07:06:14.649882 [info ]: Started model dev_staging.stg_products
+07:06:14.649926 [debug]: Started rendering model dev_staging.stg_products
+07:06:14.649966 [info ]: Started model dev_core.dim_date
+07:06:14.649990 [debug]: Started rendering model dev_core.dim_date
+07:06:14.659613 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.dim_date at target\.lsp\compiled\models\core\dimensions\dim_date.sql
+07:06:14.659905 [info ]: Started analyzing (17 nodes)
+07:06:14.659938 [debug]: Started analyzing model dev_core.dim_date
+07:06:14.660037 [debug]: Finished rendering [  0.01s] model dev_core.dim_date [success]
+07:06:14.681953 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.stg_products at target\.lsp\compiled\models\staging\stg_products.sql
+07:06:14.682084 [debug]: Started analyzing model dev_staging.stg_products
+07:06:14.682202 [debug]: Finished rendering [  0.03s] model dev_staging.stg_products [success]
+07:06:14.682269 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.stg_customers at target\.lsp\compiled\models\staging\stg_customers.sql
+07:06:14.682353 [debug]: Started analyzing model dev_staging.stg_customers
+07:06:14.685738 [debug]: Finished rendering [  0.04s] model dev_staging.stg_customers [success]
+07:06:14.690572 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.stg_shipments at target\.lsp\compiled\models\staging\stg_shipments.sql
+07:06:14.690699 [debug]: Started analyzing model dev_staging.stg_shipments
+07:06:14.690775 [debug]: Finished rendering [  0.04s] model dev_staging.stg_shipments [success]
+07:06:14.753328 [info ]:  Succeeded [  0.10s] model dev_core.dim_date (table)
+07:06:14.753410 [debug]: Finished analyzing [  0.09s] model dev_core.dim_date [success]
+07:06:14.753483 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.stg_orders at target\.lsp\compiled\models\staging\stg_orders.sql
+07:06:14.753580 [debug]: Started analyzing model dev_staging.stg_orders
+07:06:14.753658 [debug]: Finished rendering [  0.10s] model dev_staging.stg_orders [success]
+07:06:14.753716 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.stg_order_items at target\.lsp\compiled\models\staging\stg_order_items.sql
+07:06:14.753798 [debug]: Started analyzing model dev_staging.stg_order_items
+07:06:14.754548 [info ]:  Succeeded [  0.10s] model dev_staging.stg_shipments (view)
+07:06:14.754609 [debug]: Finished analyzing [  0.06s] model dev_staging.stg_shipments [success]
+07:06:14.754658 [info ]: Started model dev_core.fct_shipments
+07:06:14.754689 [debug]: Started rendering model dev_core.fct_shipments
+07:06:14.754762 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.stg_payments at target\.lsp\compiled\models\staging\stg_payments.sql
+07:06:14.754838 [debug]: Started analyzing model dev_staging.stg_payments
+07:06:14.754937 [debug]: Finished rendering [  0.11s] model dev_staging.stg_payments [success]
+07:06:14.758527 [info ]:  Succeeded [  0.11s] model dev_staging.stg_products (view)
+07:06:14.758585 [debug]: Finished analyzing [  0.08s] model dev_staging.stg_products [success]
+07:06:14.758634 [info ]: Started model dev_core.dim_products
+07:06:14.758663 [debug]: Started rendering model dev_core.dim_products
+07:06:14.762280 [info ]:  Succeeded [  0.11s] model dev_staging.stg_orders (view)
+07:06:14.762337 [debug]: Finished analyzing [  0.01s] model dev_staging.stg_orders [success]
+07:06:14.762385 [info ]: Started model dev_core.fct_orders
+07:06:14.762414 [debug]: Started rendering model dev_core.fct_orders
+07:06:14.762477 [debug]: Finished rendering [  0.11s] model dev_staging.stg_order_items [success]
+07:06:14.763840 [info ]:  Succeeded [  0.11s] model dev_staging.stg_customers (view)
+07:06:14.763900 [debug]: Finished analyzing [  0.08s] model dev_staging.stg_customers [success]
+07:06:14.763958 [info ]: Started model dev_core.dim_customers
+07:06:14.764032 [debug]: Started rendering model dev_core.dim_customers
+07:06:14.772714 [info ]:  Succeeded [  0.12s] model dev_staging.stg_order_items (view)
+07:06:14.772782 [debug]: Finished analyzing [  0.02s] model dev_staging.stg_order_items [success]
+07:06:14.774324 [info ]:  Succeeded [  0.12s] model dev_staging.stg_payments (view)
+07:06:14.774383 [debug]: Finished analyzing [  0.02s] model dev_staging.stg_payments [success]
+07:06:14.774456 [info ]: Started model dev_core.fct_payments
+07:06:14.774490 [debug]: Started rendering model dev_core.fct_payments
+07:06:14.854248 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.dim_customers at target\.lsp\compiled\models\core\dimensions\dim_customers.sql
+07:06:14.854390 [debug]: Started analyzing model dev_core.dim_customers
+07:06:14.854481 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.fct_shipments at target\.lsp\compiled\models\core\facts\fct_shipments.sql
+07:06:14.854624 [debug]: Started analyzing model dev_core.fct_shipments
+07:06:14.854710 [debug]: Finished rendering [  0.09s] model dev_core.dim_customers [success]
+07:06:14.855094 [debug]: Finished rendering [  0.10s] model dev_core.fct_shipments [success]
+07:06:14.870691 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.dim_products at target\.lsp\compiled\models\core\dimensions\dim_products.sql
+07:06:14.870818 [debug]: Started analyzing model dev_core.dim_products
+07:06:14.870957 [debug]: Finished rendering [  0.11s] model dev_core.dim_products [success]
+07:06:14.906622 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.fct_payments at target\.lsp\compiled\models\core\facts\fct_payments.sql
+07:06:14.906749 [debug]: Started analyzing model dev_core.fct_payments
+07:06:14.906816 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.fct_orders at target\.lsp\compiled\models\core\facts\fct_orders.sql
+07:06:14.906873 [debug]: Started analyzing model dev_core.fct_orders
+07:06:14.906932 [debug]: Finished rendering [  0.13s] model dev_core.fct_payments [success]
+07:06:14.923718 [info ]:  Succeeded [  0.16s] model dev_core.dim_customers (table)
+07:06:14.923774 [debug]: Finished analyzing [  0.07s] model dev_core.dim_customers [success]
+07:06:14.923832 [debug]: Finished rendering [  0.16s] model dev_core.fct_orders [success]
+07:06:14.942406 [info ]:  Succeeded [  0.18s] model dev_core.dim_products (table)
+07:06:14.942472 [debug]: Finished analyzing [  0.07s] model dev_core.dim_products [success]
+07:06:15.031079 [info ]:  Succeeded [  0.26s] model dev_core.fct_payments (incremental)
+07:06:15.031147 [debug]: Finished analyzing [  0.12s] model dev_core.fct_payments [success]
+07:06:15.040501 [info ]:  Succeeded [  0.28s] model dev_core.fct_orders (incremental)
+07:06:15.040571 [debug]: Finished analyzing [  0.13s] model dev_core.fct_orders [success]
+07:06:15.040626 [info ]: Started model dev_core.fct_order_items
+07:06:15.040659 [debug]: Started rendering model dev_core.fct_order_items
+07:06:15.044215 [info ]:  Succeeded [  0.29s] model dev_core.fct_shipments (incremental)
+07:06:15.044286 [debug]: Finished analyzing [  0.19s] model dev_core.fct_shipments [success]
+07:06:15.072503 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.fct_order_items at target\.lsp\compiled\models\core\facts\fct_order_items.sql
+07:06:15.072686 [debug]: Started analyzing model dev_core.fct_order_items
+07:06:15.072778 [debug]: Finished rendering [  0.03s] model dev_core.fct_order_items [success]
+07:06:15.131417 [info ]:  Succeeded [  0.09s] model dev_core.fct_order_items (incremental)
+07:06:15.131481 [debug]: Finished analyzing [  0.06s] model dev_core.fct_order_items [success]
+07:06:15.131540 [info ]: Started model dev_core.int_sales_base
+07:06:15.131576 [debug]: Started rendering model dev_core.int_sales_base
+07:06:15.136957 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.int_sales_base at target\.lsp\compiled\models\core\intermediates\int_sales_base.sql
+07:06:15.137091 [debug]: Started analyzing model dev_core.int_sales_base
+07:06:15.137179 [debug]: Finished rendering [  0.01s] model dev_core.int_sales_base [success]
+07:06:15.148239 [info ]:  Succeeded [  0.02s] model dev_core.int_sales_base (view)
+07:06:15.148304 [debug]: Finished analyzing [  0.01s] model dev_core.int_sales_base [success]
+07:06:15.148371 [info ]: Started model dev_marts.mrt_product_sales
+07:06:15.148402 [debug]: Started rendering model dev_marts.mrt_product_sales
+07:06:15.148456 [info ]: Started model dev_marts.mrt_sales_trends
+07:06:15.148477 [debug]: Started rendering model dev_marts.mrt_sales_trends
+07:06:15.148510 [info ]: Started model dev_marts.mrt_order_status_bucket
+07:06:15.148536 [debug]: Started rendering model dev_marts.mrt_order_status_bucket
+07:06:15.161017 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.mrt_product_sales at target\.lsp\compiled\models\marts\mrt_product_sales.sql
+07:06:15.161160 [debug]: Started analyzing model dev_marts.mrt_product_sales
+07:06:15.161233 [debug]: Finished rendering [  0.01s] model dev_marts.mrt_product_sales [success]
+07:06:15.175334 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.mrt_order_status_bucket at target\.lsp\compiled\models\marts\mrt_order_status_bucket.sql
+07:06:15.175453 [debug]: Started analyzing model dev_marts.mrt_order_status_bucket
+07:06:15.175530 [debug]: Finished rendering [  0.03s] model dev_marts.mrt_order_status_bucket [success]
+07:06:15.180603 [debug]: Compiled SQL for node model.ecommerce_analytics_platform.mrt_sales_trends at target\.lsp\compiled\models\marts\mrt_sales_trends.sql
+07:06:15.180764 [debug]: Started analyzing model dev_marts.mrt_sales_trends
+07:06:15.180857 [debug]: Finished rendering [  0.03s] model dev_marts.mrt_sales_trends [success]
+07:06:15.180887 [info ]: Finished rendering [  0.53s] (17 nodes, 0 skipped, 0 errors)
+07:06:15.210806 [info ]:  Succeeded [  0.06s] model dev_marts.mrt_order_status_bucket (table)
+07:06:15.210874 [debug]: Finished analyzing [  0.04s] model dev_marts.mrt_order_status_bucket [success]
+07:06:15.223955 [info ]:  Succeeded [  0.07s] model dev_marts.mrt_product_sales (table)
+07:06:15.224021 [debug]: Finished analyzing [  0.06s] model dev_marts.mrt_product_sales [success]
+07:06:15.261252 [info ]:  Succeeded [  0.11s] model dev_marts.mrt_sales_trends (table)
+07:06:15.261338 [debug]: Finished analyzing [  0.08s] model dev_marts.mrt_sales_trends [success]
+07:06:15.261364 [info ]: Finished analyzing [  0.60s] (17 nodes, 0 skipped, 0 errors)
+07:06:15.280075 [info ]: Cached model count updated: 17 models (accurate)

@@ -11,3 +11,53 @@ start C:\Users\mayur\AppData\Roaming\dbt
 [0m13:48:26.079148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A05BC1AE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A06BCEB30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A06BCF640>]}
 [0m13:48:26.081425 [debug] [MainThread]: Flushing usage events
 [0m13:48:27.242408 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:33:11.038967 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208BD1D1B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208BF1A9E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208BF1AB670>]}
+
+
+============================== 12:33:11.054592 | f45ae877-cc8f-4c31-b324-6c0972beb135 ==============================
+[0m12:33:11.054592 [info ] [MainThread]: Running with dbt=1.10.17
+[0m12:33:11.054592 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\mayur\\AppData\\Roaming\\dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m12:33:11.138430 [info ] [MainThread]: dbt version: 1.10.17
+[0m12:33:11.138430 [info ] [MainThread]: python version: 3.10.11
+[0m12:33:11.138430 [info ] [MainThread]: python path: C:\Users\mayur\AppData\Local\Programs\Python\Python310\python.exe
+[0m12:33:11.138430 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m12:33:32.232156 [info ] [MainThread]: Using profiles dir at C:\Users\mayur\AppData\Roaming\dbt
+[0m12:33:32.232156 [info ] [MainThread]: Using profiles.yml file at C:\Users\mayur\AppData\Roaming\dbt\profiles.yml
+[0m12:33:32.232156 [info ] [MainThread]: Using dbt_project.yml file at C:\my_analytics\analytics_projects\ecommerce_analytics_platform\dbt_project.yml
+[0m12:33:32.232156 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m12:33:32.244323 [debug] [MainThread]: Command `dbt debug` failed at 12:33:32.243705 after 21.48 seconds
+[0m12:33:32.247239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208BD1D1B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208CC348550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208D21EE2C0>]}
+[0m12:33:32.250103 [debug] [MainThread]: Flushing usage events
+[0m12:33:33.574350 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:34:35.832035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1BAD11AE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1BCCECEB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1BCCEE830>]}
+
+
+============================== 12:34:35.832035 | 34231734-34b6-4531-85e9-3ac78e7861de ==============================
+[0m12:34:35.832035 [info ] [MainThread]: Running with dbt=1.10.17
+[0m12:34:35.849641 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\mayur\\AppData\\Roaming\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt build --target dev', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m12:34:35.850842 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\my_analytics\analytics_projects\ecommerce_analytics_platform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:34:35.857251 [debug] [MainThread]: Command `dbt build` failed at 12:34:35.856238 after 0.26 seconds
+[0m12:34:35.859419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1BAD11AE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1BCCEED40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1BCCEFE80>]}
+[0m12:34:35.861087 [debug] [MainThread]: Flushing usage events
+[0m12:34:37.534294 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:34:52.950764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000261A64B1B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000261A74B9E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000261A74BB670>]}
+
+
+============================== 12:34:52.950764 | 67ad50ca-6a63-425d-9baf-28c8d39de4b1 ==============================
+[0m12:34:52.950764 [info ] [MainThread]: Running with dbt=1.10.17
+[0m12:34:52.966356 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\mayur\\AppData\\Roaming\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt clean', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m12:34:52.966356 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\my_analytics\analytics_projects\ecommerce_analytics_platform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:34:52.973585 [debug] [MainThread]: Command `dbt clean` failed at 12:34:52.972593 after 0.24 seconds
+[0m12:34:52.974620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000261A64B1B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000261A7584550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000261A7584460>]}
+[0m12:34:52.975618 [debug] [MainThread]: Flushing usage events
+[0m12:34:53.923315 [debug] [MainThread]: An error was encountered while trying to flush usage events

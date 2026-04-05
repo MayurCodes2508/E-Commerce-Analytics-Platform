@@ -1,206 +1,121 @@
-🛒 E-Commerce Analytics Platform (End-to-End Data Pipeline)
+# E-Commerce Analytics Platform
 
-📌 Overview
+## Portfolio Summary
+This project demonstrates an end-to-end analytics engineering workflow for e-commerce data, from synthetic operational data generation to production-style transformation and reporting layers in BigQuery.
 
-This project simulates a production-grade analytics platform for an e-commerce business. It covers the full data lifecycle — from data generation and ingestion to transformation, modeling, analytics, and automation.
+The repository focuses on reliable data modeling patterns, automated execution, and analytics-ready outputs using dbt.
 
-The goal is to demonstrate how modern data teams build scalable, reliable, and production-ready analytics systems.
+## What I Built
+- Synthetic source data generation for customers, products, orders, order items, payments, and shipments.
+- Cloud ingestion pipeline that stages Parquet files in GCS and appends data into BigQuery raw tables.
+- Layered dbt project with staging, core, intermediate, and marts.
+- Dimensional model with three dimensions and four fact tables.
+- KPI marts for sales trends, product sales, and order status distribution.
+- CI, CD, and scheduled orchestration with GitHub Actions using GCP OIDC authentication.
 
----
+## End-to-End Pipeline Architecture
+```text
+Python Data Generators (CSV)
+  -> GCS Parquet Staging
+  -> BigQuery Raw Tables (append)
+  -> dbt Transformations
+      - staging (cleaning + deduplication)
+      - core dimensions/facts (surrogate keys + incremental facts)
+      - intermediate business layer
+      - marts (analytics KPIs)
+  -> Dashboard Exposure (sales_dashboard)
+```
 
-🚀 Key Features
+## How Data Flows Through the System
+1. Scripts in data_generator/scripts create or append CSV data in data_generator/output_data.
+2. ingestion/load_to_bigquery.py reads CSV files, applies a safe overlap window, deduplicates by table key, adds ingestion_timestamp, writes Parquet, uploads to GCS, and appends to BigQuery raw tables.
+3. dbt sources define raw tables with freshness thresholds.
+4. Staging models clean and type-cast fields and keep the latest record per business key using ROW_NUMBER and QUALIFY over ingestion_timestamp.
+5. Core models build dimensions and incremental fact tables with BigQuery partitioning, clustering, and a 3-day lookback in incremental logic.
+6. int_sales_base joins facts and dimensions into reusable sales logic.
+7. Mart models aggregate business metrics and add dbt_loaded_at for load observability.
+8. exposures.yml links mart outputs to the sales_dashboard exposure.
 
-🔹 Data Engineering
+## Key Engineering Decisions
+- Layered dbt structure to separate raw cleanup, reusable business logic, and BI-ready outputs.
+- Incremental fact models with merge strategy plus partitioning and clustering for scalable queries.
+- Source freshness checks and model-level tests (not_null, unique, relationships, accepted_values).
+- Contracts enabled on core dimensions and facts.
+- Ingestion design uses overlap plus deduplication to reduce missed late-arriving records.
 
-- Synthetic OLTP data generation (customers, orders, payments, shipments)
-- Incremental data ingestion into BigQuery
-- Append-only raw layer with ingestion metadata
+## Core Models
+Dimensions:
+- dim_customers
+- dim_products
+- dim_date
 
-🔹 Data Modeling (dbt)
+Facts:
+- fct_orders
+- fct_order_items
+- fct_payments
+- fct_shipments
 
-Layered architecture:
+Intermediate:
+- int_sales_base
 
-- Staging → cleaning & deduplication  
-- Core → dimensional modeling (facts & dimensions)  
-- Intermediate → reusable business logic  
-- Marts → analytics-ready datasets  
+Marts:
+- mrt_sales_trends
+- mrt_product_sales
+- mrt_order_status_bucket
 
-- Star schema design with proper grain handling
+## Automation in This Repository
+- CI workflow: .github/workflows/ci.yml
+  - Runs on push and pull request to main.
+  - Executes dbt deps and dbt build --target ci.
+- CD workflow: .github/workflows/cd.yml
+  - Runs when CI succeeds on main.
+  - Executes dbt deps and dbt build --target prod.
+- Orchestrator workflow: .github/workflows/orchestrator.yml
+  - Runs on schedule (every 12 hours) and manual dispatch.
+  - Executes generation, ingestion, and dbt build --target prod.
 
-🔹 Performance Optimization
+## Run Locally
+1. Install dependencies:
 
-- Incremental models for large fact tables  
-- Partitioning & clustering for efficient querying  
-
-🔹 Data Quality & Governance
-
-- Data tests (not null, unique, relationships, business rules)  
-- Model contracts (schema enforcement)  
-- Source freshness checks  
-- Environment separation (dev / prod)  
-- IAM-based access control  
-
-🔹 Observability
-
-- Ingestion timestamps  
-- `dbt_loaded_at` tracking in marts  
-- Data freshness validation  
-
-🔹 Analytics & BI
-
-Power BI dashboard powered by marts
-
-Key metrics:
-- Gross, Net, and Realized Revenue  
-- Total / Valid / Completed Orders  
-- Average Order Value (AOV)  
-
-🔹 Metadata & Lineage
-
-- dbt exposures linking models → dashboard  
-- Full lineage visualization using dbt docs  
-
-🔹 CI/CD & Orchestration 🚀
-
-- CI Pipeline (GitHub Actions)
-  - Runs on push / PR  
-  - Validates dbt models and tests  
-
-- CD Pipeline 
-  - Deploys models to production after CI passes  
-
-- Orchestration (GitHub Actions Cron)
-  - Runs daily automated pipeline  
-  - Flow:
-    ```
-    Data Generation → Ingestion → dbt (prod)
-    ```
-  - Uses secure GCP OIDC authentication (no service account keys) 
-
----
-
-🏗️ Architecture
-Data Generator (Python) ↓ BigQuery (Raw Layer) ↓ dbt (Staging → Core → Intermediate → Marts) ↓ Power BI Dashboard
-Copy code
-
----
-
-📊 Data Model
-
-Dimensions
-- `dim_customers`
-- `dim_products`
-- `dim_date`
-
-Facts
-- `fct_orders`
-- `fct_order_items`
-- `fct_payments`
-- `fct_shipments`
-
-Intermediate
-- `int_sales_base`
-
-Marts
-- `mrt_sales_trends`
-- `mrt_product_sales`
-- `mrt_order_status_bucket`
-
----
-
-📈 Dashboard Highlights
-
-The Power BI dashboard provides:
-
-- Revenue trends over time  
-- Product performance analysis  
-- Order lifecycle distribution  
-- KPI tracking (Revenue, Orders, AOV)  
-
-> ⚠️ Note: Data is synthetically generated and may not reflect real-world distributions.
-
----
-
-🧠 Key Business Logic
-
-- Gross Revenue → All orders  
-- Net Revenue → Excludes refunded orders  
-- Realized Revenue → Delivered orders only  
-- AOV → Revenue / Orders (aligned with each metric)  
-
----
-
-🛠️ Tech Stack
-
-- Warehouse: BigQuery  
-- Transformation: dbt  
-- Orchestration & CI/CD: GitHub Actions  
-- Data Generation: Python (Pandas, Faker)  
-- BI Tool: Power BI  
-
----
-
-⚙️ How to Run (Local)
-
-1. Install dependencies
+```bash
 pip install -r requirements.txt
-Copy code
+```
 
-2. Generate Data
-python data_generator/scripts/generate_customers.py python data_generator/scripts/generate_orders.py python data_generator/scripts/generate_order_items.py python data_generator/scripts/generate_payments.py python data_generator/scripts/generate_shipments.py
-Copy code
+2. Generate source data (run from data_generator/scripts):
 
-3. Ingest to BigQuery
-python ingestion/load_to_bigquery.py
-Copy code
+```bash
+python generate_products.py
+python generate_customers.py
+python generate_orders.py
+python generate_order_items.py
+python generate_payments.py
+python generate_shipments.py
+```
 
-4. Run dbt Models
-dbt build --target dev dbt build --target prod
-Copy code
+3. Ingest to BigQuery (run from ingestion):
 
-5. Serve Documentation
-dbt docs generate dbt docs serve
-Copy code
+```bash
+python load_to_bigquery.py
+```
 
----
+4. Run dbt (run from dbt_project):
 
-🔄 Automated Pipeline
+```bash
+dbt deps
+dbt build --target <your_target>
+```
 
-Once deployed:
-Runs daily via GitHub Actions: → Generate data → Load into BigQuery → Transform using dbt (prod) → Validate with tests
-Copy code
+5. Generate and serve docs (run from dbt_project):
 
----
+```bash
+dbt docs generate --target <your_target>
+dbt docs serve
+```
 
-🔐 Environments
-
-- dev → development & testing  
-- prod → production-ready models for BI  
-
----
-
-🔄 Future Enhancements
-
-- Slim CI (state-based runs)  
-- Cost monitoring (BigQuery)  
-- Data anomaly detection  
-- Semantic layer (dbt metrics)  
-
----
-
-🎯 What This Project Demonstrates
-
-- End-to-end data pipeline design  
-- Dimensional modeling best practices  
-- CI/CD for data pipelines  
-- Workflow orchestration  
-- Data quality enforcement  
-- Business-focused analytics  
-
----
-
-👤 Author
-
-Mayur  
-
-Aspiring Analytics Engineer / Data Engineer
+## Technologies Used
+- Python
+- dbt and dbt-bigquery
+- BigQuery
+- Google Cloud Storage
+- dbt_utils
+- GitHub Actions
