@@ -56,4 +56,4 @@ jobs:
         working-directory: ./dbt_project
         run: |
           dbt deps
-          dbt build --full-refresh --target ci
+          dbt build --target ci

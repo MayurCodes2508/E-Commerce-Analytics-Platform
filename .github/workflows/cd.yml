@@ -57,4 +57,4 @@ jobs:
         working-directory: ./dbt_project
         run: |
           dbt deps
-          dbt build --full-refresh --target prod
+          dbt build --target prod
