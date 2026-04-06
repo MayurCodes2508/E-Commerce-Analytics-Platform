@@ -9,8 +9,6 @@ SELECT shipment_id,
 FROM `intense-pixel-490219-h2`.`dev_staging`.`stg_shipments`
 
 
-WHERE shipped_at > (SELECT COALESCE(TIMESTAMP_SUB(MAX(shipped_at), INTERVAL 3 DAY), TIMESTAMP('1970-01-01')) FROM `intense-pixel-490219-h2`.`dev_core`.`fct_shipments`)
-
 )
 
 SELECT to_hex(md5(cast(coalesce(cast(b.shipment_id as string), '_dbt_utils_surrogate_key_null_') as string))) AS shipment_key,

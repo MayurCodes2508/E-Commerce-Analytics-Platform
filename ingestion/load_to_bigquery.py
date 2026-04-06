@@ -2,6 +2,7 @@ from google.cloud import bigquery, storage
 import pandas as pd
 import os
 import datetime
+import tempfile
 
 PROJECT_ID = "intense-pixel-490219-h2"
 DATASET = "raw"
@@ -89,7 +90,8 @@ for table_name, file_name in tables.items():
 
     df["ingestion_timestamp"] = pd.Timestamp.utcnow()
 
-    local_parquet = f"/tmp/{table_name}_{run_ts}.parquet"
+    temp_dir = tempfile.gettempdir()
+    local_parquet = os.path.join(temp_dir, f"{table_name}_{run_ts}.parquet")
     df.to_parquet(local_parquet, index=False)
 
     gcs_path = f"{table_name}/dt={date_str}/run_ts={run_ts}/data.parquet"

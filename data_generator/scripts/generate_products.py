@@ -3,6 +3,18 @@ import random
 from datetime import datetime
 import os
 
+# Backfill switch: set true to generate for OVERRIDE_DATE only, false for normal mode.
+ENABLE_DATE_OVERRIDE = os.getenv("ENABLE_DATE_OVERRIDE", "false").lower() == "true"
+OVERRIDE_DATE = os.getenv("OVERRIDE_DATE", "")  # YYYY-MM-DD
+
+
+def get_business_date():
+    if ENABLE_DATE_OVERRIDE:
+        if not OVERRIDE_DATE:
+            raise ValueError("ENABLE_DATE_OVERRIDE is true, but OVERRIDE_DATE is empty.")
+        return datetime.strptime(OVERRIDE_DATE, "%Y-%m-%d").date()
+    return datetime.today().date()
+
 def generate_products():
     output_path = "../output_data/products.csv"
 
@@ -43,6 +55,8 @@ def generate_products():
 
     products = []
 
+    business_date = get_business_date()
+
     for product_id in range(1, 801):
         category = random.choice(categories)
         brand = random.choice(brands)
@@ -58,7 +72,7 @@ def generate_products():
             "category": category,
             "brand": brand,
             "base_price": base_price,
-            "created_at": datetime.today().date(),
+            "created_at": business_date,
             "is_active": True
         })
 

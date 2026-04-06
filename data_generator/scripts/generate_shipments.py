@@ -1,7 +1,39 @@
 import pandas as pd
 import random
 import os
-from datetime import timedelta
+from datetime import datetime, timedelta
+from google.cloud import bigquery
+
+PROJECT_ID = os.getenv("GCP_PROJECT_ID", "intense-pixel-490219-h2")
+RAW_DATASET = os.getenv("RAW_DATASET", "raw")
+
+# Backfill switch: set true to generate for OVERRIDE_DATE only, false for normal mode.
+ENABLE_DATE_OVERRIDE = os.getenv("ENABLE_DATE_OVERRIDE", "false").lower() == "true"
+OVERRIDE_DATE = os.getenv("OVERRIDE_DATE", "")  # YYYY-MM-DD
+
+
+def get_business_datetime(order_date_value):
+    if ENABLE_DATE_OVERRIDE:
+        if not OVERRIDE_DATE:
+            raise ValueError("ENABLE_DATE_OVERRIDE is true, but OVERRIDE_DATE is empty.")
+        return datetime.strptime(OVERRIDE_DATE, "%Y-%m-%d")
+    return pd.to_datetime(order_date_value)
+
+
+def get_max_id_from_bigquery(table_name, id_column):
+    """Get current max ID from raw BigQuery table; return 0 if table is unavailable."""
+    try:
+        client = bigquery.Client(project=PROJECT_ID)
+        query = (
+            f"SELECT COALESCE(MAX(CAST({id_column} AS INT64)), 0) AS max_id "
+            f"FROM `{PROJECT_ID}.{RAW_DATASET}.{table_name}`"
+        )
+        result = client.query(query).to_dataframe()
+        max_id = result["max_id"][0]
+        return int(max_id) if pd.notna(max_id) else 0
+    except Exception as exc:
+        print(f"Warning: could not read max {id_column} from BigQuery ({exc}). Falling back to 0.")
+        return 0
 
 def generate_shipments():
     orders_path = "../output_data/orders.csv"
@@ -22,11 +54,11 @@ def generate_shipments():
     if os.path.exists(shipments_path):
         existing_shipments = pd.read_csv(shipments_path)
         processed_orders = existing_shipments["order_id"].unique()
-        last_shipment_id = existing_shipments["shipment_id"].max()
     else:
         existing_shipments = pd.DataFrame()
         processed_orders = []
-        last_shipment_id = 0
+
+    last_shipment_id = get_max_id_from_bigquery("shipments", "shipment_id")
 
     successful_payments = payments[payments["payment_status"] == "success"]
     paid_orders = successful_payments["order_id"].unique()
@@ -46,7 +78,7 @@ def generate_shipments():
     for _, order in eligible_orders.iterrows():
         shipment_counter += 1
 
-        order_time = pd.to_datetime(order["order_date"])
+        order_time = get_business_datetime(order["order_date"])
 
         shipped_at = order_time + timedelta(hours=random.randint(2, 24))
 

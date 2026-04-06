@@ -1,6 +1,39 @@
 import pandas as pd
 import random
 import os
+from datetime import datetime
+from google.cloud import bigquery
+
+PROJECT_ID = os.getenv("GCP_PROJECT_ID", "intense-pixel-490219-h2")
+RAW_DATASET = os.getenv("RAW_DATASET", "raw")
+
+# Backfill switch: set true to generate for OVERRIDE_DATE only, false for normal mode.
+ENABLE_DATE_OVERRIDE = os.getenv("ENABLE_DATE_OVERRIDE", "false").lower() == "true"
+OVERRIDE_DATE = os.getenv("OVERRIDE_DATE", "")  # YYYY-MM-DD
+
+
+def get_business_datetime(order_date_value):
+    if ENABLE_DATE_OVERRIDE:
+        if not OVERRIDE_DATE:
+            raise ValueError("ENABLE_DATE_OVERRIDE is true, but OVERRIDE_DATE is empty.")
+        return datetime.strptime(OVERRIDE_DATE, "%Y-%m-%d")
+    return pd.to_datetime(order_date_value)
+
+
+def get_max_id_from_bigquery(table_name, id_column):
+    """Get current max ID from raw BigQuery table; return 0 if table is unavailable."""
+    try:
+        client = bigquery.Client(project=PROJECT_ID)
+        query = (
+            f"SELECT COALESCE(MAX(CAST({id_column} AS INT64)), 0) AS max_id "
+            f"FROM `{PROJECT_ID}.{RAW_DATASET}.{table_name}`"
+        )
+        result = client.query(query).to_dataframe()
+        max_id = result["max_id"][0]
+        return int(max_id) if pd.notna(max_id) else 0
+    except Exception as exc:
+        print(f"Warning: could not read max {id_column} from BigQuery ({exc}). Falling back to 0.")
+        return 0
 
 def generate_payments():
     orders_path = "../output_data/orders.csv"
@@ -30,11 +63,11 @@ def generate_payments():
     if os.path.exists(payments_path):
         existing_payments = pd.read_csv(payments_path)
         processed_orders = existing_payments["order_id"].unique()
-        last_payment_id = existing_payments["payment_id"].max()
     else:
         existing_payments = pd.DataFrame()
         processed_orders = []
-        last_payment_id = 0
+
+    last_payment_id = get_max_id_from_bigquery("payments", "payment_id")
 
     new_orders = orders[~orders["order_id"].isin(processed_orders)]
 
@@ -58,7 +91,7 @@ def generate_payments():
             "payment_method": random.choice(payment_methods),
             "amount": order_total,
             "payment_status": random.choice(payment_statuses),
-            "payment_timestamp": order["order_date"]
+            "payment_timestamp": get_business_datetime(order["order_date"])
         })
 
     new_payments_df = pd.DataFrame(payments)

@@ -1,6 +1,26 @@
 import pandas as pd
 import random
 import os
+from google.cloud import bigquery
+
+PROJECT_ID = os.getenv("GCP_PROJECT_ID", "intense-pixel-490219-h2")
+RAW_DATASET = os.getenv("RAW_DATASET", "raw")
+
+
+def get_max_id_from_bigquery(table_name, id_column):
+    """Get current max ID from raw BigQuery table; return 0 if table is unavailable."""
+    try:
+        client = bigquery.Client(project=PROJECT_ID)
+        query = (
+            f"SELECT COALESCE(MAX(CAST({id_column} AS INT64)), 0) AS max_id "
+            f"FROM `{PROJECT_ID}.{RAW_DATASET}.{table_name}`"
+        )
+        result = client.query(query).to_dataframe()
+        max_id = result["max_id"][0]
+        return int(max_id) if pd.notna(max_id) else 0
+    except Exception as exc:
+        print(f"Warning: could not read max {id_column} from BigQuery ({exc}). Falling back to 0.")
+        return 0
 
 def generate_order_items():
     orders_path = "../output_data/orders.csv"
@@ -15,14 +35,12 @@ def generate_order_items():
 
     if os.path.exists(order_items_path):
         existing_items = pd.read_csv(order_items_path)
-
         processed_orders = existing_items["order_id"].unique()
-        last_item_id = existing_items["order_item_id"].max()
-
     else:
         existing_items = pd.DataFrame()
         processed_orders = []
-        last_item_id = 0
+
+    last_item_id = get_max_id_from_bigquery("order_items", "order_item_id")
 
     new_orders = orders[~orders["order_id"].isin(processed_orders)]
 
